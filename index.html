@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediLife | Advanced Medical Solutions</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%230ea5e9' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z'/></svg>">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <script>
+        if (localStorage.getItem('medilife-theme') === 'light') {
+            document.body.classList.add('light-theme');
+        }
+    </script>
+
+    <div id="page-loader">
+        <div class="loader-content">
+            <img src="./assets/Header/logo.webp" alt="MediLife Logo" class="loader-img" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 50\'><text y=\'35\' font-family=\'sans-serif\' font-weight=\'bold\' font-size=\'30\' fill=\'%230ea5e9\'>MediLife</text></svg>'">
+            <p>Processing Request...</p>
+        </div>
+    </div>
+
+    <div id="cart-toast" class="toast">
+        <div class="toast-icon"><i class="fa-solid fa-check"></i></div>
+        <div class="toast-text">Item successfully added to your cart!</div>
+    </div>
+
+    <button id="scrollToTopBtn" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <header class="headerWrap" id="main-header">
+        <div class="imgWrap">
+            <a href="index.html">
+                <img src="./assets/Header/logo.webp" alt="MediLife Logo" class="site-logo" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 50\'><text y=\'35\' font-family=\'sans-serif\' font-weight=\'bold\' font-size=\'30\' fill=\'%230ea5e9\'>MediLife</text></svg>'">
+            </a>
+        </div>
+        
+        <div class="hamburger" id="hamburger-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <nav class="linksWrap" id="nav-links">
+            <div class="topCloseBtn" id="close-btn">
+                <i class="fa-solid fa-times"></i>
+            </div>
+            <ul>
+                <li class="dropdown" id="home-dropdown">
+                    <div class="dropdownHeader">
+                        <a href="javascript:void(0)" class="homePageLink" id="home-nav-link">Home</a>
+                        <button class="dropdownToggle" aria-label="Toggle dropdown" id="dropdown-toggle-btn">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <ul class="dropdownMenu" id="dropdown-menu">
+                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="../pages/home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="../pages/about.html">About Us</a></li>
+                <li><a href="../pages/dashboard.html">DashBoard</a></li>
+                <li><a href="../pages/services.html">Services</a></li>
+                <li><a href="../pages/blog.html">Blog</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+                <li><a href="../pages/signup.html">Sign Up</a></li>
+                <li><a href="../pages/login.html">Login</a></li>
+                <li>
+                    <a href="../pages/checkout.html" aria-label="Cart" class="cart-nav-icon">
+                        <i class="fa-solid fa-cart-arrow-down" style="color: rgb(116, 192, 252);"></i>
+                    </a>
+                </li>
+                <li class="theme-toggle-li">
+                    <button id="theme-toggle-btn" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-sun" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="menuOverlay" id="menu-overlay"></div>
+    </header>
+
+    <main>
+        
+        <section class="hero-section">
+            <div class="video-bg-container">
+                <div class="overlay-dark"></div>
+                <video src="./assets/Home1/Hero1/6771772_Digital_Animation_Montage_1280x720 (1).mp4" autoplay muted loop playsinline></video>
+            </div>
+
+            <div class="container hero-content center-aligned-hero">
+                <div class="hero-text fade-in">
+                    <h1>Precision Medicine.<br>Advanced Care.</h1>
+                    <p>Equipping healthcare professionals with next-generation medical technology for a healthier world.</p>
+                    <div class="hero-btns">
+                        <a href="../pages/error.html" class="btn btn-primary">Browse Catalog</a>
+                        <a href="../pages/error.html" class="btn btn-outline">Request Demo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="products-section">
+            <div class="container">
+                <div class="section-header center-aligned fade-in">
+                    <h2>Our Medical Solutions</h2>
+                    <p>Explore our wide range of FDA-approved medical devices designed for reliability and accuracy.</p>
+                </div>
+
+                <div class="tabs-nav fade-in">
+                    <button class="tab-btn active" data-tab="tab-1">Diagnostics</button>
+                    <button class="tab-btn" data-tab="tab-2">Surgical</button>
+                    <button class="tab-btn" data-tab="tab-3">Patient Care</button>
+                </div>
+
+                <div class="tabs-content-wrapper">
+                    <div class="tab-content active" id="tab-1">
+                        <div class="product-grid">
+                            <div class="product-card fade-in">
+                                <div class="prod-img">
+                                    <img src="./assets/Home1/Grids/Diagnostics/1.webp" alt="MRI Scanner">
+                                </div>
+                                <div class="prod-details">
+                                    <h3>MRI Scanner Pro</h3>
+                                    <p class="prod-desc">Advanced magnetic resonance imaging for comprehensive high-resolution clinical scans.</p>
+                                    <p class="price">$150,000</p>
+                                </div>
+                                <div class="prod-hover">
+                                    <h4 class="hover-title">Technical Specs</h4>
+                                    <ul class="hover-specs">
+                                        <li><i class="fa-solid fa-microchip"></i> 3.0 Tesla Magnet Array</li>
+                                        <li><i class="fa-solid fa-expand"></i> 70cm Ultra-Wide Bore</li>
+                                        <li><i class="fa-solid fa-bolt"></i> AI-Driven Noise Reduction</li>
+                                    </ul>
+                                    <button class="btn btn-sm add-to-cart-btn btn-live-line">
+                                        <span>Add to Cart</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-card fade-in">
+                                <div class="prod-img">
+                                    <img src="./assets/Home1/Grids/Diagnostics/2.webp" alt="Digital X-Ray">
+                                </div>
+                                <div class="prod-details">
+                                    <h3>Digital X-Ray</h3>
+                                    <p class="prod-desc">High-frequency digital radiography system ensuring rapid and precise bone diagnostics.</p>
+                                    <p class="price">$85,000</p>
+                                </div>
+                                <div class="prod-hover">
+                                    <h4 class="hover-title">Technical Specs</h4>
+                                    <ul class="hover-specs">
+                                        <li><i class="fa-solid fa-microchip"></i> 50kW High-Freq Generator</li>
+                                        <li><i class="fa-solid fa-wifi"></i> Wireless Flat Panel Detector</li>
+                                        <li><i class="fa-solid fa-bolt"></i> Auto-Tracking Capability</li>
+                                    </ul>
+                                    <button class="btn btn-sm add-to-cart-btn btn-live-line">
+                                        <span>Add to Cart</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-card fade-in">
+                                <div class="prod-img">
+                                    <img src="./assets/Home1/Grids/Diagnostics/3.webp" alt="Ultrasound">
+                                </div>
+                                <div class="prod-details">
+                                    <h3>Ultrasound V5</h3>
+                                    <p class="prod-desc">Multi-purpose clinical ultrasound system optimized for cardiovascular and OB/GYN imaging.</p>
+                                    <p class="price">$45,000</p>
+                                </div>
+                                <div class="prod-hover">
+                                    <h4 class="hover-title">Technical Specs</h4>
+                                    <ul class="hover-specs">
+                                        <li><i class="fa-solid fa-microchip"></i> 4D Imaging Technology</li>
+                                        <li><i class="fa-solid fa-desktop"></i> 21-inch OLED Display</li>
+                                        <li><i class="fa-solid fa-bolt"></i> Elastography Integration</li>
+                                    </ul>
+                                    <button class="btn btn-sm add-to-cart-btn btn-live-line">
+                                        <span>Add to Cart</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-card fade-in">
+                                <div class="prod-img">
+                                    <img src="./assets/Home1/Grids/Diagnostics/4.webp" alt="ECG Monitor">
+                                </div>
+                                <div class="prod-details">
+                                    <h3>ECG Monitor</h3>
+                                    <p class="prod-desc">Portable 12-lead electrocardiogram device offering immediate cardiac rhythm analysis.</p>
+                                    <p class="price">$12,000</p>
+                                </div>
+                                <div class="prod-hover">
+                                    <h4 class="hover-title">Technical Specs</h4>
+                                    <ul class="hover-specs">
+                                        <li><i class="fa-solid fa-microchip"></i> 12-Lead Simultaneous Acq.</li>
+                                        <li><i class="fa-solid fa-print"></i> Built-in Thermal Printer</li>
+                                        <li><i class="fa-solid fa-bolt"></i> Arrhythmia Detection Alg.</li>
+                                    </ul>
+                                    <button class="btn btn-sm add-to-cart-btn btn-live-line">
+                                        <span>Add to Cart</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-card fade-in">
+                                <div class="prod-img">
+                                    <img src="./assets/Home1/Grids/Diagnostics/5.webp" alt="CT Scanner">
+                                </div>
+                                <div class="prod-details">
+                                    <h3>CT Scanner Elite</h3>
+                                    <p class="prod-desc">128-slice computed tomography scanner delivering unparalleled cross-sectional detail.</p>
+                                    <p class="price">$220,000</p>
+                                </div>
+                                <div class="prod-hover">
+                                    <h4 class="hover-title">Technical Specs</h4>
+                                    <ul class="hover-specs">
+                                        <li><i class="fa-solid fa-microchip"></i> 128-Slice Config</li>
+                                        <li><i class="fa-solid fa-shield-halved"></i> Low-Dose Radiation Protocol</li>
+                                        <li><i class="fa-solid fa-bolt"></i> 0.35s Rotation Speed</li>
+                                    </ul>
+                                    <button class="btn btn-sm add-to-cart-btn btn-live-line">
+                                        <span>Add to Cart</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="tab-2">
+                        <div class="product-grid">
+                            <div class="product-card">
+                                <div class="prod-img">
+                                    <img src="./assets/Home1/Grids/Surgical/11.webp" alt="Surgical Robot">
+                                </div>
+                                <div class="prod-details">
+                                    <h3>RoboSurge Arm</h3>
+                                    <p class="prod-desc">Minimally invasive robotic surgical system for complex operational procedures.</p>
+                                    <p class="price">$500,000</p>
+                                </div>
+                                <div class="prod-hover">
+                                    <h4 class="hover-title">Technical Specs</h4>
+                                    <ul class="hover-specs">
+                                        <li><i class="fa-solid fa-microchip"></i> 7-Degree Freedom Arms</li>
+                                        <li><i class="fa-solid fa-eye"></i> 3D HD Vision System</li>
+                                        <li><i class="fa-solid fa-bolt"></i> Haptic Feedback Control</li>
+                                    </ul>
+                                    <button class="btn btn-sm add-to-cart-btn btn-live-line">
+                                        <span>Add to Cart</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="prod-img">
+                                    <img src="./assets/Home1/Grids/Surgical/22.webp" alt="Anesthesia">
+                                </div>
+                                <div class="prod-details">
+                                    <h3>Anesthesia Workstation</h3>
+                                    <p class="prod-desc">Fully integrated vaporizing and ventilation hub for precise anesthesia delivery.</p>
+                                    <p class="price">$35,000</p>
+                                </div>
+                                <div class="prod-hover">
+                                    <h4 class="hover-title">Technical Specs</h4>
+                                    <ul class="hover-specs">
+                                        <li><i class="fa-solid fa-microchip"></i> Advanced Gas Monitoring</li>
+                                        <li><i class="fa-solid fa-lungs"></i> Integrated ICU Ventilator</li>
+                                        <li><i class="fa-solid fa-bolt"></i> Touchscreen Interface</li>
+                                    </ul>
+                                    <button class="btn btn-sm add-to-cart-btn btn-live-line">
+                                        <span>Add to Cart</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="prod-img">
+                                    <img src="./assets/Home1/Grids/Surgical/33.webp" alt="Surgical Light">
+                                </div>
+                                <div class="prod-details">
+                                    <h3>LED Surgical Light</h3>
+                                    <p class="prod-desc">Shadowless, temperature-controlled illumination for operating theaters.</p>
+                                    <p class="price">$5,500</p>
+                                </div>
+                                <div class="prod-hover">
+                                    <h4 class="hover-title">Technical Specs</h4>
+                                    <ul class="hover-specs">
+                                        <li><i class="fa-solid fa-microchip"></i> 160,000 Lux Intensity</li>
+                                        <li><i class="fa-solid fa-sun"></i> Adjustable Color Temp</li>
+                                        <li><i class="fa-solid fa-bolt"></i> 50,000+ Hour Lifespan</li>
+                                    </ul>
+                                    <button class="btn btn-sm add-to-cart-btn btn-live-line">
+                                        <span>Add to Cart</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="prod-img">
+                                    <img src="./assets/Home1/Grids/Surgical/44.webp" alt="Surgical Table">
+                                </div>
+                                <div class="prod-details">
+                                    <h3>Hydraulic OT Table</h3>
+                                    <p class="prod-desc">Ergonomic, multi-positional hydraulic operating table with radiolucent top.</p>
+                                    <p class="price">$15,000</p>
+                                </div>
+                                <div class="prod-hover">
+                                    <h4 class="hover-title">Technical Specs</h4>
+                                    <ul class="hover-specs">
+                                        <li><i class="fa-solid fa-microchip"></i> Electro-Hydraulic Motors</li>
+                                        <li><i class="fa-solid fa-weight-hanging"></i> 400kg Weight Capacity</li>
+                                        <li><i class="fa-solid fa-bolt"></i> C-Arm Compatible</li>
+                                    </ul>
+                                    <button class="btn btn-sm add-to-cart-btn btn-live-line">
+                                        <span>Add to Cart</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="prod-img">
+                                    <img src="./assets/Home1/Grids/Surgical/55.webp" alt="Scalpel Set">
+                                </div>
+                                <div class="prod-details">
+                                    <h3>Precision Scalpel Set</h3>
+                                    <p class="prod-desc">Laser-sharpened, surgical-grade stainless steel scalpel kit for micro-incisions.</p>
+                                    <p class="price">$1,200</p>
+                                </div>
+                                <div class="prod-hover">
+                                    <h4 class="hover-title">Technical Specs</h4>
+                                    <ul class="hover-specs">
+                                        <li><i class="fa-solid fa-microchip"></i> Titanium Alloy Handles</li>
+                                        <li><i class="fa-solid fa-scissors"></i> Laser-Honed Edges</li>
+                                        <li><i class="fa-solid fa-bolt"></i> Autoclave Safe Setup</li>
+                                    </ul>
+                                    <button class="btn btn-sm add-to-cart-btn btn-live-line">
+                                        <span>Add to Cart</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="tab-3">
+                        <div class="product-grid">
+                            <div class="product-card">
+                                <div class="prod-img">
+                                    <img src="./assets/Home1/Grids/PatientCare/111.webp" alt="ICU Bed">
+                                </div>
+                                <div class="prod-details">
+                                    <h3>ICU Bed (Electric)</h3>
+                                    <p class="prod-desc">Fully automated 5-function intensive care bed prioritizing patient recovery.</p>
+                                    <p class="price">$8,000</p>
+                                </div>
+                                <div class="prod-hover">
+                                    <h4 class="hover-title">Technical Specs</h4>
+                                    <ul class="hover-specs">
+                                        <li><i class="fa-solid fa-microchip"></i> 5-Motor Electric Actuators</li>
+                                        <li><i class="fa-solid fa-bed"></i> CPR Quick Release</li>
+                                        <li><i class="fa-solid fa-bolt"></i> Built-in Weighing Scale</li>
+                                    </ul>
+                                    <button class="btn btn-sm add-to-cart-btn btn-live-line">
+                                        <span>Add to Cart</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="prod-img">
+                                    <img src="./assets/Home1/Grids/PatientCare/222.webp" alt="Wheelchair">
+                                </div>
+                                <div class="prod-details">
+                                    <h3>Auto Wheelchair</h3>
+                                    <p class="prod-desc">Motorized mobility solution with intuitive joystick controls and robust suspension.</p>
+                                    <p class="price">$2,500</p>
+                                </div>
+                                <div class="prod-hover">
+                                    <h4 class="hover-title">Technical Specs</h4>
+                                    <ul class="hover-specs">
+                                        <li><i class="fa-solid fa-microchip"></i> Dual 250W Hub Motors</li>
+                                        <li><i class="fa-solid fa-battery-full"></i> 20 Mile Range Battery</li>
+                                        <li><i class="fa-solid fa-bolt"></i> Anti-Tip Rear Wheels</li>
+                                    </ul>
+                                    <button class="btn btn-sm add-to-cart-btn btn-live-line">
+                                        <span>Add to Cart</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="prod-img">
+                                    <img src="./assets/Home1/Grids/PatientCare/333.webp" alt="Oxygen Concentrator">
+                                </div>
+                                <div class="prod-details">
+                                    <h3>Oxygen Concentrator</h3>
+                                    <p class="prod-desc">High-capacity medical oxygen generator for continuous respiratory therapy.</p>
+                                    <p class="price">$900</p>
+                                </div>
+                                <div class="prod-hover">
+                                    <h4 class="hover-title">Technical Specs</h4>
+                                    <ul class="hover-specs">
+                                        <li><i class="fa-solid fa-microchip"></i> 10L/Min Output Flow</li>
+                                        <li><i class="fa-solid fa-wind"></i> 93% ± 3% O2 Purity</li>
+                                        <li><i class="fa-solid fa-bolt"></i> Ultra-Quiet Operation</li>
+                                    </ul>
+                                    <button class="btn btn-sm add-to-cart-btn btn-live-line">
+                                        <span>Add to Cart</span>
+                                    </button>
+                                </div>
+                            </div>
+                             <div class="product-card">
+                                <div class="prod-img">
+                                    <img src="./assets/Home1/Grids/PatientCare/444.webp" alt="Nebulizer">
+                                </div>
+                                <div class="prod-details">
+                                    <h3>Clinical Nebulizer</h3>
+                                    <p class="prod-desc">Professional-grade compressor nebulizer for effective aerosol medication delivery.</p>
+                                    <p class="price">$150</p>
+                                </div>
+                                <div class="prod-hover">
+                                    <h4 class="hover-title">Technical Specs</h4>
+                                    <ul class="hover-specs">
+                                        <li><i class="fa-solid fa-microchip"></i> Heavy-Duty Piston Motor</li>
+                                        <li><i class="fa-solid fa-droplet"></i> ≤5μm Particle Size</li>
+                                        <li><i class="fa-solid fa-bolt"></i> Continuous Duty Cycle</li>
+                                    </ul>
+                                    <button class="btn btn-sm add-to-cart-btn btn-live-line">
+                                        <span>Add to Cart</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="prod-img">
+                                    <img src="./assets/Home1/Grids/PatientCare/555.webp" alt="Vitals Monitor">
+                                </div>
+                                <div class="prod-details">
+                                    <h3>Portable Vitals Monitor</h3>
+                                    <p class="prod-desc">Multi-parameter patient tracking unit for wards and ambulatory transport.</p>
+                                    <p class="price">$3,200</p>
+                                </div>
+                                <div class="prod-hover">
+                                    <h4 class="hover-title">Technical Specs</h4>
+                                    <ul class="hover-specs">
+                                        <li><i class="fa-solid fa-microchip"></i> 6-Parameter Tracking</li>
+                                        <li><i class="fa-solid fa-heart-pulse"></i> NIBP & SpO2 Integration</li>
+                                        <li><i class="fa-solid fa-bolt"></i> Central Station Wireless Sync</li>
+                                    </ul>
+                                    <button class="btn btn-sm add-to-cart-btn btn-live-line">
+                                        <span>Add to Cart</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="offer-section fade-in">
+            <div class="offer-bg">
+                <img src="./assets/Home1/bg1.webp" alt="Medical Lab Background">
+                <div class="overlay-blue"></div>
+            </div>
+            <div class="container offer-content">
+                <div class="timer-box">
+                    <span>Offer Ends on</span>
+                    <div id="countdown" class="countdown-display">00d : 00h : 00m : 00s</div>
+                </div>
+                <h1>Exclusive Institution Discount</h1>
+                <p>Equip your entire facility with our premium package. Limited time offer for bulk orders on diagnostic equipment. Our specialized team handles installation and training globally.</p>
+                <div class="offer-btns">
+                    <a href="../pages/error.html" class="btn btn-primary">Claim Offer</a>
+                    <a href="../pages/error.html" class="btn btn-outline-white">View Details</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="partners-section">
+            <div class="container">
+                 <div class="section-header center-aligned fade-in">
+                    <h2>Trusted By Leaders</h2>
+                    <p>We collaborate with the most prestigious names in healthcare and medical technology to bring you world-class solutions.</p>
+                </div>
+                <div class="slider-wrapper">
+                    <div class="text-slider" id="partner-slider">
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="license-section">
+            <div class="container">
+                <div class="section-header center-aligned fade-in">
+                    <h2>Compliance & Certifications</h2>
+                    <p>Committed to the highest global standards of safety and quality.</p>
+                </div>
+
+                <div class="license-intro-content fade-in">
+                    <p class="highlight-para">At MediLife, regulatory compliance is the fundamental cornerstone of our engineering and distribution protocols. We actively navigate the complex landscape of global medical standards to ensure that every facility we partner with receives equipment that is strictly vetted, highly reliable, and fundamentally safe.</p>
+                </div>
+
+                <div class="license-grid fade-in">
+                    <div class="license-card">
+                        <div class="license-card-bg" style="background-image: url('./assets/Home1/Certificates/iso.webp');"></div>
+                        <div class="license-content-area">
+                            <div class="license-icon-header">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <h3 class="license-title">ISO 9001:2015</h3>
+                            <h4 class="license-subtitle">Quality Management System</h4>
+                            <p class="license-text">Ensuring that every medical device engineered and distributed meets rigorous international benchmarks for consistency, operational performance, and clinical safety.</p>
+                            <div class="card-action-btns">
+                                <a href="../pages/error.html" class="btn btn-primary btn-sm">View Certificate</a>
+                                <a href="../pages/error.html" class="btn btn-outline-white btn-sm">Audit Report</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="license-card">
+                        <div class="license-card-bg" style="background-image: url('./assets/Home1/Certificates/fda.webp');"></div>
+                        <div class="license-content-area">
+                            <div class="license-icon-header">
+                                <i class="fa-solid fa-file-medical"></i>
+                            </div>
+                            <h3 class="license-title">FDA Approved</h3>
+                            <h4 class="license-subtitle">Regulatory Compliance</h4>
+                            <p class="license-text">Strict adherence to US FDA regulations, fulfilling all 510(k) premarket notification requirements and executing exhaustive post-market clinical surveillance.</p>
+                            <div class="card-action-btns">
+                                <a href="../pages/error.html" class="btn btn-primary btn-sm">Verify Status</a>
+                                <a href="../pages/error.html" class="btn btn-outline-white btn-sm">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footerWrap container">
+            <div class="box">
+                <div class="logoContainer">
+                    <div class="logo">
+                        <img src="./assets/Header/logo.webp" alt="MediLife Logo" class="footer-logo site-logo" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 50\'><text y=\'35\' font-family=\'sans-serif\' font-weight=\'bold\' font-size=\'30\' fill=\'%230ea5e9\'>MediLife</text></svg>'">
+                    </div>
+                </div>
+                <p class="footer-desc">
+                    MediLife is a global leader in medical technology, dedicated to improving patient outcomes through innovative solutions and reliable support.
+                </p>
+            </div>
+
+            <div class="box">
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="../pages/about.html">About Us</a></li>
+                    <li><a href="../pages/services.html">Services</a></li>
+                    <li><a href="../pages/contact.html">Contact</a></li>
+                    <li><a href="../pages/login.html">Login</a></li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4>Categories</h4>
+                <ul class="footer-links">
+                    <li><a href="../pages/error.html">Surgical</a></li>
+                    <li><a href="../pages/error.html">Imaging</a></li>
+                    <li><a href="../pages/error.html">Monitoring</a></li>
+                    <li><a href="../pages/error.html">Lab Equipment</a></li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4>Contact</h4>
+                <ul class="contactInfo">
+                    <li><i class="fa-solid fa-location-dot"></i><span> Stackly Headquarters, Los Angeles, CA</span></li>
+                    <li><i class="fa-solid fa-phone"></i> +1 888 123 4567</li>
+                    <li><i class="fa-solid fa-envelope"></i> vip@stackly.auto</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4>Newsletter</h4>
+                <p>Subscribe for latest medical updates.</p>
+                <form id="footer-newsletter-form" class="subscribe-form" novalidate>
+                    <input type="email" id="newsletter-email" name="email" placeholder="Your Email" autocomplete="email">
+                    <span id="newsletter-error" style="color: var(--error-color); font-size: 0.8rem; display: block; margin-top: -5px; min-height: 15px;"></span>
+                    <button type="submit" class="btn btn-primary full-width">Subscribe</button>
+                </form>
+                <div class="media">
+                    <a href="../pages/error.html" class="socialLink" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="../pages/error.html" class="socialLink" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="../pages/error.html" class="socialLink" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="../pages/error.html" class="socialLink" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom container">
+            <p>&copy; 2026 MediLife Medical Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Full Page Loader Interceptor ---
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('page-loader');
+            loader.style.opacity = '0';
+            setTimeout(() => { loader.style.display = 'none'; }, 300);
+        });
+
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href !== '#' && !href.startsWith('javascript') && !this.classList.contains('cart-nav-icon')) {
+                    e.preventDefault();
+                    const loader = document.getElementById('page-loader');
+                    loader.style.display = 'flex';
+                    setTimeout(() => { loader.style.opacity = '1'; }, 10);
+                    setTimeout(() => { window.location.href = href; }, 400); 
+                }
+            });
+        });
+
+        // --- Hamburger Menu Logic ---
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const navLinks = document.getElementById('nav-links');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const dropdownToggleBtn = document.getElementById('dropdown-toggle-btn');
+        const homeNavLink = document.getElementById('home-nav-link');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        const body = document.body;
+
+        function openMenu() {
+            navLinks.classList.add('showMenu');
+            menuOverlay.style.display = 'block';
+            body.classList.add('menu-open');
+        }
+
+        function closeMenu() {
+            navLinks.classList.remove('showMenu');
+            menuOverlay.style.display = 'none';
+            body.classList.remove('menu-open');
+            dropdownMenu.classList.remove('showDropdown');
+        }
+
+        hamburgerBtn.addEventListener('click', (e) => { e.stopPropagation(); openMenu(); });
+        closeBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+
+        document.addEventListener('click', (e) => {
+            if (body.classList.contains('menu-open')) {
+                if (!navLinks.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+                    closeMenu();
+                }
+            }
+        });
+
+        dropdownToggleBtn.addEventListener('click', (e) => {
+            e.preventDefault(); e.stopPropagation();
+            dropdownMenu.classList.toggle('showDropdown');
+        });
+
+        homeNavLink.addEventListener('click', (e) => {
+            if(window.innerWidth <= 768) {
+                e.preventDefault(); e.stopPropagation();
+                dropdownMenu.classList.toggle('showDropdown');
+            }
+        });
+
+        // --- Theme Toggle ---
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const themeIcon = document.getElementById('theme-icon');
+
+        if (localStorage.getItem('medilife-theme') === 'light') {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            if (document.body.classList.contains('light-theme')) {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('medilife-theme', 'light');
+            } else {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('medilife-theme', 'dark');
+            }
+        });
+
+        // --- Sticky Header & Scroll To Top ---
+        const header = document.getElementById('main-header');
+        const scrollBtn = document.getElementById('scrollToTopBtn');
+        const heroSection = document.querySelector('.hero-section');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) header.classList.add('sticky');
+            else header.classList.remove('sticky');
+
+            if (window.scrollY > heroSection.offsetHeight) scrollBtn.classList.add('visible');
+            else scrollBtn.classList.remove('visible');
+        });
+
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // --- Tab Switching Logic ---
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                btn.classList.add('active');
+                document.getElementById(btn.getAttribute('data-tab')).classList.add('active');
+            });
+        });
+
+        // --- Add to Cart Popup Logic ---
+        const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
+        const toast = document.getElementById('cart-toast');
+
+        addToCartBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                toast.classList.add('show');
+                setTimeout(() => { toast.classList.remove('show'); }, 3000);
+            });
+        });
+
+        // --- Timer Logic ---
+        const countdownEl = document.getElementById('countdown');
+        const endDate = new Date();
+        endDate.setDate(endDate.getDate() + 3); 
+
+        function updateTimer() {
+            const now = new Date().getTime();
+            const distance = endDate - now;
+            if (distance < 0) {
+                countdownEl.innerHTML = "EXPIRED";
+                return;
+            }
+            const days = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+            const hours = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+            const minutes = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+            const seconds = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+            countdownEl.innerHTML = `${days}d : ${hours}h : ${minutes}m : ${seconds}s`;
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        // --- Partners Text Slider (Responsive) ---
+        const partners = [
+            "Siemens Healthineers", "GE Healthcare", "Medtronic", 
+            "Philips Healthcare", "Abbott Laboratories", "Stryker Corporation",
+            "Johnson & Johnson", "Boston Scientific", "Baxter International", "Danaher Corporation"
+        ];
+        const sliderContainer = document.getElementById('partner-slider');
+        let currentPartnerIndex = 0;
+
+        function updateSlider() {
+            let html = '';
+            let itemsToShow = window.innerWidth > 1024 ? 3 : window.innerWidth > 600 ? 2 : 1;
+            
+            for(let i=0; i < itemsToShow; i++) {
+                let idx = (currentPartnerIndex + i) % partners.length;
+                html += `<span class="partner-name">${partners[idx]}</span>`;
+            }
+            
+            sliderContainer.style.opacity = '0';
+            setTimeout(() => {
+                sliderContainer.innerHTML = html;
+                sliderContainer.style.opacity = '1';
+                currentPartnerIndex = (currentPartnerIndex + itemsToShow) % partners.length;
+            }, 500);
+        }
+        updateSlider();
+        window.addEventListener('resize', updateSlider);
+        setInterval(updateSlider, 3000);
+
+        // --- Footer Newsletter Validation & Redirect ---
+        const footerForm = document.getElementById('footer-newsletter-form');
+        const newsletterEmail = document.getElementById('newsletter-email');
+        const newsletterError = document.getElementById('newsletter-error');
+
+        const isValidEmail = (email) => {
+            const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        };
+
+        footerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            newsletterError.innerText = '';
+            newsletterEmail.style.borderColor = '';
+
+            if (newsletterEmail.value.trim() === '') {
+                newsletterError.innerText = 'Email is required';
+                newsletterEmail.style.borderColor = 'var(--error-color)';
+            } else if (!isValidEmail(newsletterEmail.value.trim())) {
+                newsletterError.innerText = 'Please enter a valid email address';
+                newsletterEmail.style.borderColor = 'var(--error-color)';
+            } else {
+                const loader = document.getElementById('page-loader');
+                loader.style.display = 'flex';
+                setTimeout(() => { loader.style.opacity = '1'; }, 10);
+                setTimeout(() => { window.location.href = '../pages/error.html'; }, 400);
+            }
+        });
+
+        // --- Fade In Animation ---
+        const fadeElems = document.querySelectorAll('.fade-in');
+        const fadeInObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        fadeElems.forEach(elem => fadeInObserver.observe(elem));
+    </script>
+</body>
+</html>

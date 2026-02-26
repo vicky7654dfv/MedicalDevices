@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediLife | Healthcare Professional Login</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%230ea5e9' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z'/></svg>">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <script>
+        if (localStorage.getItem('medilife-theme') === 'light') {
+            document.body.classList.add('light-theme');
+        }
+    </script>
+
+    <div id="page-loader">
+        <div class="loader-content">
+            <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="loader-img" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 50\'><text y=\'35\' font-family=\'sans-serif\' font-weight=\'bold\' font-size=\'30\' fill=\'%230ea5e9\'>MediLife</text></svg>'">
+            <p>Authenticating Credentials...</p>
+        </div>
+    </div>
+
+    <div class="page-bg">
+        <img src="../assets/SignUp/bgIm.webp" alt="Medical Background">
+        <div class="overlay-blue"></div>
+    </div>
+
+    <div class="page-wrapper">
+        
+        <div class="top-action-bar fade-in">
+            <a href="../index.html" class="return-home-btn">
+                <i class="fa-solid fa-house-medical"></i> Return Home
+            </a>
+        </div>
+
+        <div class="page-heading fade-in">
+            <h1 class="static-color-title">Access Your Portal</h1>
+            <p class="static-color-para">"Streamlining your clinical supply chain."</p>
+        </div>
+
+        <div class="login-container fade-in-up">
+            
+            <div class="split-left">
+                <div class="left-content">
+                    <a href="../index.html">
+                        <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="brand-logo" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 50\'><text y=\'35\' font-family=\'sans-serif\' font-weight=\'bold\' font-size=\'30\' fill=\'%230ea5e9\'>MediLife</text></svg>'">
+                    </a>
+                    <h2>Welcome Back</h2>
+                    <p>Log in to manage your medical equipment procurement, view active orders, and access dedicated clinical support.</p>
+                </div>
+            </div>
+
+            <div class="split-right">
+                <form id="login-form" novalidate>
+                    
+                    <div class="form-group">
+                        <label for="email">Institutional Email</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-envelope input-icon"></i>
+                            <input type="email" id="email" name="email" placeholder="doctor@hospital.org" autocomplete="email">
+                        </div>
+                        <span class="error-msg" id="email-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock input-icon"></i>
+                            <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password">
+                            <i class="fa-solid fa-eye toggle-password" id="toggle-pwd"></i>
+                        </div>
+                        <span class="error-msg" id="password-error"></span>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" id="remember">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="error.html" class="forgot-link">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary full-width">Secure Login</button>
+                    
+                    <div class="auth-links">
+                        <span>Don't have an account?</span>
+                        <a href="signup.html" class="register-link">Register here</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Loader Logic
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('page-loader');
+            loader.style.opacity = '0';
+            setTimeout(() => { loader.style.display = 'none'; }, 300);
+        });
+
+        // Link Interceptor for Loader
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href !== '#' && !href.startsWith('javascript') && !this.classList.contains('toggle-password')) {
+                    e.preventDefault();
+                    const loader = document.getElementById('page-loader');
+                    loader.style.display = 'flex';
+                    setTimeout(() => { loader.style.opacity = '1'; }, 10);
+                    setTimeout(() => { window.location.href = href; }, 400); 
+                }
+            });
+        });
+
+        // Form Elements
+        const form = document.getElementById('login-form');
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+        
+        // Error Message Spans
+        const emailError = document.getElementById('email-error');
+        const passwordError = document.getElementById('password-error');
+
+        // Toggle Password Visibility Logic
+        const togglePwd = document.getElementById('toggle-pwd');
+        togglePwd.addEventListener('click', function() {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+
+        // Regex Helpers
+        const isValidEmail = (email) => {
+            const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        };
+
+        const clearErrors = () => {
+            emailError.innerText = '';
+            passwordError.innerText = '';
+            document.querySelectorAll('.input-wrapper').forEach(wrapper => {
+                wrapper.classList.remove('error-border');
+            });
+        };
+
+        const showError = (element, errorSpan, message) => {
+            errorSpan.innerText = message;
+            element.parentElement.classList.add('error-border');
+        };
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            clearErrors();
+            let isFormValid = true;
+
+            // Email Validation
+            if (email.value.trim() === '') {
+                showError(email, emailError, 'Email is required');
+                isFormValid = false;
+            } else if (!isValidEmail(email.value.trim())) {
+                showError(email, emailError, 'Please enter a valid institutional email');
+                isFormValid = false;
+            }
+
+            // Password Validation
+            if (password.value === '') {
+                showError(password, passwordError, 'Password is required');
+                isFormValid = false;
+            }
+
+            // Redirect on success (Simulating successful login to dashboard/home)
+            if (isFormValid) {
+                const loader = document.getElementById('page-loader');
+                loader.style.display = 'flex';
+                setTimeout(() => { loader.style.opacity = '1'; }, 10);
+                setTimeout(() => { window.location.href = '../index.html'; }, 400); 
+            }
+        });
+    </script>
+</body>
+</html>
