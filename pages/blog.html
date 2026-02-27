@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediLife | Medical Insights & Research Journal</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%230ea5e9' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z'/></svg>">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <script>
+        if (localStorage.getItem('medilife-theme') === 'light') {
+            document.body.classList.add('light-theme');
+        }
+    </script>
+
+    <div id="page-loader">
+        <div class="loader-content">
+            <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="loader-img"
+                onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 50\'><text y=\'35\' font-family=\'sans-serif\' font-weight=\'bold\' font-size=\'30\' fill=\'%230ea5e9\'>MediLife</text></svg>'">
+            <p>Loading Journal...</p>
+        </div>
+    </div>
+
+    <button id="scrollToTopBtn" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <header class="headerWrap" id="main-header">
+        <div class="imgWrap">
+            <a href="../index.html">
+                <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="site-logo"
+                    onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 50\'><text y=\'35\' font-family=\'sans-serif\' font-weight=\'bold\' font-size=\'30\' fill=\'%230ea5e9\'>MediLife</text></svg>'">
+            </a>
+        </div>
+
+        <div class="hamburger" id="hamburger-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <nav class="linksWrap" id="nav-links">
+            <div class="topCloseBtn" id="close-btn">
+                <i class="fa-solid fa-times"></i>
+            </div>
+            <ul>
+                <li class="dropdown" id="home-dropdown">
+                    <div class="dropdownHeader">
+                        <a href="javascript:void(0)" class="homePageLink" id="home-nav-link">Home</a>
+                        <button class="dropdownToggle" aria-label="Toggle dropdown" id="dropdown-toggle-btn">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <ul class="dropdownMenu" id="dropdown-menu">
+                        <li><a href="../index.html">Home 1</a></li>
+                        <li><a href="./home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="./about.html">About Us</a></li>
+                <li><a href="./dashboard.html">DashBoard</a></li>
+                <li><a href="./product.html">Product</a></li>
+                <li><a href="./services.html">Services</a></li>
+                <li><a href="./blog.html" style="color: var(--accent-blue);">Blog</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./signup.html">Sign Up</a></li>
+                <li><a href="./login.html">Login</a></li>
+                <li>
+                    <a href="./checkout.html" aria-label="Cart" class="cart-nav-icon">
+                        <i class="fa-solid fa-cart-arrow-down" style="color: rgb(116, 192, 252);"></i><sup>4</sup>
+                    </a>
+                </li>
+                <li class="theme-toggle-li">
+                    <button id="theme-toggle-btn" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-sun" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="menuOverlay" id="menu-overlay"></div>
+    </header>
+
+    <main class="blog-main container">
+
+        <div class="page-heading fade-in">
+            <span class="blog-label"><i class="fa-solid fa-dna"></i> MediLife Research Journal</span>
+            <h1>Medical Insights &amp; Innovation</h1>
+            <p>Expert clinical perspectives, breakthrough research, and technology updates from the frontier of medical
+                science and device engineering.</p>
+        </div>
+
+        <div class="blog-layout">
+
+            <!-- ===== FEED ===== -->
+            <div class="blog-feed">
+
+                <!-- Featured Article -->
+                <article class="featured-post post-item fade-in" data-category="diagnostics">
+                    <div class="post-img-wrapper">
+                        <img src="../assets/Home1/Grids/Diagnostics/1.webp" alt="AI-Powered Diagnostics"
+                            onerror="this.src='https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800'">
+                        <span class="category-badge">Diagnostics</span>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span><i class="fa-regular fa-calendar"></i> Feb 20, 2026</span>
+                            <span><i class="fa-regular fa-clock"></i> 9 Min Read</span>
+                            <span><i class="fa-regular fa-user"></i> Dr. Sarah Mitchell</span>
+                        </div>
+                        <h2><a href="./error.html">AI-Powered Diagnostics: How Machine Learning is Revolutionizing Early
+                                Disease Detection</a></h2>
+                        <p>From radiology image analysis to predictive biomarker screening, artificial intelligence is
+                            transforming how clinicians identify diseases at earlier, more treatable stages — and what
+                            this means for the next generation of diagnostic equipment.</p>
+                        <a href="./error.html" class="btn btn-primary read-article-btn">Read Full Article</a>
+                    </div>
+                </article>
+
+                <!-- Article Grid -->
+                <div class="article-grid" id="article-grid">
+
+                    <article class="post-card post-item fade-in" data-category="diagnostics">
+                        <div class="card-img-wrapper">
+                            <img src="../assets/Home1/Grids/Diagnostics/2.webp" alt="MRI Technology"
+                                onerror="this.src='https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=400'">
+                            <span class="category-badge">Diagnostics</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="post-meta">
+                                <span><i class="fa-regular fa-calendar"></i> Feb 14, 2026</span>
+                            </div>
+                            <h3><a href="./error.html">Next-Gen MRI: Ultra-High Field Imaging and Clinical
+                                    Applications</a></h3>
+                            <p>How 7-Tesla MRI systems are enabling unprecedented soft-tissue resolution for
+                                neurological and musculoskeletal imaging.</p>
+                            <a href="./error.html" class="read-more">Read More <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="post-card post-item fade-in" data-category="diagnostics">
+                        <div class="card-img-wrapper">
+                            <img src="../assets/Home1/Grids/Diagnostics/3.webp" alt="Lab Analyzer"
+                                onerror="this.src='https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=400'">
+                            <span class="category-badge">Diagnostics</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="post-meta">
+                                <span><i class="fa-regular fa-calendar"></i> Feb 08, 2026</span>
+                            </div>
+                            <h3><a href="./error.html">Point-of-Care Testing: Bringing Lab Precision to the Bedside</a>
+                            </h3>
+                            <p>The rise of portable diagnostic analyzers that deliver laboratory-grade results within
+                                minutes in any clinical setting.</p>
+                            <a href="./error.html" class="read-more">Read More <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="post-card post-item fade-in" data-category="surgical">
+                        <div class="card-img-wrapper">
+                            <img src="../assets/Home1/Grids/Surgical/1.webp" alt="Robotic Surgery"
+                                onerror="this.src='https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=400'">
+                            <span class="category-badge">Surgical</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="post-meta">
+                                <span><i class="fa-regular fa-calendar"></i> Feb 01, 2026</span>
+                            </div>
+                            <h3><a href="./error.html">Robotic-Assisted Surgery: Accuracy, Recovery, and the Human
+                                    Factor</a></h3>
+                            <p>Evaluating outcomes in laparoscopic and orthopedic robotic procedures — what the data
+                                tells us about precision and patient recovery times.</p>
+                            <a href="./error.html" class="read-more">Read More <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="post-card post-item fade-in" data-category="surgical">
+                        <div class="card-img-wrapper">
+                            <img src="../assets/Home1/Grids/Surgical/2.webp" alt="Surgical Instruments"
+                                onerror="this.src='https://images.unsplash.com/photo-1585847406874-e6f0e52d1fd7?auto=format&fit=crop&q=80&w=400'">
+                            <span class="category-badge">Surgical</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="post-meta">
+                                <span><i class="fa-regular fa-calendar"></i> Jan 25, 2026</span>
+                            </div>
+                            <h3><a href="./error.html">Sterilization Protocols for Advanced Endoscopic Instruments</a>
+                            </h3>
+                            <p>Best practices for reprocessing flexible and rigid endoscopes to meet the latest
+                                infection control standards.</p>
+                            <a href="./error.html" class="read-more">Read More <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="post-card post-item fade-in" data-category="patientcare">
+                        <div class="card-img-wrapper">
+                            <img src="../assets/Home1/Grids/Surgical/3.webp" alt="Patient Monitoring"
+                                onerror="this.src='https://images.unsplash.com/photo-1631217868264-e5b90bb7f5b4?auto=format&fit=crop&q=80&w=400'">
+                            <span class="category-badge">Patient Care</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="post-meta">
+                                <span><i class="fa-regular fa-calendar"></i> Jan 18, 2026</span>
+                            </div>
+                            <h3><a href="./error.html">Wearable Patient Monitors: Continuous Vital Sign Tracking in
+                                    ICUs</a></h3>
+                            <p>How wireless biosensor patches are reducing alarm fatigue while improving real-time
+                                clinical decision-making in critical care.</p>
+                            <a href="./error.html" class="read-more">Read More <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="post-card post-item fade-in" data-category="patientcare">
+                        <div class="card-img-wrapper">
+                            <img src="../assets/Home1/Grids/Diagnostics/1.webp" alt="Infusion System"
+                                onerror="this.src='https://images.unsplash.com/photo-1504813184591-01572f98c85f?auto=format&fit=crop&q=80&w=400'">
+                            <span class="category-badge">Patient Care</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="post-meta">
+                                <span><i class="fa-regular fa-calendar"></i> Jan 10, 2026</span>
+                            </div>
+                            <h3><a href="./error.html">Smart Infusion Pumps: Preventing Medication Errors at Scale</a>
+                            </h3>
+                            <p>Dose-error reduction software and drug libraries that have measurably decreased adverse
+                                drug events in hospital settings.</p>
+                            <a href="./error.html" class="read-more">Read More <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="post-card post-item fade-in" data-category="lab">
+                        <div class="card-img-wrapper">
+                            <img src="../assets/Home1/Grids/Diagnostics/2.webp" alt="Lab Equipment"
+                                onerror="this.src='https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&q=80&w=400'">
+                            <span class="category-badge">Lab Equipment</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="post-meta">
+                                <span><i class="fa-regular fa-calendar"></i> Jan 03, 2026</span>
+                            </div>
+                            <h3><a href="./error.html">Automated Hematology Analyzers: Advancing Complete Blood Count
+                                    Accuracy</a></h3>
+                            <p>How five-part differential analyzers are reducing manual QC workloads and improving
+                                turnaround time in high-volume labs.</p>
+                            <a href="./error.html" class="read-more">Read More <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="post-card post-item fade-in" data-category="lab">
+                        <div class="card-img-wrapper">
+                            <img src="../assets/Home1/Grids/Diagnostics/3.webp" alt="Centrifuge"
+                                onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80&w=400'">
+                            <span class="category-badge">Lab Equipment</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="post-meta">
+                                <span><i class="fa-regular fa-calendar"></i> Dec 26, 2025</span>
+                            </div>
+                            <h3><a href="./error.html">Centrifuge Calibration and Maintenance: Ensuring Reliable Sample
+                                    Separation</a></h3>
+                            <p>A technical guide to maintaining rotor balance, seal integrity, and RPM accuracy across
+                                refrigerated and micro-centrifuge models.</p>
+                            <a href="./error.html" class="read-more">Read More <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="post-card post-item fade-in" data-category="diagnostics">
+                        <div class="card-img-wrapper">
+                            <img src="../assets/Home1/Grids/Surgical/1.webp" alt="Ultrasound"
+                                onerror="this.src='https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&q=80&w=400'">
+                            <span class="category-badge">Diagnostics</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="post-meta">
+                                <span><i class="fa-regular fa-calendar"></i> Dec 18, 2025</span>
+                            </div>
+                            <h3><a href="./error.html">Portable Ultrasound Systems: Redefining Bedside Imaging</a></h3>
+                            <p>Handheld ultrasound probes are enabling real-time echography in emergency medicine, rural
+                                clinics, and remote field hospitals.</p>
+                            <a href="./error.html" class="read-more">Read More <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="no-results-msg" id="no-results" style="display: none;">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <h3>No articles found</h3>
+                    <p>Try adjusting your search term or selecting a different category.</p>
+                </div>
+
+            </div>
+
+            <!-- ===== SIDEBAR ===== -->
+            <aside class="blog-sidebar">
+
+                <div class="sidebar-widget search-widget">
+                    <h3><i class="fa-solid fa-magnifying-glass"></i> Search Articles</h3>
+                    <div class="search-input-box">
+                        <input type="text" id="blog-search" placeholder="Search topics, equipment...">
+                        <i class="fa-solid fa-search"></i>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget categories-widget">
+                    <h3><i class="fa-solid fa-filter"></i> Categories</h3>
+                    <ul class="category-list" id="category-filters">
+                        <li class="active" data-filter="all">All Articles <span>10</span></li>
+                        <li data-filter="diagnostics">Diagnostics <span>4</span></li>
+                        <li data-filter="surgical">Surgical <span>2</span></li>
+                        <li data-filter="patientcare">Patient Care <span>2</span></li>
+                        <li data-filter="lab">Lab Equipment <span>2</span></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget trending-widget">
+                    <h3><i class="fa-solid fa-fire"></i> Trending Now</h3>
+                    <div class="trending-list">
+                        <a href="./error.html" class="trending-item">
+                            <div class="trend-rank">01</div>
+                            <div class="trend-text">
+                                <h4>Understanding Pulse Oximetry Limitations in Patients with Dark Skin</h4>
+                                <span><i class="fa-regular fa-clock"></i> 6 Min Read</span>
+                            </div>
+                        </a>
+                        <a href="./error.html" class="trending-item">
+                            <div class="trend-rank">02</div>
+                            <div class="trend-text">
+                                <h4>Defibrillator Maintenance: AED Monthly Inspection Checklist</h4>
+                                <span><i class="fa-regular fa-clock"></i> 4 Min Read</span>
+                            </div>
+                        </a>
+                        <a href="./error.html" class="trending-item">
+                            <div class="trend-rank">03</div>
+                            <div class="trend-text">
+                                <h4>IVD Regulations: EU MDR Compliance for In-Vitro Diagnostics</h4>
+                                <span><i class="fa-regular fa-clock"></i> 7 Min Read</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget tags-widget">
+                    <h3><i class="fa-solid fa-tags"></i> Popular Tags</h3>
+                    <div class="tags-container">
+                        <a href="./error.html">MRI</a>
+                        <a href="./error.html">AI Imaging</a>
+                        <a href="./error.html">Robotics</a>
+                        <a href="./error.html">IVD</a>
+                        <a href="./error.html">ICU Care</a>
+                        <a href="./error.html">Endoscopy</a>
+                        <a href="./error.html">Biomarkers</a>
+                        <a href="./error.html">POCT</a>
+                    </div>
+                </div>
+
+            </aside>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footerWrap container">
+            <div class="box">
+                <div class="logoContainer">
+                    <div class="logo">
+                        <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="footer-logo site-logo"
+                            onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 50\'><text y=\'35\' font-family=\'sans-serif\' font-weight=\'bold\' font-size=\'30\' fill=\'%230ea5e9\'>MediLife</text></svg>'">
+                    </div>
+                </div>
+                <p class="footer-desc">
+                    MediLife is a global leader in medical technology, dedicated to improving patient outcomes through
+                    innovative solutions and reliable support.
+                </p>
+            </div>
+
+            <div class="box">
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./services.html">Services</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="./login.html">Login</a></li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4>Categories</h4>
+                <ul class="footer-links">
+                    <li><a href="./error.html">Surgical</a></li>
+                    <li><a href="./error.html">Imaging</a></li>
+                    <li><a href="./error.html">Monitoring</a></li>
+                    <li><a href="./error.html">Lab Equipment</a></li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4>Contact</h4>
+                <ul class="contactInfo">
+                    <li><i class="fa-solid fa-location-dot"></i><span> Stackly Headquarters, Los Angeles, CA</span></li>
+                    <li><i class="fa-solid fa-phone"></i> +1 888 123 4567</li>
+                    <li><i class="fa-solid fa-envelope"></i> vip@stackly.auto</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4>Newsletter</h4>
+                <p>Subscribe for latest medical updates.</p>
+                <form id="footer-newsletter-form" class="subscribe-form" novalidate>
+                    <input type="email" id="newsletter-email" name="email" placeholder="Your Email"
+                        autocomplete="email">
+                    <span id="newsletter-error"
+                        style="color: var(--error-color); font-size: 0.8rem; display: block; margin-top: -5px; min-height: 15px;"></span>
+                    <button type="submit" class="btn btn-primary full-width">Subscribe</button>
+                </form>
+                <div class="media">
+                    <a href="./error.html" class="socialLink" aria-label="LinkedIn"><i
+                            class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="./error.html" class="socialLink" aria-label="WhatsApp"><i
+                            class="fa-brands fa-whatsapp"></i></a>
+                    <a href="./error.html" class="socialLink" aria-label="Facebook"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="./error.html" class="socialLink" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom container">
+            <p>&copy; 2026 MediLife Medical Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Page Loader & Link Transitions ---
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('page-loader');
+            loader.style.opacity = '0';
+            setTimeout(() => { loader.style.display = 'none'; }, 300);
+        });
+
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href && href !== '#' && !href.startsWith('javascript') && !href.startsWith('http') && !href.startsWith('https') && !this.classList.contains('cart-nav-icon')) {
+                    e.preventDefault();
+                    const loader = document.getElementById('page-loader');
+                    loader.style.display = 'flex';
+                    setTimeout(() => { loader.style.opacity = '1'; }, 10);
+                    setTimeout(() => { window.location.href = href; }, 400);
+                }
+            });
+        });
+
+        // --- Hamburger Menu ---
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const navLinks = document.getElementById('nav-links');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const dropdownToggleBtn = document.getElementById('dropdown-toggle-btn');
+        const homeNavLink = document.getElementById('home-nav-link');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        const body = document.body;
+
+        function openMenu() { navLinks.classList.add('showMenu'); menuOverlay.style.display = 'block'; body.classList.add('menu-open'); }
+        function closeMenu() { navLinks.classList.remove('showMenu'); menuOverlay.style.display = 'none'; body.classList.remove('menu-open'); dropdownMenu.classList.remove('showDropdown'); }
+
+        hamburgerBtn.addEventListener('click', (e) => { e.stopPropagation(); openMenu(); });
+        closeBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+        document.addEventListener('click', (e) => {
+            if (body.classList.contains('menu-open') && !navLinks.contains(e.target) && !hamburgerBtn.contains(e.target)) closeMenu();
+        });
+        dropdownToggleBtn.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); dropdownMenu.classList.toggle('showDropdown'); });
+        homeNavLink.addEventListener('click', (e) => { if (window.innerWidth <= 768) { e.preventDefault(); e.stopPropagation(); dropdownMenu.classList.toggle('showDropdown'); } });
+
+        // --- Theme Toggle ---
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const themeIcon = document.getElementById('theme-icon');
+        if (localStorage.getItem('medilife-theme') === 'light') { themeIcon.classList.remove('fa-sun'); themeIcon.classList.add('fa-moon'); }
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            if (document.body.classList.contains('light-theme')) { themeIcon.classList.remove('fa-sun'); themeIcon.classList.add('fa-moon'); localStorage.setItem('medilife-theme', 'light'); }
+            else { themeIcon.classList.remove('fa-moon'); themeIcon.classList.add('fa-sun'); localStorage.setItem('medilife-theme', 'dark'); }
+        });
+
+        // --- Sticky Header & Scroll To Top ---
+        const header = document.getElementById('main-header');
+        const scrollBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) header.classList.add('sticky'); else header.classList.remove('sticky');
+            if (window.scrollY > 300) scrollBtn.classList.add('visible'); else scrollBtn.classList.remove('visible');
+        });
+        scrollBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+        // --- Fade In ---
+        const fadeElems = document.querySelectorAll('.fade-in');
+        const fadeInObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+        }, { threshold: 0.08 });
+        fadeElems.forEach(elem => fadeInObserver.observe(elem));
+
+        // --- Blog Filter & Search ---
+        const searchInput = document.getElementById('blog-search');
+        const filterBtns = document.querySelectorAll('#category-filters li');
+        const postItems = document.querySelectorAll('.post-item');
+        const noResults = document.getElementById('no-results');
+
+        function filterPosts() {
+            const term = searchInput.value.toLowerCase();
+            const active = document.querySelector('#category-filters li.active').getAttribute('data-filter');
+            let count = 0;
+            postItems.forEach(post => {
+                const title = post.querySelector('h2, h3').innerText.toLowerCase();
+                const cat = post.getAttribute('data-category');
+                const matches = title.includes(term) && (active === 'all' || active === cat);
+                post.style.display = matches ? '' : 'none';
+                if (matches) count++;
+            });
+            noResults.style.display = count === 0 ? 'block' : 'none';
+        }
+
+        searchInput.addEventListener('input', filterPosts);
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                filterPosts();
+            });
+        });
+
+        // --- Footer Newsletter ---
+        const footerForm = document.getElementById('footer-newsletter-form');
+        const newsletterEmail = document.getElementById('newsletter-email');
+        const newsletterError = document.getElementById('newsletter-error');
+        const isValidEmail = (e) => /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(String(e).toLowerCase());
+        footerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            newsletterError.innerText = '';
+            newsletterEmail.style.borderColor = '';
+            if (!newsletterEmail.value.trim()) { newsletterError.innerText = 'Email is required'; newsletterEmail.style.borderColor = 'var(--error-color)'; }
+            else if (!isValidEmail(newsletterEmail.value.trim())) { newsletterError.innerText = 'Please enter a valid email address'; newsletterEmail.style.borderColor = 'var(--error-color)'; }
+            else { window.location.href = './error.html'; }
+        });
+    </script>
+</body>
+
+</html>

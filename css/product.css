@@ -1,0 +1,351 @@
+/* ===================================================
+   product.css — Product-page-specific styles only.
+   Global base, header, footer → inherited from style.css
+   =================================================== */
+
+/* --- Featured Grid Section --- */
+.featured-products-section {
+    padding: 100px 0 140px;
+}
+
+.featured-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.featured-header h1 {
+    font-size: 3rem;
+    color: var(--text-main);
+}
+
+.featured-header p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Grid Layout & Background */
+.product-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 50px;
+    border-radius: 20px;
+    position: relative;
+    background-color: var(--bg-rich);
+    border: 1px solid var(--border-light);
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.grid-background {
+    background-size: 40px 40px;
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+body.light-theme .grid-background {
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+
+/* 5-Box Bento Layout (desktop) */
+@media (min-width: 1024px) {
+    .product-grid-layout {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Box 1: Wide top row */
+    .pro-card:nth-child(1) {
+        grid-column: span 2;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .pro-card:nth-child(1) .pro-img-wrap {
+        flex: 1;
+        border-right: 1px solid var(--border-light);
+        border-bottom: none;
+    }
+
+    .pro-card:nth-child(1) .pro-content {
+        flex: 1;
+        justify-content: center;
+    }
+
+    /* Box 2: Tall right column */
+    .pro-card:nth-child(2) {
+        grid-row: span 2;
+    }
+
+    .pro-card:nth-child(2) .pro-img-wrap {
+        height: 300px;
+    }
+
+    /* Box 3: Standard left */
+    .pro-card:nth-child(3) {
+        grid-column: span 1;
+    }
+
+    /* Box 4: Standard middle */
+    .pro-card:nth-child(4) {
+        grid-column: span 1;
+    }
+
+    /* Box 5: Wide bottom row reversed */
+    .pro-card:nth-child(5) {
+        grid-column: span 3;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .pro-card:nth-child(5) .pro-img-wrap {
+        flex: 0.8;
+        border-left: 1px solid var(--border-light);
+        border-bottom: none;
+    }
+
+    .pro-card:nth-child(5) .pro-content {
+        flex: 1;
+        justify-content: center;
+    }
+}
+
+/* Individual Card Styling */
+.pro-card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-light);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+    z-index: 1;
+    position: relative;
+}
+
+/* Subtle style variances */
+.pro-card:nth-child(2) {
+    border-top: 4px solid var(--accent-blue);
+}
+
+.pro-card:nth-child(4) {
+    border-bottom: 4px solid #8b5cf6;
+}
+
+.pro-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-blue);
+    box-shadow: 0 20px 40px rgba(14, 165, 233, 0.15);
+}
+
+.pro-img-wrap {
+    width: 100%;
+    height: 250px;
+    background: var(--bg-rich);
+    border-bottom: 1px solid var(--border-light);
+    overflow: hidden;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.light-theme .pro-img-wrap {
+    background: #ffffff;
+}
+
+.pro-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.pro-card:hover .pro-img-wrap img {
+    transform: scale(1.08);
+}
+
+.pro-content {
+    padding: 30px 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.category-tag {
+    color: var(--accent-blue);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.pro-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.pro-content p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    flex-grow: 1;
+    margin-bottom: 25px;
+}
+
+/* Pricing / Quantity row */
+.pro-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px dashed var(--border-light);
+}
+
+.pro-bottom .price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+}
+
+/* +/- Quantity Controls */
+.qty-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--input-bg);
+    padding: 6px 12px;
+    border-radius: 30px;
+    border: 1px solid var(--border-light);
+}
+
+.qty-btn {
+    background: transparent;
+    border: 1px solid var(--border-light);
+    color: var(--text-main);
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.qty-btn:hover {
+    background: var(--accent-blue);
+    color: white;
+    border-color: var(--accent-blue);
+}
+
+.qty-val {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-main);
+    min-width: 15px;
+    text-align: center;
+}
+
+/* Stylish Stats Grid */
+.stylish-data-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 60px auto 0;
+    gap: 25px;
+    width: 100%;
+}
+
+.data-card {
+    background: var(--bg-card);
+    padding: 35px 20px;
+    border-radius: 16px;
+    border: 1px solid var(--border-light);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.data-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--accent-blue);
+    border-radius: 4px 0 0 4px;
+}
+
+.data-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-blue);
+}
+
+.data-card h3 {
+    font-size: 3rem;
+    color: var(--text-main);
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+.data-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* --- Media Queries (product-specific only) --- */
+@media (max-width: 1200px) {
+    .stylish-data-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1024px) {
+    .product-grid-layout {
+        padding: 30px;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-grid-layout {
+        padding: 20px;
+        grid-template-columns: 1fr;
+    }
+
+    .stylish-data-grid {
+        grid-template-columns: 1fr;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 426px) {
+    .data-card h3 {
+        font-size: 2.2rem;
+    }
+
+    .pro-content {
+        padding: 20px 15px;
+    }
+
+    .pro-img-wrap {
+        height: 200px;
+        padding: 15px;
+    }
+}

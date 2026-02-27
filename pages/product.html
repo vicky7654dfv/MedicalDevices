@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediLife | Products</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%230ea5e9' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z'/></svg>">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/product.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <script>
+        if (localStorage.getItem('medilife-theme') === 'light') {
+            document.body.classList.add('light-theme');
+        }
+    </script>
+
+    <div id="page-loader">
+        <div class="loader-content">
+            <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="loader-img"
+                onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 50\'><text y=\'35\' font-family=\'sans-serif\' font-weight=\'bold\' font-size=\'30\' fill=\'%230ea5e9\'>MediLife</text></svg>'">
+            <p>Processing Request...</p>
+        </div>
+    </div>
+
+    <div id="cart-toast" class="cart-toast-wrap">
+        <div class="toast-icon"><i class="fa-solid fa-check"></i></div>
+        <div class="toast-text">Item successfully added to your cart!</div>
+    </div>
+
+    <button id="scrollToTopBtn" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <header class="headerWrap" id="main-header">
+        <div class="imgWrap">
+            <a href="../index.html">
+                <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="site-logo"
+                    onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 50\'><text y=\'35\' font-family=\'sans-serif\' font-weight=\'bold\' font-size=\'30\' fill=\'%230ea5e9\'>MediLife</text></svg>'">
+            </a>
+        </div>
+
+        <div class="hamburger" id="hamburger-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <nav class="linksWrap" id="nav-links">
+            <div class="topCloseBtn" id="close-btn">
+                <i class="fa-solid fa-times"></i>
+            </div>
+            <ul>
+                <li class="dropdown" id="home-dropdown">
+                    <div class="dropdownHeader">
+                        <a href="javascript:void(0)" class="homePageLink" id="home-nav-link">Home</a>
+                        <button class="dropdownToggle" aria-label="Toggle dropdown" id="dropdown-toggle-btn">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <ul class="dropdownMenu" id="dropdown-menu">
+                        <li><a href="../index.html">Home 1</a></li>
+                        <li><a href="./home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="./about.html">About Us</a></li>
+                <li><a href="./dashboard.html">DashBoard</a></li>
+                <li><a href="./product.html">Product</a></li>
+                <li><a href="./services.html">Services</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./signup.html">Sign Up</a></li>
+                <li><a href="./login.html">Login</a></li>
+                <li>
+                    <a href="./checkout.html" aria-label="Cart" class="cart-nav-icon">
+                        <i class="fa-solid fa-cart-arrow-down" style="color: rgb(116, 192, 252);"></i><sup>4</sup>
+                    </a>
+                </li>
+                <li class="theme-toggle-li">
+                    <button id="theme-toggle-btn" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-sun" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="menuOverlay" id="menu-overlay"></div>
+    </header>
+
+    <main>
+        <section class="featured-products-section">
+            <div class="container">
+                <div class="featured-header fade-in">
+                    <h1>Featured Medical Solutions</h1>
+                    <p>Experience the apex of clinical precision across Diagnostics, Surgical execution, and advanced
+                        Patient Care with our industry-leading equipment grid.</p>
+                </div>
+
+                <div class="product-grid-layout grid-background fade-in">
+
+                    <div class="pro-card style-1">
+                        <div class="pro-img-wrap">
+                            <img src="../assets/Home1/Grids/Diagnostics/1.webp" alt="MRI Scanner Pro"
+                                onerror="this.src='https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80'">
+                        </div>
+                        <div class="pro-content">
+                            <span class="category-tag"><i class="fa-solid fa-microscope"></i> Diagnostics</span>
+                            <h3>MRI Scanner Pro</h3>
+                            <p>Advanced magnetic resonance imaging mapping system delivering comprehensive
+                                high-resolution clinical scans.</p>
+                            <div class="pro-bottom">
+                                <span class="price">$150,000</span>
+                                <div class="qty-control">
+                                    <button class="qty-btn minus-btn"><i class="fa-solid fa-minus"></i></button>
+                                    <span class="qty-val">0</span>
+                                    <button class="qty-btn plus-btn"><i class="fa-solid fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pro-card style-2">
+                        <div class="pro-img-wrap">
+                            <img src="../assets/Home1/Grids/Surgical/11.webp" alt="RoboSurge Arm"
+                                onerror="this.src='https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&q=80'">
+                        </div>
+                        <div class="pro-content">
+                            <span class="category-tag"><i class="fa-solid fa-scalpel-line-dashed"></i> Surgical</span>
+                            <h3>RoboSurge Arm</h3>
+                            <p>Minimally invasive robotic surgical system equipped with 7-degree freedom arms for highly
+                                complex operations.</p>
+                            <div class="pro-bottom">
+                                <span class="price">$500,000</span>
+                                <div class="qty-control">
+                                    <button class="qty-btn minus-btn"><i class="fa-solid fa-minus"></i></button>
+                                    <span class="qty-val">0</span>
+                                    <button class="qty-btn plus-btn"><i class="fa-solid fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pro-card style-3">
+                        <div class="pro-img-wrap">
+                            <img src="../assets/Home1/Grids/PatientCare/111.webp" alt="ICU Bed (Electric)"
+                                onerror="this.src='https://images.unsplash.com/photo-1538108149393-cefb6b22eb55?auto=format&fit=crop&q=80'">
+                        </div>
+                        <div class="pro-content">
+                            <span class="category-tag"><i class="fa-solid fa-bed-pulse"></i> Patient Care</span>
+                            <h3>ICU Bed (Electric)</h3>
+                            <p>Fully automated 5-function intensive care bed featuring built-in scale.</p>
+                            <div class="pro-bottom">
+                                <span class="price">$8,000</span>
+                                <div class="qty-control">
+                                    <button class="qty-btn minus-btn"><i class="fa-solid fa-minus"></i></button>
+                                    <span class="qty-val">0</span>
+                                    <button class="qty-btn plus-btn"><i class="fa-solid fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pro-card style-4">
+                        <div class="pro-img-wrap">
+                            <img src="../assets/Home1/Grids/Diagnostics/2.webp" alt="Digital X-Ray"
+                                onerror="this.src='https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&q=80'">
+                        </div>
+                        <div class="pro-content">
+                            <span class="category-tag"><i class="fa-solid fa-x-ray"></i> Diagnostics</span>
+                            <h3>Digital X-Ray Unit</h3>
+                            <p>High-frequency digital radiography system ensuring rapid and precise bone diagnostics.
+                            </p>
+                            <div class="pro-bottom">
+                                <span class="price">$85,000</span>
+                                <div class="qty-control">
+                                    <button class="qty-btn minus-btn"><i class="fa-solid fa-minus"></i></button>
+                                    <span class="qty-val">0</span>
+                                    <button class="qty-btn plus-btn"><i class="fa-solid fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pro-card style-5">
+                        <div class="pro-img-wrap">
+                            <img src="../assets/Home1/Grids/PatientCare/555.webp" alt="Vitals Monitor"
+                                onerror="this.src='https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&q=80'">
+                        </div>
+                        <div class="pro-content">
+                            <span class="category-tag"><i class="fa-solid fa-heart-pulse"></i> Patient Care</span>
+                            <h3>Portable Vitals Monitor</h3>
+                            <p>Multi-parameter patient tracking unit optimized for rapid deployment in ambulatory
+                                transport and emergency ward monitoring protocols.</p>
+                            <div class="pro-bottom">
+                                <span class="price">$3,200</span>
+                                <div class="qty-control">
+                                    <button class="qty-btn minus-btn"><i class="fa-solid fa-minus"></i></button>
+                                    <span class="qty-val">0</span>
+                                    <button class="qty-btn plus-btn"><i class="fa-solid fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="stylish-data-grid fade-in">
+                    <div class="data-card">
+                        <h3 class="stat-num">99.9%</h3>
+                        <p>Clinical Uptime</p>
+                    </div>
+                    <div class="data-card">
+                        <h3 class="stat-num">100%</h3>
+                        <p>FDA Compliant</p>
+                    </div>
+                    <div class="data-card">
+                        <h3 class="stat-num">24/7</h3>
+                        <p>Priority Support</p>
+                    </div>
+                    <div class="data-card">
+                        <h3 class="stat-num">50+</h3>
+                        <p>Countries Served</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footerWrap container">
+            <div class="box">
+                <div class="logoContainer">
+                    <div class="logo">
+                        <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="footer-logo site-logo"
+                            onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 50\'><text y=\'35\' font-family=\'sans-serif\' font-weight=\'bold\' font-size=\'30\' fill=\'%230ea5e9\'>MediLife</text></svg>'">
+                    </div>
+                </div>
+                <p class="footer-desc">
+                    MediLife is a global leader in medical technology, dedicated to improving patient outcomes through
+                    innovative solutions and reliable support.
+                </p>
+            </div>
+
+            <div class="box">
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./services.html">Services</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="./login.html">Login</a></li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4>Categories</h4>
+                <ul class="footer-links">
+                    <li><a href="./error.html">Surgical</a></li>
+                    <li><a href="./error.html">Imaging</a></li>
+                    <li><a href="./error.html">Monitoring</a></li>
+                    <li><a href="./error.html">Lab Equipment</a></li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4>Contact</h4>
+                <ul class="contactInfo">
+                    <li><i class="fa-solid fa-location-dot"></i><span> Stackly Headquarters, Los Angeles, CA</span></li>
+                    <li><i class="fa-solid fa-phone"></i> +1 888 123 4567</li>
+                    <li><i class="fa-solid fa-envelope"></i> vip@stackly.auto</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4>Newsletter</h4>
+                <p>Subscribe for latest medical updates.</p>
+                <form id="footer-newsletter-form" class="subscribe-form" novalidate>
+                    <input type="email" id="newsletter-email" name="email" placeholder="Your Email"
+                        autocomplete="email">
+                    <span id="newsletter-error"
+                        style="color: var(--error-color); font-size: 0.8rem; display: block; margin-top: -5px; min-height: 15px;"></span>
+                    <button type="submit" class="btn btn-primary full-width">Subscribe</button>
+                </form>
+                <div class="media">
+                    <a href="./error.html" class="socialLink" aria-label="LinkedIn"><i
+                            class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="./error.html" class="socialLink" aria-label="WhatsApp"><i
+                            class="fa-brands fa-whatsapp"></i></a>
+                    <a href="./error.html" class="socialLink" aria-label="Facebook"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="./error.html" class="socialLink" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom container">
+            <p>&copy; 2026 MediLife Medical Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Full Page Loader & Link Interceptor ---
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('page-loader');
+            loader.style.opacity = '0';
+            setTimeout(() => { loader.style.display = 'none'; }, 300);
+        });
+
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href && href !== '#' && !href.startsWith('javascript') && !this.classList.contains('cart-nav-icon')) {
+                    e.preventDefault();
+                    const loader = document.getElementById('page-loader');
+                    loader.style.display = 'flex';
+                    setTimeout(() => { loader.style.opacity = '1'; }, 10);
+                    setTimeout(() => { window.location.href = href; }, 400);
+                }
+            });
+        });
+
+        // --- Hamburger Menu Logic ---
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const navLinks = document.getElementById('nav-links');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const dropdownToggleBtn = document.getElementById('dropdown-toggle-btn');
+        const homeNavLink = document.getElementById('home-nav-link');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        const body = document.body;
+
+        function openMenu() {
+            navLinks.classList.add('showMenu');
+            menuOverlay.style.display = 'block';
+            body.classList.add('menu-open');
+        }
+
+        function closeMenu() {
+            navLinks.classList.remove('showMenu');
+            menuOverlay.style.display = 'none';
+            body.classList.remove('menu-open');
+            dropdownMenu.classList.remove('showDropdown');
+        }
+
+        hamburgerBtn.addEventListener('click', (e) => { e.stopPropagation(); openMenu(); });
+        closeBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+
+        document.addEventListener('click', (e) => {
+            if (body.classList.contains('menu-open') && !navLinks.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+                closeMenu();
+            }
+        });
+
+        dropdownToggleBtn.addEventListener('click', (e) => {
+            e.preventDefault(); e.stopPropagation();
+            dropdownMenu.classList.toggle('showDropdown');
+        });
+
+        homeNavLink.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault(); e.stopPropagation();
+                dropdownMenu.classList.toggle('showDropdown');
+            }
+        });
+
+        // --- Quantity Controls Logic ---
+        document.querySelectorAll('.qty-control').forEach(control => {
+            const minusBtn = control.querySelector('.minus-btn');
+            const plusBtn = control.querySelector('.plus-btn');
+            const qtyVal = control.querySelector('.qty-val');
+
+            minusBtn.addEventListener('click', () => {
+                let currentVal = parseInt(qtyVal.innerText);
+                // Hard stops at 0 preventing negative counts
+                if (currentVal > 0) qtyVal.innerText = currentVal - 1;
+            });
+
+            plusBtn.addEventListener('click', () => {
+                let currentVal = parseInt(qtyVal.innerText);
+                qtyVal.innerText = currentVal + 1;
+            });
+        });
+
+        // --- Theme Toggle ---
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const themeIcon = document.getElementById('theme-icon');
+
+        if (localStorage.getItem('medilife-theme') === 'light') {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            if (document.body.classList.contains('light-theme')) {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('medilife-theme', 'light');
+            } else {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('medilife-theme', 'dark');
+            }
+        });
+
+        // --- Sticky Header & Scroll To Top ---
+        const header = document.getElementById('main-header');
+        const scrollBtn = document.getElementById('scrollToTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) header.classList.add('sticky');
+            else header.classList.remove('sticky');
+
+            if (window.scrollY > 300) scrollBtn.classList.add('visible');
+            else scrollBtn.classList.remove('visible');
+        });
+
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // --- Footer Newsletter Validation & Redirect via useNavigate ---
+        const footerForm = document.getElementById('footer-newsletter-form');
+        const newsletterEmail = document.getElementById('newsletter-email');
+        const newsletterError = document.getElementById('newsletter-error');
+
+        const isValidEmail = (email) => {
+            const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        };
+
+        footerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            newsletterError.innerText = '';
+            newsletterEmail.style.borderColor = '';
+
+            if (newsletterEmail.value.trim() === '') {
+                newsletterError.innerText = 'Email is required';
+                newsletterEmail.style.borderColor = 'var(--error-color)';
+            } else if (!isValidEmail(newsletterEmail.value.trim())) {
+                newsletterError.innerText = 'Please enter a valid email address';
+                newsletterEmail.style.borderColor = 'var(--error-color)';
+            } else {
+                window.location.href = './error.html';
+            }
+        });
+
+        // --- Fade In Animation ---
+        const fadeElems = document.querySelectorAll('.fade-in');
+        const fadeInObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        fadeElems.forEach(elem => fadeInObserver.observe(elem));
+    </script>
+</body>
+
+</html>
