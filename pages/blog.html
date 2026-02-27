@@ -25,8 +25,7 @@
 
     <div id="page-loader">
         <div class="loader-content">
-            <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="loader-img"
-                onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 50\'><text y=\'35\' font-family=\'sans-serif\' font-weight=\'bold\' font-size=\'30\' fill=\'%230ea5e9\'>MediLife</text></svg>'">
+            <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="loader-img">
             <p>Loading Journal...</p>
         </div>
     </div>
@@ -38,8 +37,7 @@
     <header class="headerWrap" id="main-header">
         <div class="imgWrap">
             <a href="../index.html">
-                <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="site-logo"
-                    onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 50\'><text y=\'35\' font-family=\'sans-serif\' font-weight=\'bold\' font-size=\'30\' fill=\'%230ea5e9\'>MediLife</text></svg>'">
+                <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="site-logo">
             </a>
         </div>
 
@@ -88,54 +86,159 @@
         <div class="menuOverlay" id="menu-overlay"></div>
     </header>
 
-    <main class="blog-main container">
+    <main class="blog-main">
 
-        <div class="page-heading fade-in">
-            <span class="blog-label"><i class="fa-solid fa-dna"></i> MediLife Research Journal</span>
-            <h1>Medical Insights &amp; Innovation</h1>
-            <p>Expert clinical perspectives, breakthrough research, and technology updates from the frontier of medical
-                science and device engineering.</p>
+        <!-- Page Hero -->
+        <div class="blog-hero container fade-in">
+            <div class="hero-badge"><i class="fa-solid fa-dna"></i> Research &amp; Insights</div>
+            <h1>MediLife Journal</h1>
+            <p>Clinical breakthroughs, device engineering, and healthcare technology — curated for professionals.</p>
         </div>
 
-        <div class="blog-layout">
+        <div class="blog-wrapper container">
 
-            <!-- ===== FEED ===== -->
-            <div class="blog-feed">
+            <!-- ===== SIDEBAR (LEFT) ===== -->
+            <aside class="blog-sidebar">
 
-                <!-- Featured Article -->
-                <article class="featured-post post-item fade-in" data-category="diagnostics">
-                    <div class="post-img-wrapper">
-                        <img src="../assets/Home1/Grids/Diagnostics/1.webp" alt="AI-Powered Diagnostics"
-                            onerror="this.src='https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800'">
-                        <span class="category-badge">Diagnostics</span>
+                <!-- Search -->
+                <div class="sidebar-widget search-widget">
+                    <div class="widget-header">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <h3>Search</h3>
                     </div>
-                    <div class="post-content">
-                        <div class="post-meta">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass search-icon-inside"></i>
+                        <input type="text" id="blog-search" placeholder="Topics, equipment...">
+                    </div>
+                </div>
+
+                <!-- Categories -->
+                <div class="sidebar-widget categories-widget">
+                    <div class="widget-header">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <h3>Categories</h3>
+                    </div>
+                    <ul class="category-list" id="category-filters">
+                        <li class="active" data-filter="all">
+                            <span class="cat-name"><i class="fa-solid fa-border-all"></i> All Articles</span>
+                            <span class="cat-count">10</span>
+                        </li>
+                        <li data-filter="diagnostics">
+                            <span class="cat-name"><i class="fa-solid fa-stethoscope"></i> Diagnostics</span>
+                            <span class="cat-count">4</span>
+                        </li>
+                        <li data-filter="surgical">
+                            <span class="cat-name"><i class="fa-solid fa-syringe"></i> Surgical</span>
+                            <span class="cat-count">2</span>
+                        </li>
+                        <li data-filter="patientcare">
+                            <span class="cat-name"><i class="fa-solid fa-heart-pulse"></i> Patient Care</span>
+                            <span class="cat-count">2</span>
+                        </li>
+                        <li data-filter="lab">
+                            <span class="cat-name"><i class="fa-solid fa-flask"></i> Lab Equipment</span>
+                            <span class="cat-count">2</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Trending -->
+                <div class="sidebar-widget trending-widget">
+                    <div class="widget-header">
+                        <i class="fa-solid fa-fire"></i>
+                        <h3>Trending</h3>
+                    </div>
+                    <div class="trending-list">
+                        <a href="./error.html" class="trending-item">
+                            <span class="trend-num">01</span>
+                            <div class="trend-text">
+                                <h4>Pulse Oximetry Limitations in Patients with Dark Skin Tones</h4>
+                                <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+                            </div>
+                        </a>
+                        <a href="./error.html" class="trending-item">
+                            <span class="trend-num">02</span>
+                            <div class="trend-text">
+                                <h4>AED Monthly Inspection: Defibrillator Maintenance Checklist</h4>
+                                <span><i class="fa-regular fa-clock"></i> 4 min read</span>
+                            </div>
+                        </a>
+                        <a href="./error.html" class="trending-item">
+                            <span class="trend-num">03</span>
+                            <div class="trend-text">
+                                <h4>EU MDR Compliance for In-Vitro Diagnostic Devices</h4>
+                                <span><i class="fa-regular fa-clock"></i> 7 min read</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tags -->
+                <div class="sidebar-widget tags-widget">
+                    <div class="widget-header">
+                        <i class="fa-solid fa-hashtag"></i>
+                        <h3>Popular Tags</h3>
+                    </div>
+                    <ul class="tags-list">
+                        <li><a href="./error.html"><span class="tag-hash">#</span>MRI</a></li>
+                        <li><a href="./error.html"><span class="tag-hash">#</span>AI Imaging</a></li>
+                        <li><a href="./error.html"><span class="tag-hash">#</span>Robotics</a></li>
+                        <li><a href="./error.html"><span class="tag-hash">#</span>IVD</a></li>
+                        <li><a href="./error.html"><span class="tag-hash">#</span>ICU Care</a></li>
+                        <li><a href="./error.html"><span class="tag-hash">#</span>Endoscopy</a></li>
+                        <li><a href="./error.html"><span class="tag-hash">#</span>Biomarkers</a></li>
+                        <li><a href="./error.html"><span class="tag-hash">#</span>POCT</a></li>
+                        <li><a href="./error.html"><span class="tag-hash">#</span>Sterilization</a></li>
+                        <li><a href="./error.html"><span class="tag-hash">#</span>Lab Automation</a></li>
+                    </ul>
+                </div>
+
+            </aside>
+
+            <!-- ===== FEED (RIGHT) ===== -->
+            <section class="blog-feed">
+
+                <!-- Featured Article — Horizontal Split -->
+                <article class="featured-post post-item fade-in" data-category="diagnostics">
+                    <div class="featured-img-side">
+                        <img src="../assets/Blog/1.webp" alt="AI-Powered Diagnostics">
+                        <span class="cat-pill">Diagnostics</span>
+                    </div>
+                    <div class="featured-content-side">
+                        <div class="article-meta">
+                            <span class="meta-tag featured-tag"><i class="fa-solid fa-star"></i> Featured</span>
                             <span><i class="fa-regular fa-calendar"></i> Feb 20, 2026</span>
-                            <span><i class="fa-regular fa-clock"></i> 9 Min Read</span>
-                            <span><i class="fa-regular fa-user"></i> Dr. Sarah Mitchell</span>
+                            <span><i class="fa-regular fa-clock"></i> 9 min</span>
                         </div>
                         <h2><a href="./error.html">AI-Powered Diagnostics: How Machine Learning is Revolutionizing Early
                                 Disease Detection</a></h2>
                         <p>From radiology image analysis to predictive biomarker screening, artificial intelligence is
-                            transforming how clinicians identify diseases at earlier, more treatable stages — and what
-                            this means for the next generation of diagnostic equipment.</p>
-                        <a href="./error.html" class="btn btn-primary read-article-btn">Read Full Article</a>
+                            transforming how clinicians identify diseases at earlier, more treatable stages.</p>
+                        <div class="featured-footer">
+                            <span class="author-tag"><i class="fa-regular fa-user"></i> Dr. Sarah Mitchell</span>
+                            <a href="./error.html" class="read-btn">Read Article <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
                     </div>
                 </article>
 
-                <!-- Article Grid -->
-                <div class="article-grid" id="article-grid">
+                <!-- Section divider -->
+                <div class="feed-divider">
+                    <span>Latest Articles</span>
+                </div>
+
+                <!-- Article List -->
+                <div class="article-list" id="article-grid">
 
                     <article class="post-card post-item fade-in" data-category="diagnostics">
-                        <div class="card-img-wrapper">
-                            <img src="../assets/Home1/Grids/Diagnostics/2.webp" alt="MRI Technology"
-                                onerror="this.src='https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=400'">
-                            <span class="category-badge">Diagnostics</span>
+                        <div class="card-img-col">
+                            <img src="../assets/Blog/2.webp" alt="Next-Gen MRI Imaging">
+                            <span class="cat-pill">Diagnostics</span>
                         </div>
-                        <div class="card-content">
-                            <div class="post-meta">
+                        <div class="card-body">
+                            <div class="article-meta">
                                 <span><i class="fa-regular fa-calendar"></i> Feb 14, 2026</span>
+                                <span><i class="fa-regular fa-clock"></i> 7 min</span>
                             </div>
                             <h3><a href="./error.html">Next-Gen MRI: Ultra-High Field Imaging and Clinical
                                     Applications</a></h3>
@@ -147,14 +250,14 @@
                     </article>
 
                     <article class="post-card post-item fade-in" data-category="diagnostics">
-                        <div class="card-img-wrapper">
-                            <img src="../assets/Home1/Grids/Diagnostics/3.webp" alt="Lab Analyzer"
-                                onerror="this.src='https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=400'">
-                            <span class="category-badge">Diagnostics</span>
+                        <div class="card-img-col">
+                            <img src="../assets/Blog/3.webp" alt="Point-of-Care Testing">
+                            <span class="cat-pill">Diagnostics</span>
                         </div>
-                        <div class="card-content">
-                            <div class="post-meta">
+                        <div class="card-body">
+                            <div class="article-meta">
                                 <span><i class="fa-regular fa-calendar"></i> Feb 08, 2026</span>
+                                <span><i class="fa-regular fa-clock"></i> 5 min</span>
                             </div>
                             <h3><a href="./error.html">Point-of-Care Testing: Bringing Lab Precision to the Bedside</a>
                             </h3>
@@ -166,14 +269,14 @@
                     </article>
 
                     <article class="post-card post-item fade-in" data-category="surgical">
-                        <div class="card-img-wrapper">
-                            <img src="../assets/Home1/Grids/Surgical/1.webp" alt="Robotic Surgery"
-                                onerror="this.src='https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=400'">
-                            <span class="category-badge">Surgical</span>
+                        <div class="card-img-col">
+                            <img src="../assets/Blog/4.webp" alt="Robotic-Assisted Surgery">
+                            <span class="cat-pill">Surgical</span>
                         </div>
-                        <div class="card-content">
-                            <div class="post-meta">
+                        <div class="card-body">
+                            <div class="article-meta">
                                 <span><i class="fa-regular fa-calendar"></i> Feb 01, 2026</span>
+                                <span><i class="fa-regular fa-clock"></i> 8 min</span>
                             </div>
                             <h3><a href="./error.html">Robotic-Assisted Surgery: Accuracy, Recovery, and the Human
                                     Factor</a></h3>
@@ -185,14 +288,14 @@
                     </article>
 
                     <article class="post-card post-item fade-in" data-category="surgical">
-                        <div class="card-img-wrapper">
-                            <img src="../assets/Home1/Grids/Surgical/2.webp" alt="Surgical Instruments"
-                                onerror="this.src='https://images.unsplash.com/photo-1585847406874-e6f0e52d1fd7?auto=format&fit=crop&q=80&w=400'">
-                            <span class="category-badge">Surgical</span>
+                        <div class="card-img-col">
+                            <img src="../assets/Blog/5.webp" alt="Endoscopic Sterilization">
+                            <span class="cat-pill">Surgical</span>
                         </div>
-                        <div class="card-content">
-                            <div class="post-meta">
+                        <div class="card-body">
+                            <div class="article-meta">
                                 <span><i class="fa-regular fa-calendar"></i> Jan 25, 2026</span>
+                                <span><i class="fa-regular fa-clock"></i> 6 min</span>
                             </div>
                             <h3><a href="./error.html">Sterilization Protocols for Advanced Endoscopic Instruments</a>
                             </h3>
@@ -204,14 +307,14 @@
                     </article>
 
                     <article class="post-card post-item fade-in" data-category="patientcare">
-                        <div class="card-img-wrapper">
-                            <img src="../assets/Home1/Grids/Surgical/3.webp" alt="Patient Monitoring"
-                                onerror="this.src='https://images.unsplash.com/photo-1631217868264-e5b90bb7f5b4?auto=format&fit=crop&q=80&w=400'">
-                            <span class="category-badge">Patient Care</span>
+                        <div class="card-img-col">
+                            <img src="../assets/Blog/6.webp" alt="Wearable Patient Monitors">
+                            <span class="cat-pill">Patient Care</span>
                         </div>
-                        <div class="card-content">
-                            <div class="post-meta">
+                        <div class="card-body">
+                            <div class="article-meta">
                                 <span><i class="fa-regular fa-calendar"></i> Jan 18, 2026</span>
+                                <span><i class="fa-regular fa-clock"></i> 6 min</span>
                             </div>
                             <h3><a href="./error.html">Wearable Patient Monitors: Continuous Vital Sign Tracking in
                                     ICUs</a></h3>
@@ -223,14 +326,14 @@
                     </article>
 
                     <article class="post-card post-item fade-in" data-category="patientcare">
-                        <div class="card-img-wrapper">
-                            <img src="../assets/Home1/Grids/Diagnostics/1.webp" alt="Infusion System"
-                                onerror="this.src='https://images.unsplash.com/photo-1504813184591-01572f98c85f?auto=format&fit=crop&q=80&w=400'">
-                            <span class="category-badge">Patient Care</span>
+                        <div class="card-img-col">
+                            <img src="../assets/Blog/7.webp" alt="Smart Infusion Pumps">
+                            <span class="cat-pill">Patient Care</span>
                         </div>
-                        <div class="card-content">
-                            <div class="post-meta">
+                        <div class="card-body">
+                            <div class="article-meta">
                                 <span><i class="fa-regular fa-calendar"></i> Jan 10, 2026</span>
+                                <span><i class="fa-regular fa-clock"></i> 5 min</span>
                             </div>
                             <h3><a href="./error.html">Smart Infusion Pumps: Preventing Medication Errors at Scale</a>
                             </h3>
@@ -242,14 +345,14 @@
                     </article>
 
                     <article class="post-card post-item fade-in" data-category="lab">
-                        <div class="card-img-wrapper">
-                            <img src="../assets/Home1/Grids/Diagnostics/2.webp" alt="Lab Equipment"
-                                onerror="this.src='https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&q=80&w=400'">
-                            <span class="category-badge">Lab Equipment</span>
+                        <div class="card-img-col">
+                            <img src="../assets/Blog/8.webp" alt="Hematology Analyzers">
+                            <span class="cat-pill">Lab Equipment</span>
                         </div>
-                        <div class="card-content">
-                            <div class="post-meta">
+                        <div class="card-body">
+                            <div class="article-meta">
                                 <span><i class="fa-regular fa-calendar"></i> Jan 03, 2026</span>
+                                <span><i class="fa-regular fa-clock"></i> 7 min</span>
                             </div>
                             <h3><a href="./error.html">Automated Hematology Analyzers: Advancing Complete Blood Count
                                     Accuracy</a></h3>
@@ -261,14 +364,14 @@
                     </article>
 
                     <article class="post-card post-item fade-in" data-category="lab">
-                        <div class="card-img-wrapper">
-                            <img src="../assets/Home1/Grids/Diagnostics/3.webp" alt="Centrifuge"
-                                onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80&w=400'">
-                            <span class="category-badge">Lab Equipment</span>
+                        <div class="card-img-col">
+                            <img src="../assets/Blog/9.webp" alt="Centrifuge Calibration">
+                            <span class="cat-pill">Lab Equipment</span>
                         </div>
-                        <div class="card-content">
-                            <div class="post-meta">
+                        <div class="card-body">
+                            <div class="article-meta">
                                 <span><i class="fa-regular fa-calendar"></i> Dec 26, 2025</span>
+                                <span><i class="fa-regular fa-clock"></i> 5 min</span>
                             </div>
                             <h3><a href="./error.html">Centrifuge Calibration and Maintenance: Ensuring Reliable Sample
                                     Separation</a></h3>
@@ -280,14 +383,14 @@
                     </article>
 
                     <article class="post-card post-item fade-in" data-category="diagnostics">
-                        <div class="card-img-wrapper">
-                            <img src="../assets/Home1/Grids/Surgical/1.webp" alt="Ultrasound"
-                                onerror="this.src='https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&q=80&w=400'">
-                            <span class="category-badge">Diagnostics</span>
+                        <div class="card-img-col">
+                            <img src="../assets/Blog/10.webp" alt="Portable Ultrasound Systems">
+                            <span class="cat-pill">Diagnostics</span>
                         </div>
-                        <div class="card-content">
-                            <div class="post-meta">
+                        <div class="card-body">
+                            <div class="article-meta">
                                 <span><i class="fa-regular fa-calendar"></i> Dec 18, 2025</span>
+                                <span><i class="fa-regular fa-clock"></i> 6 min</span>
                             </div>
                             <h3><a href="./error.html">Portable Ultrasound Systems: Redefining Bedside Imaging</a></h3>
                             <p>Handheld ultrasound probes are enabling real-time echography in emergency medicine, rural
@@ -302,75 +405,10 @@
                 <div class="no-results-msg" id="no-results" style="display: none;">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <h3>No articles found</h3>
-                    <p>Try adjusting your search term or selecting a different category.</p>
+                    <p>Try a different search term or select another category.</p>
                 </div>
 
-            </div>
-
-            <!-- ===== SIDEBAR ===== -->
-            <aside class="blog-sidebar">
-
-                <div class="sidebar-widget search-widget">
-                    <h3><i class="fa-solid fa-magnifying-glass"></i> Search Articles</h3>
-                    <div class="search-input-box">
-                        <input type="text" id="blog-search" placeholder="Search topics, equipment...">
-                        <i class="fa-solid fa-search"></i>
-                    </div>
-                </div>
-
-                <div class="sidebar-widget categories-widget">
-                    <h3><i class="fa-solid fa-filter"></i> Categories</h3>
-                    <ul class="category-list" id="category-filters">
-                        <li class="active" data-filter="all">All Articles <span>10</span></li>
-                        <li data-filter="diagnostics">Diagnostics <span>4</span></li>
-                        <li data-filter="surgical">Surgical <span>2</span></li>
-                        <li data-filter="patientcare">Patient Care <span>2</span></li>
-                        <li data-filter="lab">Lab Equipment <span>2</span></li>
-                    </ul>
-                </div>
-
-                <div class="sidebar-widget trending-widget">
-                    <h3><i class="fa-solid fa-fire"></i> Trending Now</h3>
-                    <div class="trending-list">
-                        <a href="./error.html" class="trending-item">
-                            <div class="trend-rank">01</div>
-                            <div class="trend-text">
-                                <h4>Understanding Pulse Oximetry Limitations in Patients with Dark Skin</h4>
-                                <span><i class="fa-regular fa-clock"></i> 6 Min Read</span>
-                            </div>
-                        </a>
-                        <a href="./error.html" class="trending-item">
-                            <div class="trend-rank">02</div>
-                            <div class="trend-text">
-                                <h4>Defibrillator Maintenance: AED Monthly Inspection Checklist</h4>
-                                <span><i class="fa-regular fa-clock"></i> 4 Min Read</span>
-                            </div>
-                        </a>
-                        <a href="./error.html" class="trending-item">
-                            <div class="trend-rank">03</div>
-                            <div class="trend-text">
-                                <h4>IVD Regulations: EU MDR Compliance for In-Vitro Diagnostics</h4>
-                                <span><i class="fa-regular fa-clock"></i> 7 Min Read</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="sidebar-widget tags-widget">
-                    <h3><i class="fa-solid fa-tags"></i> Popular Tags</h3>
-                    <div class="tags-container">
-                        <a href="./error.html">MRI</a>
-                        <a href="./error.html">AI Imaging</a>
-                        <a href="./error.html">Robotics</a>
-                        <a href="./error.html">IVD</a>
-                        <a href="./error.html">ICU Care</a>
-                        <a href="./error.html">Endoscopy</a>
-                        <a href="./error.html">Biomarkers</a>
-                        <a href="./error.html">POCT</a>
-                    </div>
-                </div>
-
-            </aside>
+            </section>
 
         </div>
     </main>
@@ -380,8 +418,7 @@
             <div class="box">
                 <div class="logoContainer">
                     <div class="logo">
-                        <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="footer-logo site-logo"
-                            onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 50\'><text y=\'35\' font-family=\'sans-serif\' font-weight=\'bold\' font-size=\'30\' fill=\'%230ea5e9\'>MediLife</text></svg>'">
+                        <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="footer-logo site-logo">
                     </div>
                 </div>
                 <p class="footer-desc">
@@ -389,7 +426,6 @@
                     innovative solutions and reliable support.
                 </p>
             </div>
-
             <div class="box">
                 <h4>Explore</h4>
                 <ul class="footer-links">
@@ -399,7 +435,6 @@
                     <li><a href="./login.html">Login</a></li>
                 </ul>
             </div>
-
             <div class="box">
                 <h4>Categories</h4>
                 <ul class="footer-links">
@@ -409,7 +444,6 @@
                     <li><a href="./error.html">Lab Equipment</a></li>
                 </ul>
             </div>
-
             <div class="box">
                 <h4>Contact</h4>
                 <ul class="contactInfo">
@@ -418,7 +452,6 @@
                     <li><i class="fa-solid fa-envelope"></i> vip@stackly.auto</li>
                 </ul>
             </div>
-
             <div class="box">
                 <h4>Newsletter</h4>
                 <p>Subscribe for latest medical updates.</p>
@@ -440,20 +473,20 @@
                 </div>
             </div>
         </div>
-
         <div class="footer-bottom container">
             <p>&copy; 2026 MediLife Medical Solutions. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // --- Page Loader & Link Transitions ---
+        // --- Loader ---
         window.addEventListener('load', () => {
             const loader = document.getElementById('page-loader');
             loader.style.opacity = '0';
             setTimeout(() => { loader.style.display = 'none'; }, 300);
         });
 
+        // --- Link Transitions ---
         document.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
@@ -467,7 +500,7 @@
             });
         });
 
-        // --- Hamburger Menu ---
+        // --- Hamburger ---
         const hamburgerBtn = document.getElementById('hamburger-btn');
         const closeBtn = document.getElementById('close-btn');
         const navLinks = document.getElementById('nav-links');
@@ -476,44 +509,39 @@
         const homeNavLink = document.getElementById('home-nav-link');
         const dropdownMenu = document.getElementById('dropdown-menu');
         const body = document.body;
-
         function openMenu() { navLinks.classList.add('showMenu'); menuOverlay.style.display = 'block'; body.classList.add('menu-open'); }
         function closeMenu() { navLinks.classList.remove('showMenu'); menuOverlay.style.display = 'none'; body.classList.remove('menu-open'); dropdownMenu.classList.remove('showDropdown'); }
-
         hamburgerBtn.addEventListener('click', (e) => { e.stopPropagation(); openMenu(); });
         closeBtn.addEventListener('click', closeMenu);
         menuOverlay.addEventListener('click', closeMenu);
-        document.addEventListener('click', (e) => {
-            if (body.classList.contains('menu-open') && !navLinks.contains(e.target) && !hamburgerBtn.contains(e.target)) closeMenu();
-        });
+        document.addEventListener('click', (e) => { if (body.classList.contains('menu-open') && !navLinks.contains(e.target) && !hamburgerBtn.contains(e.target)) closeMenu(); });
         dropdownToggleBtn.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); dropdownMenu.classList.toggle('showDropdown'); });
         homeNavLink.addEventListener('click', (e) => { if (window.innerWidth <= 768) { e.preventDefault(); e.stopPropagation(); dropdownMenu.classList.toggle('showDropdown'); } });
 
-        // --- Theme Toggle ---
+        // --- Theme ---
         const themeToggleBtn = document.getElementById('theme-toggle-btn');
         const themeIcon = document.getElementById('theme-icon');
-        if (localStorage.getItem('medilife-theme') === 'light') { themeIcon.classList.remove('fa-sun'); themeIcon.classList.add('fa-moon'); }
+        if (localStorage.getItem('medilife-theme') === 'light') { themeIcon.classList.replace('fa-sun', 'fa-moon'); }
         themeToggleBtn.addEventListener('click', () => {
             document.body.classList.toggle('light-theme');
-            if (document.body.classList.contains('light-theme')) { themeIcon.classList.remove('fa-sun'); themeIcon.classList.add('fa-moon'); localStorage.setItem('medilife-theme', 'light'); }
-            else { themeIcon.classList.remove('fa-moon'); themeIcon.classList.add('fa-sun'); localStorage.setItem('medilife-theme', 'dark'); }
+            if (document.body.classList.contains('light-theme')) { themeIcon.classList.replace('fa-sun', 'fa-moon'); localStorage.setItem('medilife-theme', 'light'); }
+            else { themeIcon.classList.replace('fa-moon', 'fa-sun'); localStorage.setItem('medilife-theme', 'dark'); }
         });
 
         // --- Sticky Header & Scroll To Top ---
         const header = document.getElementById('main-header');
         const scrollBtn = document.getElementById('scrollToTopBtn');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) header.classList.add('sticky'); else header.classList.remove('sticky');
-            if (window.scrollY > 300) scrollBtn.classList.add('visible'); else scrollBtn.classList.remove('visible');
+            header.classList.toggle('sticky', window.scrollY > 50);
+            scrollBtn.classList.toggle('visible', window.scrollY > 300);
         });
         scrollBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
         // --- Fade In ---
-        const fadeElems = document.querySelectorAll('.fade-in');
         const fadeInObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
         }, { threshold: 0.08 });
-        fadeElems.forEach(elem => fadeInObserver.observe(elem));
+        document.querySelectorAll('.fade-in').forEach(el => fadeInObserver.observe(el));
 
         // --- Blog Filter & Search ---
         const searchInput = document.getElementById('blog-search');
@@ -528,13 +556,12 @@
             postItems.forEach(post => {
                 const title = post.querySelector('h2, h3').innerText.toLowerCase();
                 const cat = post.getAttribute('data-category');
-                const matches = title.includes(term) && (active === 'all' || active === cat);
-                post.style.display = matches ? '' : 'none';
-                if (matches) count++;
+                const show = title.includes(term) && (active === 'all' || active === cat);
+                post.style.display = show ? '' : 'none';
+                if (show) count++;
             });
             noResults.style.display = count === 0 ? 'block' : 'none';
         }
-
         searchInput.addEventListener('input', filterPosts);
         filterBtns.forEach(btn => {
             btn.addEventListener('click', function () {
@@ -548,13 +575,12 @@
         const footerForm = document.getElementById('footer-newsletter-form');
         const newsletterEmail = document.getElementById('newsletter-email');
         const newsletterError = document.getElementById('newsletter-error');
-        const isValidEmail = (e) => /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(String(e).toLowerCase());
         footerForm.addEventListener('submit', (e) => {
             e.preventDefault();
             newsletterError.innerText = '';
             newsletterEmail.style.borderColor = '';
             if (!newsletterEmail.value.trim()) { newsletterError.innerText = 'Email is required'; newsletterEmail.style.borderColor = 'var(--error-color)'; }
-            else if (!isValidEmail(newsletterEmail.value.trim())) { newsletterError.innerText = 'Please enter a valid email address'; newsletterEmail.style.borderColor = 'var(--error-color)'; }
+            else if (!isValid(newsletterEmail.value.trim())) { newsletterError.innerText = 'Enter a valid email address'; newsletterEmail.style.borderColor = 'var(--error-color)'; }
             else { window.location.href = './error.html'; }
         });
     </script>
