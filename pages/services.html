@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediLife | Medical Services</title>
+    <meta name="description"
+        content="Explore MediLife's comprehensive medical device services — from surgical equipment maintenance to biomedical engineering support.">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%230ea5e9' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z'/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/services.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <script>
+        if (localStorage.getItem('medilife-theme') === 'light') {
+            document.body.classList.add('light-theme');
+        }
+    </script>
+
+    <div id="page-loader">
+        <div class="loader-content">
+            <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="loader-img">
+            <p>Loading Services...</p>
+        </div>
+    </div>
+
+    <button id="scrollToTopBtn" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- HEADER — same as index.html -->
+    <header class="headerWrap" id="main-header">
+        <div class="imgWrap">
+            <a href="../index.html">
+                <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="site-logo">
+            </a>
+        </div>
+
+        <div class="hamburger" id="hamburger-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <nav class="linksWrap" id="nav-links">
+            <div class="topCloseBtn" id="close-btn">
+                <i class="fa-solid fa-times"></i>
+            </div>
+            <ul>
+                <li class="dropdown" id="home-dropdown">
+                    <div class="dropdownHeader">
+                        <a href="javascript:void(0)" class="homePageLink" id="home-nav-link">Home</a>
+                        <button class="dropdownToggle" aria-label="Toggle dropdown" id="dropdown-toggle-btn">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <ul class="dropdownMenu" id="dropdown-menu">
+                        <li><a href="../index.html">Home 1</a></li>
+                        <li><a href="./home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="./about.html">About Us</a></li>
+                <li><a href="./dashboard.html">DashBoard</a></li>
+                <li><a href="./product.html">Product</a></li>
+                <li><a href="./services.html" class="active-nav">Services</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./signup.html">Sign Up</a></li>
+                <li><a href="./login.html">Login</a></li>
+                <li>
+                    <a href="./checkout.html" aria-label="Cart" class="cart-nav-icon">
+                        <i class="fa-solid fa-cart-arrow-down" style="color: rgb(116, 192, 252);"></i><sup>4</sup>
+                    </a>
+                </li>
+                <li class="theme-toggle-li">
+                    <button id="theme-toggle-btn" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-sun" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="menuOverlay" id="menu-overlay"></div>
+    </header>
+
+    <main class="srv-main">
+
+        <!-- ===================================================
+             SECTION 1 · HERO CAROUSEL
+             =================================================== -->
+        <section class="srv-hero" aria-label="Services hero">
+            <!-- Slides -->
+            <div class="srv-slides" id="srv-slides">
+                <div class="srv-slide active" style="--bg:url('../assets/Services/11.webp')"></div>
+                <div class="srv-slide" style="--bg:url('../assets/Services/22.webp')"></div>
+                <div class="srv-slide" style="--bg:url('../assets/Services/33.webp')"></div>
+            </div>
+            <!-- Dark overlay -->
+            <div class="srv-hero-overlay"></div>
+
+            <!-- Hero content -->
+            <div class="srv-hero-content container">
+                <span class="srv-eyebrow fade-in">Precision · Care · Innovation</span>
+                <h1 class="fade-in">Medical Services<br><span class="srv-accent">Redefined</span></h1>
+                <p class="fade-in delay-1">Comprehensive biomedical support, from surgical device maintenance to
+                    advanced diagnostic calibration — all under one roof.</p>
+                <div class="srv-hero-btns fade-in delay-2">
+                    <a href="./error.html" class="btn btn-primary">Book a Consultation</a>
+                    <a href="./error.html" class="btn btn-outline-white">View Brochure <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Carousel controls -->
+            <div class="srv-carousel-nav">
+                <button class="srv-dot active" data-index="0" aria-label="Slide 1"></button>
+                <button class="srv-dot" data-index="1" aria-label="Slide 2"></button>
+                <button class="srv-dot" data-index="2" aria-label="Slide 3"></button>
+            </div>
+            <button class="srv-arrow srv-prev" id="srv-prev" aria-label="Previous slide">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="srv-arrow srv-next" id="srv-next" aria-label="Next slide">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </section>
+
+        <!-- ===================================================
+             SECTION 2 · SERVICE VIDEO GRID (3×2)
+             =================================================== -->
+        <section class="srv-grid-section">
+            <div class="container">
+                <div class="srv-section-head fade-in">
+                    <span class="srv-label">What We Offer</span>
+                    <h2>Our Core Services</h2>
+                    <p>Six disciplines of uncompromising biomedical excellence. Hover each card to explore.</p>
+                </div>
+
+                <div class="srv-video-grid">
+
+                    <!-- Card 1 -->
+                    <div class="srv-vcard fade-in" data-index="0">
+                        <div class="srv-vcard-media">
+                            <img src="../assets/Services/44.webp" alt="Surgical Equipment Maintenance" loading="lazy">
+                            <div class="srv-vcard-overlay">
+                                <div class="srv-vcard-tag"><i class="fa-solid fa-scalpel-line-dashes"></i> Surgical
+                                </div>
+                                <div class="srv-vcard-hover-content">
+                                    <i class="fa-solid fa-wrench srv-vcard-icon"></i>
+                                    <h3>Surgical Equipment Maintenance</h3>
+                                    <p>Full lifecycle service for OR instruments, robotic arms, and electrosurgical
+                                        units.</p>
+                                    <a href="./error.html" class="btn btn-sm-white">Learn More <i
+                                            class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="srv-vcard-footer">
+                            <h3>Surgical Maintenance</h3>
+                            <span><i class="fa-solid fa-circle-check"></i> ISO Certified</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="srv-vcard fade-in delay-1" data-index="1">
+                        <div class="srv-vcard-media">
+                            <img src="../assets/Services/55.webp" alt="Diagnostic Imaging" loading="lazy">
+                            <div class="srv-vcard-overlay">
+                                <div class="srv-vcard-tag"><i class="fa-solid fa-x-ray"></i> Imaging</div>
+                                <div class="srv-vcard-hover-content">
+                                    <i class="fa-solid fa-radiation srv-vcard-icon"></i>
+                                    <h3>Diagnostic Imaging Services</h3>
+                                    <p>MRI, CT, and ultrasound calibration to ensure sub-millimetre accuracy in every
+                                        scan.</p>
+                                    <a href="./error.html" class="btn btn-sm-white">Learn More <i
+                                            class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="srv-vcard-footer">
+                            <h3>Diagnostic Imaging</h3>
+                            <span><i class="fa-solid fa-circle-check"></i> FDA Compliant</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="srv-vcard fade-in delay-2" data-index="2">
+                        <div class="srv-vcard-media">
+                            <img src="../assets/Services/66.webp" alt="Patient Monitoring" loading="lazy">
+                            <div class="srv-vcard-overlay">
+                                <div class="srv-vcard-tag"><i class="fa-solid fa-heart-pulse"></i> Monitoring</div>
+                                <div class="srv-vcard-hover-content">
+                                    <i class="fa-solid fa-display srv-vcard-icon"></i>
+                                    <h3>Patient Monitoring Systems</h3>
+                                    <p>Installation, testing, and preventive maintenance for bedside monitors and
+                                        telemetry.</p>
+                                    <a href="./error.html" class="btn btn-sm-white">Learn More <i
+                                            class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="srv-vcard-footer">
+                            <h3>Patient Monitoring</h3>
+                            <span><i class="fa-solid fa-circle-check"></i> 24/7 Support</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="srv-vcard fade-in delay-1" data-index="3">
+                        <div class="srv-vcard-media">
+                            <img src="../assets/Services/77.webp" alt="Lab Equipment Calibration" loading="lazy">
+                            <div class="srv-vcard-overlay">
+                                <div class="srv-vcard-tag"><i class="fa-solid fa-flask"></i> Laboratory</div>
+                                <div class="srv-vcard-hover-content">
+                                    <i class="fa-solid fa-microscope srv-vcard-icon"></i>
+                                    <h3>Lab Equipment Calibration</h3>
+                                    <p>NIST-traceable calibration for analysers, centrifuges, autoclaves, and
+                                        incubators.</p>
+                                    <a href="./error.html" class="btn btn-sm-white">Learn More <i
+                                            class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="srv-vcard-footer">
+                            <h3>Lab Calibration</h3>
+                            <span><i class="fa-solid fa-circle-check"></i> NIST Traceable</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="srv-vcard fade-in delay-2" data-index="4">
+                        <div class="srv-vcard-media">
+                            <img src="../assets/Services/88.webp" alt="Sterilization Services" loading="lazy">
+                            <div class="srv-vcard-overlay">
+                                <div class="srv-vcard-tag"><i class="fa-solid fa-shield-virus"></i> Sterilization</div>
+                                <div class="srv-vcard-hover-content">
+                                    <i class="fa-solid fa-biohazard srv-vcard-icon"></i>
+                                    <h3>Sterilization & Infection Control</h3>
+                                    <p>Validation and re-qualification of steam, EtO, and hydrogen-peroxide sterilisers.
+                                    </p>
+                                    <a href="./error.html" class="btn btn-sm-white">Learn More <i
+                                            class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="srv-vcard-footer">
+                            <h3>Sterilization</h3>
+                            <span><i class="fa-solid fa-circle-check"></i> WHO Standards</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="srv-vcard fade-in delay-3" data-index="5">
+                        <div class="srv-vcard-media">
+                            <img src="../assets/Services/99.webp" alt="Biomedical Engineering" loading="lazy">
+                            <div class="srv-vcard-overlay">
+                                <div class="srv-vcard-tag"><i class="fa-solid fa-microchip"></i> Engineering</div>
+                                <div class="srv-vcard-hover-content">
+                                    <i class="fa-solid fa-gears srv-vcard-icon"></i>
+                                    <h3>Biomedical Engineering Support</h3>
+                                    <p>Dedicated on-site and remote biomedical engineers for complex device integration.
+                                    </p>
+                                    <a href="./error.html" class="btn btn-sm-white">Learn More <i
+                                            class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="srv-vcard-footer">
+                            <h3>Biomedical Engineering</h3>
+                            <span><i class="fa-solid fa-circle-check"></i> On-site & Remote</span>
+                        </div>
+                    </div>
+
+                </div><!-- /srv-video-grid -->
+            </div>
+        </section>
+
+        <!-- ===================================================
+             SECTION 3 · BENTO STATS & CERTIFICATIONS
+             =================================================== -->
+        <section class="srv-bento-section">
+            <div class="container">
+                <div class="srv-section-head fade-in">
+                    <span class="srv-label">By the Numbers</span>
+                    <h2>Why Hospitals Trust MediLife</h2>
+                </div>
+
+                <div class="srv-bento-grid">
+
+                    <!-- Large feature card -->
+                    <div class="srv-bento-card bento-feature fade-in">
+                        <div class="bento-img-wrap">
+                            <img src="../assets/Services/00.webp" alt="MediLife hospital partner" loading="lazy">
+                            <div class="bento-img-overlay"></div>
+                        </div>
+                        <div class="bento-feature-content">
+                            <span class="bento-badge"><i class="fa-solid fa-award"></i> Global Standard</span>
+                            <h3>ISO 13485 Certified Medical Device Quality Management</h3>
+                            <p>Every service we deliver is governed by the world's most rigorous medical device quality
+                                framework.</p>
+                            <a href="./error.html" class="btn btn-primary">Read Certification <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Stat cards -->
+                    <div class="srv-bento-card bento-stat fade-in delay-1">
+                        <div class="bento-stat-icon"><i class="fa-solid fa-hospital"></i></div>
+                        <div class="bento-stat-num" data-target="2500">0</div>
+                        <div class="bento-stat-label">Hospitals Served</div>
+                        <div class="bento-stat-sub">Across 40+ countries</div>
+                    </div>
+
+                    <div class="srv-bento-card bento-stat bento-stat-blue fade-in delay-2">
+                        <div class="bento-stat-icon"><i class="fa-solid fa-toolbox"></i></div>
+                        <div class="bento-stat-num" data-target="98">0</div>
+                        <div class="bento-stat-label">Uptime Guarantee</div>
+                        <div class="bento-stat-sub">Service level agreement</div>
+                        <div class="bento-pct">%</div>
+                    </div>
+
+                    <!-- Certification grid card -->
+                    <div class="srv-bento-card bento-certs fade-in delay-1">
+                        <h3 class="bento-certs-title">Accreditations</h3>
+                        <div class="bento-certs-list">
+                            <div class="bento-cert"><i class="fa-solid fa-shield-halved"></i><span>ISO 13485</span>
+                            </div>
+                            <div class="bento-cert"><i class="fa-solid fa-certificate"></i><span>FDA 510(k)</span></div>
+                            <div class="bento-cert"><i class="fa-solid fa-globe"></i><span>CE Mark</span></div>
+                            <div class="bento-cert"><i class="fa-solid fa-flask-vial"></i><span>NIST Traceable</span>
+                            </div>
+                            <div class="bento-cert"><i class="fa-solid fa-user-doctor"></i><span>WHO Compliant</span>
+                            </div>
+                            <div class="bento-cert"><i class="fa-solid fa-heartbeat"></i><span>IEC 60601</span></div>
+                        </div>
+                    </div>
+
+                    <div class="srv-bento-card bento-stat bento-stat-green fade-in delay-3">
+                        <div class="bento-stat-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <div class="bento-stat-num" data-target="4">0</div>
+                        <div class="bento-stat-label">Hour Response</div>
+                        <div class="bento-stat-sub">Critical failure SLA</div>
+                        <div class="bento-pct">hr</div>
+                    </div>
+
+                    <!-- Quote card -->
+                    <div class="srv-bento-card bento-quote fade-in delay-2">
+                        <i class="fa-solid fa-quote-left bento-quote-icon"></i>
+                        <p>"MediLife's biomedical team reduced our OR equipment downtime by 73% in the first quarter
+                            alone."</p>
+                        <div class="bento-quote-author">
+                            <div class="bento-quote-avatar"><i class="fa-solid fa-user-nurse"></i></div>
+                            <div>
+                                <strong>Dr. Priya Ramesh</strong>
+                                <small>Chief of Surgery, Apollo Hospitals</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map / reach card -->
+                    <div class="srv-bento-card bento-reach fade-in delay-3">
+                        <div class="bento-reach-inner">
+                            <div class="bento-reach-stat">
+                                <span class="reach-num">40<sup>+</sup></span>
+                                <span class="reach-label">Countries</span>
+                            </div>
+                            <div class="bento-reach-divider"></div>
+                            <div class="bento-reach-stat">
+                                <span class="reach-num">150<sup>+</sup></span>
+                                <span class="reach-label">Engineers</span>
+                            </div>
+                            <div class="bento-reach-divider"></div>
+                            <div class="bento-reach-stat">
+                                <span class="reach-num">12k<sup>+</sup></span>
+                                <span class="reach-label">Devices Serviced / yr</span>
+                            </div>
+                        </div>
+                        <a href="./error.html" class="btn btn-outline-blue bento-reach-btn">Our Global Reach <i
+                                class="fa-solid fa-earth-americas"></i></a>
+                    </div>
+
+                </div><!-- /srv-bento-grid -->
+            </div>
+        </section>
+
+        <!-- ===================================================
+             SECTION 4 · SERVICE PROCESS TIMELINE
+             =================================================== -->
+        <section class="srv-process-section">
+            <div class="container">
+                <div class="srv-section-head fade-in">
+                    <span class="srv-label">How It Works</span>
+                    <h2>Our Service Process</h2>
+                    <p>A transparent, step-by-step journey from intake to sign-off.</p>
+                </div>
+
+                <div class="srv-timeline">
+
+                    <div class="srv-tl-item fade-in">
+                        <div class="srv-tl-num">01</div>
+                        <div class="srv-tl-card">
+                            <h3>Initial Assessment</h3>
+                            <p>Our engineers conduct a comprehensive audit of your medical devices, documenting every
+                                fault, wear pattern, and compliance gap.</p>
+                            <div class="srv-tl-tags">
+                                <span>On-site Audit</span><span>Risk Analysis</span>
+                            </div>
+                            <a href="./error.html" class="srv-tl-btn">Request Assessment <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="srv-tl-item fade-in delay-1">
+                        <div class="srv-tl-num">02</div>
+                        <div class="srv-tl-card">
+                            <h3>Custom Service Plan</h3>
+                            <p>A tailored maintenance schedule is created — preventive, corrective, and predictive —
+                                with transparent cost breakdowns and SLA commitments.</p>
+                            <div class="srv-tl-tags">
+                                <span>PPM Schedule</span><span>SLA Agreement</span>
+                            </div>
+                            <a href="./error.html" class="srv-tl-btn">View Sample Plans <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="srv-tl-item fade-in delay-2">
+                        <div class="srv-tl-num">03</div>
+                        <div class="srv-tl-card">
+                            <h3>Precision Execution</h3>
+                            <p>Our certified biomedical engineers perform all work to OEM specifications and
+                                international standards — with zero compromise on sterile procedure.</p>
+                            <div class="srv-tl-tags">
+                                <span>Certified Technicians</span><span>OEM Parts</span>
+                            </div>
+                            <a href="./error.html" class="srv-tl-btn">Book a Technician <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="srv-tl-item fade-in delay-3">
+                        <div class="srv-tl-num">04</div>
+                        <div class="srv-tl-card">
+                            <h3>QA Testing &amp; Verification</h3>
+                            <p>Multi-point electrical safety testing, performance verification, and regulatory
+                                compliance checks ensure every device is clinically ready.</p>
+                            <div class="srv-tl-tags">
+                                <span>IEC 60601</span><span>Electrical Safety</span>
+                            </div>
+                            <a href="./error.html" class="srv-tl-btn">See QA Checklist <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="srv-tl-item fade-in delay-4">
+                        <div class="srv-tl-num">05</div>
+                        <div class="srv-tl-card">
+                            <h3>Documentation &amp; Hand-off</h3>
+                            <p>Full service documentation — calibration certificates, maintenance logs, and compliance
+                                reports — delivered digitally and in print.</p>
+                            <div class="srv-tl-tags">
+                                <span>Digital Reports</span><span>Regulatory Docs</span>
+                            </div>
+                            <a href="./error.html" class="srv-tl-btn">Download Sample Report <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="srv-process-cta fade-in">
+                    <a href="./error.html" class="btn btn-primary">Start Your Service Request <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                    <a href="./contact.html" class="btn btn-outline">Talk to an Engineer</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================================================
+             SECTION 5 · FAQ ACCORDION
+             =================================================== -->
+        <section class="srv-faq-section">
+            <div class="container">
+                <div class="srv-faq-inner">
+                    <div class="srv-faq-left fade-in">
+                        <span class="srv-label">Got Questions?</span>
+                        <h2>Frequently Asked Questions</h2>
+                        <p>Clarity on our processes, timelines, accreditations, and service commitments — straight from
+                            our biomedical team.</p>
+                        <a href="./contact.html" class="btn btn-outline srv-faq-contact">
+                            <i class="fa-solid fa-headset"></i> Still have questions? Contact Us
+                        </a>
+                    </div>
+
+                    <div class="srv-faq-list fade-in delay-1">
+
+                        <div class="srv-faq-item">
+                            <button class="srv-faq-q" aria-expanded="false">
+                                <span>What is included in a Planned Preventive Maintenance (PPM) contract?</span>
+                                <i class="fa-solid fa-plus srv-faq-icon"></i>
+                            </button>
+                            <div class="srv-faq-a">
+                                <p>A PPM contract covers scheduled inspections, calibration, lubrication, part
+                                    replacements, electrical safety testing (IEC 60601), and full compliance
+                                    documentation. Frequency is agreed upfront — typically quarterly or bi-annually —
+                                    and can be customised based on manufacturer recommendations and usage intensity.</p>
+                            </div>
+                        </div>
+
+                        <div class="srv-faq-item">
+                            <button class="srv-faq-q" aria-expanded="false">
+                                <span>How long does calibration of an MRI or CT scanner take?</span>
+                                <i class="fa-solid fa-plus srv-faq-icon"></i>
+                            </button>
+                            <div class="srv-faq-a">
+                                <p>Standard MRI calibration runs 4–8 hours if the system is accessible and the phantom
+                                    is provided. CT scanner calibration, including detector offset and water phantom
+                                    testing, typically requires 2–4 hours. We schedule all imaging work during non-peak
+                                    hours to minimise disruption to clinical workflow.</p>
+                            </div>
+                        </div>
+
+                        <div class="srv-faq-item">
+                            <button class="srv-faq-q" aria-expanded="false">
+                                <span>Do you work with devices from all manufacturers, or only specific OEMs?</span>
+                                <i class="fa-solid fa-plus srv-faq-icon"></i>
+                            </button>
+                            <div class="srv-faq-a">
+                                <p>Our engineers are OEM-agnostic. We service equipment from Siemens, Philips, GE
+                                    Healthcare, Mindray, Dragerwerk, Karl Storz, and over 60 other manufacturers. For
+                                    specialised platforms we maintain direct service manuals and OEM-authorised parts
+                                    channels to ensure full compatibility and warranty protection.</p>
+                            </div>
+                        </div>
+
+                        <div class="srv-faq-item">
+                            <button class="srv-faq-q" aria-expanded="false">
+                                <span>What regulatory standards do your services comply with?</span>
+                                <i class="fa-solid fa-plus srv-faq-icon"></i>
+                            </button>
+                            <div class="srv-faq-a">
+                                <p>All services are performed in compliance with ISO 13485:2016, IEC 60601-1, AAMI/ANSI
+                                    standards, FDA 21 CFR Part 820, CE Marking directives, and WHO Medical Device
+                                    Regulations. Country-specific regulatory requirements are incorporated as part of
+                                    every engagement.</p>
+                            </div>
+                        </div>
+
+                        <div class="srv-faq-item">
+                            <button class="srv-faq-q" aria-expanded="false">
+                                <span>What is your response time for emergency equipment failures?</span>
+                                <i class="fa-solid fa-plus srv-faq-icon"></i>
+                            </button>
+                            <div class="srv-faq-a">
+                                <p>Under our critical-care SLA, our response time is under 4 hours for on-site
+                                    attendance, 24/7/365. Remote diagnostic support can typically begin within 30
+                                    minutes of a ticket being raised. All emergency calls are triaged by a senior
+                                    biomedical engineer to ensure the fastest possible restoration of critical
+                                    equipment.</p>
+                            </div>
+                        </div>
+
+                        <div class="srv-faq-item">
+                            <button class="srv-faq-q" aria-expanded="false">
+                                <span>Are your engineers in-house or third-party contractors?</span>
+                                <i class="fa-solid fa-plus srv-faq-icon"></i>
+                            </button>
+                            <div class="srv-faq-a">
+                                <p>All our biomedical engineers are full-time MediLife employees who undergo rigorous
+                                    internal training programmes, OEM certification, and annual competency assessments.
+                                    We do not subcontract any technical work, ensuring consistent quality,
+                                    accountability, and continuity of relationship for every client.</p>
+                            </div>
+                        </div>
+
+                        <div class="srv-faq-item">
+                            <button class="srv-faq-q" aria-expanded="false">
+                                <span>Can MediLife help us plan and install new medical devices?</span>
+                                <i class="fa-solid fa-plus srv-faq-icon"></i>
+                            </button>
+                            <div class="srv-faq-a">
+                                <p>Absolutely. Our biomedical engineering division offers full-cycle project management:
+                                    site readiness assessment, device selection consultation, physical installation,
+                                    network integration (HL7/DICOM), staff training, and handover documentation. We
+                                    partner with procurement teams from CAPEX planning through to first clinical use.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER — same as index.html -->
+    <footer>
+        <div class="footerWrap container">
+            <div class="box">
+                <div class="logoContainer">
+                    <div class="logo">
+                        <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="footer-logo site-logo">
+                    </div>
+                </div>
+                <p class="footer-desc">
+                    MediLife is a global leader in medical technology, dedicated to improving patient outcomes through
+                    innovative solutions and reliable support.
+                </p>
+            </div>
+            <div class="box">
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./services.html">Services</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="./login.html">Login</a></li>
+                </ul>
+            </div>
+            <div class="box">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="./error.html">Surgical</a></li>
+                    <li><a href="./error.html">Imaging</a></li>
+                    <li><a href="./error.html">Monitoring</a></li>
+                    <li><a href="./error.html">Lab Equipment</a></li>
+                </ul>
+            </div>
+            <div class="box">
+                <h4>Contact</h4>
+                <ul class="contactInfo">
+                    <li><i class="fa-solid fa-location-dot"></i><span> Stackly HQ, Los Angeles, CA</span></li>
+                    <li><i class="fa-solid fa-phone"></i> +1 888 123 4567</li>
+                    <li><i class="fa-solid fa-envelope"></i> vip@stackly.auto</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h4>Newsletter</h4>
+                <p>Subscribe for latest medical updates.</p>
+                <form id="footer-newsletter-form" class="subscribe-form" novalidate>
+                    <input type="email" id="newsletter-email" name="email" placeholder="Your Email"
+                        autocomplete="email">
+                    <span id="newsletter-error"
+                        style="color:var(--error-color);font-size:0.8rem;display:block;margin-top:-5px;min-height:15px;"></span>
+                    <button type="submit" class="btn btn-primary full-width">Subscribe</button>
+                </form>
+                <div class="media">
+                    <a href="./error.html" class="socialLink" aria-label="LinkedIn"><i
+                            class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="./error.html" class="socialLink" aria-label="WhatsApp"><i
+                            class="fa-brands fa-whatsapp"></i></a>
+                    <a href="./error.html" class="socialLink" aria-label="Facebook"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="./error.html" class="socialLink" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2026 MediLife Medical Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ── Loader ──
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('page-loader');
+            if (!loader) return;
+            loader.style.opacity = '0';
+            setTimeout(() => { loader.style.display = 'none'; }, 300);
+        });
+
+        // ── Header / hamburger ──
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const navLinks = document.getElementById('nav-links');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const dropToggle = document.getElementById('dropdown-toggle-btn');
+        const homeNavLink = document.getElementById('home-nav-link');
+        const dropMenu = document.getElementById('dropdown-menu');
+        const body = document.body;
+
+        const openMenu = () => { navLinks.classList.add('showMenu'); menuOverlay.style.display = 'block'; body.classList.add('menu-open'); };
+        const closeMenu = () => { navLinks.classList.remove('showMenu'); menuOverlay.style.display = 'none'; body.classList.remove('menu-open'); dropMenu.classList.remove('showDropdown'); };
+
+        hamburgerBtn.addEventListener('click', e => { e.stopPropagation(); openMenu(); });
+        closeBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+        document.addEventListener('click', e => {
+            if (body.classList.contains('menu-open') && !navLinks.contains(e.target) && !hamburgerBtn.contains(e.target)) closeMenu();
+        });
+        dropToggle.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); dropMenu.classList.toggle('showDropdown'); });
+        homeNavLink.addEventListener('click', e => { if (window.innerWidth <= 768) { e.preventDefault(); e.stopPropagation(); dropMenu.classList.toggle('showDropdown'); } });
+
+        // ── Theme ──
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const themeIcon = document.getElementById('theme-icon');
+        if (localStorage.getItem('medilife-theme') === 'light') { themeIcon.classList.replace('fa-sun', 'fa-moon'); }
+        themeToggleBtn.addEventListener('click', () => {
+            body.classList.toggle('light-theme');
+            const isLight = body.classList.contains('light-theme');
+            themeIcon.classList.replace(isLight ? 'fa-sun' : 'fa-moon', isLight ? 'fa-moon' : 'fa-sun');
+            localStorage.setItem('medilife-theme', isLight ? 'light' : 'dark');
+        });
+
+        // ── Sticky header + scroll-to-top ──
+        const header = document.getElementById('main-header');
+        const scrollBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('sticky', window.scrollY > 50);
+            if (scrollBtn) scrollBtn.classList.toggle('visible', window.scrollY > 300);
+        });
+        if (scrollBtn) scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // ── Fade-in observer ──
+        const fadeObs = new IntersectionObserver((entries, obs) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.fade-in').forEach(el => fadeObs.observe(el));
+
+        // ── Hero carousel ──
+        const slides = document.querySelectorAll('.srv-slide');
+        const dots = document.querySelectorAll('.srv-dot');
+        let current = 0;
+        let autoTimer = null;
+
+        function goTo(index) {
+            slides[current].classList.remove('active');
+            dots[current].classList.remove('active');
+            current = (index + slides.length) % slides.length;
+            slides[current].classList.add('active');
+            dots[current].classList.add('active');
+        }
+
+        function startAuto() {
+            autoTimer = setInterval(() => goTo(current + 1), 5000);
+        }
+
+        function resetAuto() {
+            clearInterval(autoTimer);
+            startAuto();
+        }
+
+        document.getElementById('srv-next').addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+        document.getElementById('srv-prev').addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+        dots.forEach(dot => dot.addEventListener('click', () => { goTo(+dot.dataset.index); resetAuto(); }));
+        startAuto();
+
+        // ── Counter animation ──
+        const counters = document.querySelectorAll('[data-target]');
+        const cntObs = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                const end = +el.dataset.target;
+                let start = 0;
+                const dur = 2000;
+                const step = Math.ceil(end / (dur / 16));
+                const timer = setInterval(() => {
+                    start = Math.min(start + step, end);
+                    el.textContent = start.toLocaleString();
+                    if (start >= end) clearInterval(timer);
+                }, 16);
+                obs.unobserve(el);
+            });
+        }, { threshold: 0.4 });
+        counters.forEach(c => cntObs.observe(c));
+
+        // ── FAQ accordion ──
+        document.querySelectorAll('.srv-faq-q').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const ans = btn.nextElementSibling;
+                const icon = btn.querySelector('.srv-faq-icon');
+                const isOpen = item.classList.contains('open');
+
+                // close all
+                document.querySelectorAll('.srv-faq-item.open').forEach(i => {
+                    i.classList.remove('open');
+                    i.querySelector('.srv-faq-a').style.maxHeight = null;
+                    i.querySelector('.srv-faq-icon').className = 'fa-solid fa-plus srv-faq-icon';
+                    i.querySelector('.srv-faq-q').setAttribute('aria-expanded', 'false');
+                });
+
+                if (!isOpen) {
+                    item.classList.add('open');
+                    ans.style.maxHeight = ans.scrollHeight + 'px';
+                    icon.className = 'fa-solid fa-minus srv-faq-icon';
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // ── Footer newsletter ──
+        const footerForm = document.getElementById('footer-newsletter-form');
+        if (footerForm) {
+            footerForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const em = document.getElementById('newsletter-email');
+                const err = document.getElementById('newsletter-error');
+                err.textContent = '';
+                em.style.borderColor = '';
+                const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!em.value.trim()) { err.textContent = 'Email is required'; em.style.borderColor = 'var(--error-color)'; }
+                else if (!emailRe.test(em.value)) { err.textContent = 'Enter a valid email address'; em.style.borderColor = 'var(--error-color)'; }
+                else { window.location.href = './error.html'; }
+            });
+        }
+    </script>
+</body>
+
+</html>

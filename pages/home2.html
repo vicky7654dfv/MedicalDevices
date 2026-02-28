@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | MediLife Medical Devices</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%230ea5e9' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z'/></svg>">
+    <meta name="description"
+        content="MediLife — precision medical devices, professional advisors, and trusted care solutions for every stage of life.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/home2.css">
+</head>
+
+<body>
+    <script>if (localStorage.getItem('medilife-theme') === 'light') document.body.classList.add('light-theme');</script>
+
+    <div id="page-loader">
+        <div class="loader-content">
+            <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="loader-img">
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <button id="scrollToTopBtn" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <header class="headerWrap" id="main-header">
+        <div class="imgWrap">
+            <a href="../index.html"><img src="../assets/Header/logo.webp" alt="MediLife Logo" class="site-logo"></a>
+        </div>
+        <div class="hamburger" id="hamburger-btn"><i class="fa-solid fa-bars"></i></div>
+        <nav class="linksWrap" id="nav-links">
+            <div class="topCloseBtn" id="close-btn"><i class="fa-solid fa-times"></i></div>
+            <ul>
+                <li class="dropdown" id="home-dropdown">
+                    <div class="dropdownHeader">
+                        <a href="javascript:void(0)" class="homePageLink" id="home-nav-link">Home</a>
+                        <button class="dropdownToggle" aria-label="Toggle dropdown" id="dropdown-toggle-btn"><i
+                                class="fa-solid fa-chevron-down"></i></button>
+                    </div>
+                    <ul class="dropdownMenu" id="dropdown-menu">
+                        <li><a href="../index.html">Home 1</a></li>
+                        <li><a href="./home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="./about.html">About Us</a></li>
+                <li><a href="./dashboard.html">Dashboard</a></li>
+                <li><a href="./product.html">Product</a></li>
+                <li><a href="./services.html">Services</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./signup.html">Sign Up</a></li>
+                <li><a href="./login.html">Login</a></li>
+                <li>
+                    <a href="./checkout.html" aria-label="Cart" class="cart-nav-icon">
+                        <i class="fa-solid fa-cart-arrow-down" style="color:rgb(116,192,252);"></i><sup>4</sup>
+                    </a>
+                </li>
+                <li class="theme-toggle-li">
+                    <button id="theme-toggle-btn" aria-label="Toggle Theme"><i class="fa-solid fa-sun"
+                            id="theme-icon"></i></button>
+                </li>
+            </ul>
+        </nav>
+        <div class="menuOverlay" id="menu-overlay"></div>
+    </header>
+
+    <main>
+
+        <section class="h2-hero" aria-label="Hero">
+
+            <div class="h2-hero-video" id="heroBgVideo">
+                <video autoplay muted loop playsinline preload="metadata" src="../assets/Home2/Banner/bbG.mp4"></video>
+            </div>
+            <div class="h2-hero-veil"></div>
+
+            <div class="h2-carousel-wrap" id="h2Carousel">
+
+                <div class="h2-slide active" id="h2Slide0">
+                    <h1>Precision Devices<br>That <span class="h2-slide-acc">Save Lives</span></h1>
+                    <p>We engineer and distribute medical equipment trusted by over 2,500 hospitals globally — from
+                        surgical instrumentation to AI-powered diagnostics.</p>
+                    <a href="./product.html" class="h2-slide-btn">Explore Products</a>
+                </div>
+
+                <div class="h2-slide" id="h2Slide1">
+                    <h2>Trusted by <span class="h2-slide-acc">40+ Countries</span><br>Around the World</h2>
+                    <p>From the world's top surgical theatres to community clinics in underserved regions, MediLife
+                        ensures every patient has access to certified, reliable medical technology.</p>
+                    <a href="./about.html" class="h2-slide-btn">Our Story</a>
+                </div>
+
+                <div class="h2-slide" id="h2Slide2">
+                    <h2>Speak to a <span class="h2-slide-acc">Specialist</span><br>Before You Buy</h2>
+                    <p>Our clinical advisors help you select the right device for your facility — evaluating workflow,
+                        budget, regulatory compliance, and long-term maintenance requirements.</p>
+                    <a href="./contact.html" class="h2-slide-btn">Book Consultation</a>
+                </div>
+
+            </div>
+
+            <div class="h2-hero-dots" aria-label="Slide navigation">
+                <button class="h2-hero-dot active" data-i="0" aria-label="Slide 1"></button>
+                <button class="h2-hero-dot" data-i="1" aria-label="Slide 2"></button>
+                <button class="h2-hero-dot" data-i="2" aria-label="Slide 3"></button>
+            </div>
+
+            <div class="h2-scroll-cue" aria-hidden="true">
+                <span>Scroll</span>
+                <div class="h2-scroll-line"></div>
+            </div>
+
+        </section>
+
+        <section class="h2-advisor-section" aria-label="Product advisors">
+
+            <div class="h2-advisor-bg">
+                <video autoplay muted loop playsinline preload="none" src="../assets/Home2/Banner/bbG.mp4"
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;"></video>
+            </div>
+            <div class="h2-advisor-veil"></div>
+
+            <div class="container h2-advisor-inner">
+                <div class="h2-advisor-head h2-fade">
+                    <div class="h2-sec-label" style="color:#0369a1;border-color:#0369a1;">Professional Advisors</div>
+                    <h2 class="h2-sec-title" style="color:#0f172a;">Expert Guidance Before<br>Every Purchase Decision
+                    </h2>
+                    <p class="h2-sec-sub" style="color:#475569;">Our clinical advisors bring decades of hands-on
+                        experience in biomedical engineering and hospital procurement — ensuring every investment is the
+                        right one.</p>
+                </div>
+
+                <div class="h2-advisor-grid">
+
+                    <div class="h2-advisor-card h2-fade">
+                        <div class="h2-advisor-img" style="height:280px;">
+                            <img src="../assets/Home2/Teams/1.webp" alt="Dr. Samuel Okafor" loading="lazy">
+                        </div>
+                        <div class="h2-advisor-body">
+                            <div class="h2-advisor-role">Surgical Equipment Specialist</div>
+                            <h3>Dr. Samuel Okafor</h3>
+                            <div class="h2-advisor-specs">
+                                <span class="h2-spec-tag">15 Yrs Experience</span>
+                                <span class="h2-spec-tag">ISO 13485</span>
+                                <span class="h2-spec-tag">OR Equipment</span>
+                            </div>
+                            <p>Samuel advises hospital procurement teams on surgical device selection, comparative
+                                pricing, and maintenance contract structures — with a focus on minimising downtime in
+                                critical care environments.</p>
+                            <a href="./error.html" class="h2-advisor-cta">Book a Session</a>
+                        </div>
+                    </div>
+
+                    <div class="h2-advisor-card h2-fade">
+                        <div class="h2-advisor-img" style="height:360px;">
+                            <img src="../assets/Home2/Teams/2.webp" alt="Dr. Priya Iyer" loading="lazy">
+                        </div>
+                        <div class="h2-advisor-body">
+                            <div class="h2-advisor-role">Diagnostic Imaging Consultant</div>
+                            <h3>Dr. Priya Iyer</h3>
+                            <div class="h2-advisor-specs">
+                                <span class="h2-spec-tag">12 Yrs Experience</span>
+                                <span class="h2-spec-tag">FDA Compliance</span>
+                                <span class="h2-spec-tag">MRI / CT</span>
+                            </div>
+                            <p>Priya specialises in diagnostic imaging procurement — guiding clients through technical
+                                specifications, regulatory submissions, and lifecycle cost modelling for MRI, CT, and
+                                ultrasound systems.</p>
+                            <a href="./error.html" class="h2-advisor-cta">Book a Session</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="h2-newsletter-section" aria-label="Newsletter signup">
+            <div class="h2-nl-blob"></div>
+            <div class="h2-nl-blob"></div>
+
+            <div class="container">
+                <div class="h2-nl-inner h2-fade">
+                    <h2>Stay Ahead in<br>Medical Technology</h2>
+                    <p>Join 18,000+ clinicians and procurement officers receiving weekly insights on device innovations,
+                        regulatory updates, and exclusive MediLife offers.</p>
+
+                    <form class="h2-nl-form" id="h2NlForm" novalidate>
+                        <div class="h2-nl-field-wrap">
+                            <div class="h2-nl-input-row" id="h2NlInputRow">
+                                <input type="email" id="h2NlEmail" name="email"
+                                    placeholder="Enter your professional email address" autocomplete="email"
+                                    maxlength="100">
+                                <button type="submit" class="h2-nl-submit">Subscribe</button>
+                            </div>
+                            <div class="h2-nl-error" id="h2NlError" aria-live="polite"></div>
+                        </div>
+                        <div class="h2-nl-success" id="h2NlSuccess" role="status">
+                            You're subscribed! Check your inbox for a confirmation email.
+                        </div>
+                    </form>
+
+                    <div class="h2-nl-trust">
+                        <div class="h2-trust-item">No spam, ever</div>
+                        <div class="h2-trust-item">GDPR compliant</div>
+                        <div class="h2-trust-item">Unsubscribe anytime</div>
+                        <div class="h2-trust-item">18,000+ subscribers</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="h2-gallery-section" aria-label="Product gallery and data">
+            <div class="container">
+
+                <div class="h2-fade">
+                    <div class="h2-sec-label">Our Technology</div>
+                    <h2 class="h2-sec-title">Built for the<br>Most Demanding Environments</h2>
+                </div>
+
+                <div class="h2-gallery-grid">
+
+                    <div class="h2-media-cluster h2-fade">
+
+                        <div class="h2-media-item">
+                            <img src="../assets/Home2/grid/1.webp" alt="Diagnostic equipment" loading="lazy">
+                            <div class="h2-media-label"><i class="fa-solid fa-microscope"></i>&nbsp; Diagnostics Suite
+                            </div>
+                        </div>
+
+                        <div class="h2-media-item">
+                            <img src="../assets/Home2/grid/2.webp" alt="Surgical instruments" loading="lazy">
+                            <div class="h2-media-label"><i class="fa-solid fa-scalpel"></i>&nbsp; Surgical Systems</div>
+                        </div>
+
+                        <div class="h2-media-item">
+                            <video autoplay muted loop playsinline preload="none"
+                                src="../assets/Home2/grid/vid.mp4"></video>
+                            <a href="./error.html" class="h2-play-badge" aria-label="Watch video"><i
+                                    class="fa-solid fa-play"></i></a>
+                            <div class="h2-media-label">Device in Action</div>
+                        </div>
+
+                    </div>
+
+                    <div class="h2-data-panel h2-fade">
+                        <div class="h2-data-intro">
+                            <h3 class="h2-sec-title">Why Hospitals Choose MediLife</h3>
+                            <p class="h2-sec-sub">From procurement to post-sale support, every MediLife product is
+                                backed by a full-lifecycle commitment.</p>
+                        </div>
+
+                        <div class="h2-stats-row">
+                            <div class="h2-stat-box">
+                                <div class="h2-stat-val">98%</div>
+                                <div class="h2-stat-name">Device Uptime</div>
+                            </div>
+                            <div class="h2-stat-box">
+                                <div class="h2-stat-val">4h</div>
+                                <div class="h2-stat-name">Emergency Response</div>
+                            </div>
+                            <div class="h2-stat-box">
+                                <div class="h2-stat-val">ISO</div>
+                                <div class="h2-stat-name">13485 Certified</div>
+                            </div>
+                            <div class="h2-stat-box">
+                                <div class="h2-stat-val">21+</div>
+                                <div class="h2-stat-name">Years Active</div>
+                            </div>
+                        </div>
+
+                        <div class="h2-feat-list">
+                            <div class="h2-feat-item">
+                                <div class="h2-feat-icon"><i class="fa-solid fa-microchip"></i></div>
+                                <div class="h2-feat-text">
+                                    <strong>AI-Powered Predictive Maintenance</strong>
+                                    <span>Our platform flags device anomalies 36 hours before failure — avoiding
+                                        critical downtime.</span>
+                                </div>
+                            </div>
+                            <div class="h2-feat-item">
+                                <div class="h2-feat-icon"><i class="fa-solid fa-globe"></i></div>
+                                <div class="h2-feat-text">
+                                    <strong>Global Certified Spare Parts Network</strong>
+                                    <span>OEM-grade components available in 40+ countries, shipped
+                                        same-business-day.</span>
+                                </div>
+                            </div>
+                            <div class="h2-feat-item">
+                                <div class="h2-feat-icon"><i class="fa-solid fa-file-shield"></i></div>
+                                <div class="h2-feat-text">
+                                    <strong>Full Regulatory Documentation</strong>
+                                    <span>FDA, CE, and ISO compliance certificates supplied with every device
+                                        order.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="./product.html" class="h2-gallery-cta">
+                            View All Products <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="h2-senior-section" aria-label="Senior and elderly care">
+
+            <div class="h2-senior-video-wrap">
+                <video autoplay muted loop playsinline preload="none" src="../assets/Home2/bgVid/bb.mp4"></video>
+            </div>
+            <div class="h2-senior-veil"></div>
+
+            <div class="container">
+                <div class="h2-senior-content h2-fade">
+                    <div class="h2-sec-label">Senior Care</div>
+                    <h2 class="h2-sec-title" style="color:#fff;">Medical Technology<br>Designed for Every Age</h2>
+                    <p class="h2-sec-sub" style="color:#cbd5e1;max-width:100%;">Our senior care range is purpose-built
+                        for home use, care-home facilities, and geriatric wards — with simplified interfaces, durable
+                        construction, and remote monitoring capabilities.</p>
+
+                    <div class="h2-senior-points">
+                        <div class="h2-senior-point">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                            Continuous vitals monitoring — oxygen, heart rate, blood pressure
+                        </div>
+                        <div class="h2-senior-point">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                            Large-display, low-complexity interfaces for ease of use
+                        </div>
+                        <div class="h2-senior-point">
+                            <i class="fa-solid fa-wifi"></i>
+                            Real-time data push to family members and care coordinators
+                        </div>
+                        <div class="h2-senior-point">
+                            <i class="fa-solid fa-battery-full"></i>
+                            72-hour battery life for uninterrupted care between charges
+                        </div>
+                        <div class="h2-senior-point">
+                            <i class="fa-solid fa-phone-volume"></i>
+                            24/7 telehealth support hotline included with every device
+                        </div>
+                    </div>
+
+                    <a href="./error.html" class="h2-senior-cta">
+                        Explore Senior Range <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="h2-hours-section" aria-label="Shop hours">
+            <div class="container">
+
+                <div class="h2-hours-head h2-fade">
+                    <div class="h2-sec-label">Availability</div>
+                    <h2 class="h2-sec-title">When Can You Reach Us?</h2>
+                    <p class="h2-sec-sub" style="margin:0 auto;">Our physical showroom follows scheduled hours, but our
+                        online store never closes — browse, configure, and order any medical device, any time.</p>
+                </div>
+
+                <div class="h2-hours-grid h2-fade">
+
+                    <div class="h2-shop-card h2-shop-offline">
+                        <div class="h2-shop-card-head">
+                            <div class="h2-shop-icon"><i class="fa-solid fa-store"></i></div>
+                            <div>
+                                <h3>Physical Showroom</h3>
+                                <span>Boston HQ &amp; Regional Offices</span>
+                            </div>
+                        </div>
+                        <div class="h2-shop-body">
+                            <div class="h2-hour-row">
+                                <span class="h2-hour-day">Monday – Friday</span>
+                                <span class="h2-hour-time">08:00 – 18:00</span>
+                            </div>
+                            <div class="h2-hour-row">
+                                <span class="h2-hour-day">Saturday</span>
+                                <span class="h2-hour-time">09:00 – 14:00</span>
+                            </div>
+                            <div class="h2-hour-row">
+                                <span class="h2-hour-day">Sunday</span>
+                                <span class="h2-hour-closed">Closed</span>
+                            </div>
+                            <div class="h2-hour-row">
+                                <span class="h2-hour-day">Public Holidays</span>
+                                <span class="h2-hour-closed">Closed</span>
+                            </div>
+                            <div class="h2-hour-row" style="margin-top:8px;">
+                                <span class="h2-hour-day" style="font-size:.8rem;color:#64748b;">Emergency
+                                    Support</span>
+                                <span style="font-size:.8rem;color:var(--accent-blue);font-weight:700;">24 / 7</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="h2-shop-card h2-shop-online">
+                        <div class="h2-shop-card-head">
+                            <div class="h2-shop-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                            <div>
+                                <h3>Online Store</h3>
+                                <span>Shop from anywhere, anytime</span>
+                            </div>
+                        </div>
+                        <div class="h2-shop-body">
+                            <div class="h2-always-badge">
+                                <span class="h2-always-dot"></span>
+                                Always Open — 365 Days a Year
+                            </div>
+                            <p class="h2-online-note">Browse our full catalogue of 500+ certified medical devices. Place
+                                orders, request quotes, and track shipments — all from your browser or mobile device, at
+                                any hour.</p>
+                            <div class="h2-hour-row">
+                                <span class="h2-hour-day">Order Processing</span>
+                                <span class="h2-hour-time" style="color:#fff;">Weekdays: Same Day</span>
+                            </div>
+                            <div class="h2-hour-row">
+                                <span class="h2-hour-day">Weekend Orders</span>
+                                <span class="h2-hour-time" style="color:#fff;">Dispatched Monday</span>
+                            </div>
+                            <div class="h2-hour-row">
+                                <span class="h2-hour-day">Live Chat Support</span>
+                                <span style="color:#4ade80;font-weight:700;font-size:.85rem;">09:00 – 22:00</span>
+                            </div>
+                            <br>
+                            <a href="./product.html" class="h2-online-cta">
+                                Shop Now <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footerWrap container">
+            <div class="box">
+                <div class="logoContainer">
+                    <div class="logo">
+                        <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="footer-logo site-logo"
+                            onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 50\'><text y=\'35\' font-family=\'sans-serif\' font-weight=\'bold\' font-size=\'30\' fill=\'%230ea5e9\'>MediLife</text></svg>'">
+                    </div>
+                </div>
+                <p class="footer-desc">
+                    MediLife is a global leader in medical technology, dedicated to improving patient outcomes through
+                    innovative solutions and reliable support.
+                </p>
+            </div>
+
+            <div class="box">
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./services.html">Services</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="./login.html">Login</a></li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4>Categories</h4>
+                <ul class="footer-links">
+                    <li><a href="./error.html">Surgical</a></li>
+                    <li><a href="./error.html">Imaging</a></li>
+                    <li><a href="./error.html">Monitoring</a></li>
+                    <li><a href="./error.html">Lab Equipment</a></li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4>Contact</h4>
+                <ul class="contactInfo">
+                    <li><i class="fa-solid fa-location-dot"></i><span> Stackly Headquarters, Los Angeles, CA</span></li>
+                    <li><i class="fa-solid fa-phone"></i> +1 888 123 4567</li>
+                    <li><i class="fa-solid fa-envelope"></i> vip@stackly.auto</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4>Newsletter</h4>
+                <p>Subscribe for latest medical updates.</p>
+                <form id="footer-newsletter-form" class="subscribe-form" novalidate>
+                    <input type="email" id="newsletter-email" name="email" placeholder="Your Email"
+                        autocomplete="email">
+                    <span id="newsletter-error"
+                        style="color: var(--error-color); font-size: 0.8rem; display: block; margin-top: -5px; min-height: 15px;"></span>
+                    <button type="submit" class="btn btn-primary full-width">Subscribe</button>
+                </form>
+                <div class="media">
+                    <a href="./error.html" class="socialLink" aria-label="LinkedIn"><i
+                            class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="./error.html" class="socialLink" aria-label="WhatsApp"><i
+                            class="fa-brands fa-whatsapp"></i></a>
+                    <a href="./error.html" class="socialLink" aria-label="Facebook"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="./error.html" class="socialLink" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom container">
+            <p>&copy; 2026 MediLife Medical Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ── Loader ──
+        window.addEventListener('load', () => {
+            const l = document.getElementById('page-loader');
+            if (!l) return;
+            l.style.opacity = '0';
+            setTimeout(() => l.style.display = 'none', 300);
+        });
+
+        // ── Header / hamburger / dropdown ──
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const navLinks = document.getElementById('nav-links');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const dropToggle = document.getElementById('dropdown-toggle-btn');
+        const homeNavLink = document.getElementById('home-nav-link');
+        const dropMenu = document.getElementById('dropdown-menu');
+        const body = document.body;
+
+        const openMenu = () => { navLinks.classList.add('showMenu'); menuOverlay.style.display = 'block'; body.classList.add('menu-open'); };
+        const closeMenu = () => { navLinks.classList.remove('showMenu'); menuOverlay.style.display = 'none'; body.classList.remove('menu-open'); dropMenu.classList.remove('showDropdown'); };
+
+        hamburgerBtn.addEventListener('click', e => { e.stopPropagation(); openMenu(); });
+        closeBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+        document.addEventListener('click', e => { if (body.classList.contains('menu-open') && !navLinks.contains(e.target) && !hamburgerBtn.contains(e.target)) closeMenu(); });
+        dropToggle.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); dropMenu.classList.toggle('showDropdown'); });
+        homeNavLink.addEventListener('click', e => { if (window.innerWidth <= 768) { e.preventDefault(); e.stopPropagation(); dropMenu.classList.toggle('showDropdown'); } });
+
+        // ── Theme ──
+        const themeBtn = document.getElementById('theme-toggle-btn');
+        const themeIcon = document.getElementById('theme-icon');
+        if (localStorage.getItem('medilife-theme') === 'light') themeIcon.classList.replace('fa-sun', 'fa-moon');
+        themeBtn.addEventListener('click', () => {
+            body.classList.toggle('light-theme');
+            const isLight = body.classList.contains('light-theme');
+            themeIcon.classList.replace(isLight ? 'fa-sun' : 'fa-moon', isLight ? 'fa-moon' : 'fa-sun');
+            localStorage.setItem('medilife-theme', isLight ? 'light' : 'dark');
+        });
+
+        // ── Sticky header + scroll-to-top ──
+        const mainHeader = document.getElementById('main-header');
+        const scrollBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            mainHeader.classList.toggle('sticky', window.scrollY > 50);
+            if (scrollBtn) scrollBtn.classList.toggle('visible', window.scrollY > 300);
+        });
+        if (scrollBtn) scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // ── Hero Text Carousel (3 sec) ──
+        const h2Slides = document.querySelectorAll('.h2-slide');
+        const h2Dots = document.querySelectorAll('.h2-hero-dot');
+        const h2Bar = document.getElementById('h2CarouselBar');
+        let h2Current = 0;
+        let h2Timer = null;
+
+        function h2GoTo(n) {
+            h2Slides[h2Current].classList.remove('active');
+            h2Dots[h2Current].classList.remove('active');
+            h2Current = (n + h2Slides.length) % h2Slides.length;
+            h2Slides[h2Current].classList.add('active');
+            h2Dots[h2Current].classList.add('active');
+            // Reset progress bar
+            if (h2Bar) { h2Bar.style.transition = 'none'; h2Bar.style.width = '0%'; setTimeout(() => { h2Bar.style.transition = 'width 3s linear'; h2Bar.style.width = '100%'; }, 30); }
+        }
+
+        function h2StartAuto() { h2Timer = setInterval(() => h2GoTo(h2Current + 1), 3000); }
+        function h2ResetAuto() { clearInterval(h2Timer); h2StartAuto(); }
+
+        h2Dots.forEach(d => d.addEventListener('click', () => { h2GoTo(+d.dataset.i); h2ResetAuto(); }));
+        // Kick off bar immediately
+        if (h2Bar) { h2Bar.style.transition = 'width 3s linear'; h2Bar.style.width = '100%'; }
+        h2StartAuto();
+
+        // ── Newsletter validation ──
+        const h2NlForm = document.getElementById('h2NlForm');
+        const h2NlEmail = document.getElementById('h2NlEmail');
+        const h2NlError = document.getElementById('h2NlError');
+        const h2NlSuccess = document.getElementById('h2NlSuccess');
+        const h2NlRow = document.getElementById('h2NlInputRow');
+
+        const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        function h2Validate(val) {
+            if (!val) return 'Please enter your email address.';
+            if (val.length < 6) return 'Email is too short.';
+            if (!emailRx.test(val)) return 'Please enter a valid email address (e.g. name@domain.com).';
+            if (val.includes('..')) return 'Email cannot contain consecutive dots.';
+            if (val.startsWith('.') || val.endsWith('.')) return 'Email cannot start or end with a dot.';
+            const [, domain] = val.split('@');
+            if (!domain || !domain.includes('.')) return 'Please include a valid domain (e.g. @gmail.com).';
+            return null;
+        }
+
+        h2NlEmail.addEventListener('input', () => {
+            const err = h2Validate(h2NlEmail.value.trim());
+            h2NlError.textContent = err || '';
+            h2NlRow.style.borderColor = err ? '#ef4444' : '';
+        });
+
+        h2NlForm.addEventListener('submit', e => {
+            e.preventDefault();
+            const val = h2NlEmail.value.trim();
+            const err = h2Validate(val);
+            if (err) {
+                h2NlError.textContent = err;
+                h2NlRow.style.borderColor = '#ef4444';
+                h2NlRow.style.boxShadow = '0 0 0 3px rgba(239,68,68,.12)';
+                h2NlEmail.focus();
+                return;
+            }
+            // Success
+            h2NlError.textContent = '';
+            h2NlRow.style.display = 'none';
+            h2NlSuccess.classList.add('show');
+        });
+
+        // ── Footer newsletter ──
+        const footerForm = document.getElementById('footer-newsletter-form');
+        const footerEmail = document.getElementById('newsletter-email');
+        const footerError = document.getElementById('newsletter-error');
+        if (footerForm) {
+            footerForm.addEventListener('submit', e => {
+                e.preventDefault();
+                const val = footerEmail.value.trim();
+                if (!val) { footerError.textContent = 'Please enter your email address.'; return; }
+                if (!emailRx.test(val)) { footerError.textContent = 'Please enter a valid email address.'; return; }
+                footerError.textContent = '';
+                footerEmail.value = '';
+                window.location.href = './error.html';
+            });
+        }
+
+        // ── Fade-in observer ──
+        const fadeObs = new IntersectionObserver((entries, obs) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.h2-fade').forEach(el => fadeObs.observe(el));
+    </script>
+
+</body>
+
+</html>

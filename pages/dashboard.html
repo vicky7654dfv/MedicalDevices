@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | MedicalDevices</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%230ea5e9' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z'/></svg>">
+    <meta name="description"
+        content="Admin dashboard for managing medical device orders, users, inventory, and reports.">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="dash-page">
+
+    <script>(function () { if (localStorage.getItem('medilife-theme') === 'light') document.body.classList.add('light-theme'); }());</script>
+
+    <!-- NAV -->
+    <header class="d-topbar">
+        <a href="../index.html" class="d-logo">
+            <img src="../assets/Header/logo.webp" alt="MedicalDevices Logo">
+        </a>
+        <nav class="d-nav-actions">
+            <div class="d-admin-pill">
+                <div class="d-admin-av">AD</div>
+                <span class="d-admin-label">Admin</span>
+            </div>
+            <button id="themeBtn" class="d-theme-btn" aria-label="Toggle theme">
+                <span class="sun"></span>
+                <span class="moon"></span>
+            </button>
+            <a href="../index.html" class="d-exit-btn">Exit Dashboard</a>
+        </nav>
+    </header>
+
+    <main class="d-shell">
+
+        <div class="d-page-head">
+            <h1 class="d-page-title">Admin Dashboard</h1>
+            <p class="d-page-sub">Welcome back — your live overview for today.</p>
+        </div>
+
+        <!-- CENTERED PILL TABS -->
+        <div class="d-tabs-wrap">
+            <div class="d-tabs" role="tablist">
+                <button class="d-tab active" role="tab" data-target="analytics" aria-selected="true">Analytics</button>
+                <button class="d-tab" role="tab" data-target="orders" aria-selected="false">Orders</button>
+                <button class="d-tab" role="tab" data-target="users" aria-selected="false">Users</button>
+                <button class="d-tab" role="tab" data-target="messages" aria-selected="false">Messages</button>
+                <button class="d-tab" role="tab" data-target="inventory" aria-selected="false">Inventory</button>
+                <button class="d-tab" role="tab" data-target="reports" aria-selected="false">Reports</button>
+            </div>
+        </div>
+
+        <!-- ======= ANALYTICS ======= -->
+        <section id="analytics" class="d-section active" role="tabpanel">
+            <div class="d-section-head">
+                <div>
+                    <h2>Overview &amp; Analytics</h2>
+                    <p>Live performance metrics across sales, devices, and clinical activity.</p>
+                </div>
+                <a href="./error.html" class="d-btn">Export Report</a>
+            </div>
+
+            <div class="a-kpi-row">
+                <div class="a-kpi c-blue">
+                    <div class="a-kpi-label">Monthly Revenue</div>
+                    <div class="a-kpi-value">$284k</div>
+                    <p class="a-kpi-trend t-up">&#x25B2; Up 14% from last month</p>
+                </div>
+                <div class="a-kpi c-green">
+                    <div class="a-kpi-label">Devices Shipped</div>
+                    <div class="a-kpi-value">1,340</div>
+                    <p class="a-kpi-trend t-up">&#x25B2; +8% week-over-week</p>
+                </div>
+                <div class="a-kpi c-yellow">
+                    <div class="a-kpi-label">Pending Approvals</div>
+                    <div class="a-kpi-value">37</div>
+                    <p class="a-kpi-trend t-warn">&#x25CF; Requires attention</p>
+                </div>
+                <div class="a-kpi c-violet">
+                    <div class="a-kpi-label">Active Clinics</div>
+                    <div class="a-kpi-value">89</div>
+                    <p class="a-kpi-trend t-even">&#x2192; Stable network</p>
+                </div>
+            </div>
+
+            <!-- Three ring panels -->
+            <div class="a-rings-row">
+                <div class="a-ring-panel">
+                    <div class="a-ring-label">Device Compliance</div>
+                    <svg class="ring-svg" viewBox="0 0 120 120">
+                        <circle class="ring-bg" cx="60" cy="60" r="50" />
+                        <circle class="ring-fill" cx="60" cy="60" r="50" stroke="#0ea5e9" stroke-dasharray="314"
+                            stroke-dashoffset="6" />
+                        <text class="ring-text-val" x="50%" y="52%" dominant-baseline="middle"
+                            text-anchor="middle">98%</text>
+                        <text class="ring-text-unit" x="50%" y="66%" dominant-baseline="middle"
+                            text-anchor="middle">COMPLIANT</text>
+                    </svg>
+                    <div class="a-ring-breakdown">
+                        <div class="a-ring-row"><span>FDA Cleared</span><strong>24 / 24</strong></div>
+                        <div class="a-ring-row"><span>CE Marked</span><strong>18 / 20</strong></div>
+                        <div class="a-ring-row"><span>ISO 13485</span><strong>Active</strong></div>
+                    </div>
+                </div>
+                <div class="a-ring-panel">
+                    <div class="a-ring-label">Shipment On-Time Rate</div>
+                    <svg class="ring-svg" viewBox="0 0 120 120">
+                        <circle class="ring-bg" cx="60" cy="60" r="50" />
+                        <circle class="ring-fill" cx="60" cy="60" r="50" stroke="#10b981" stroke-dasharray="314"
+                            stroke-dashoffset="28" />
+                        <text class="ring-text-val" x="50%" y="52%" dominant-baseline="middle"
+                            text-anchor="middle">91%</text>
+                        <text class="ring-text-unit" x="50%" y="66%" dominant-baseline="middle"
+                            text-anchor="middle">ON-TIME</text>
+                    </svg>
+                    <div class="a-ring-breakdown">
+                        <div class="a-ring-row"><span>This Month</span><strong>1,219 units</strong></div>
+                        <div class="a-ring-row"><span>Delayed</span><strong>121 units</strong></div>
+                        <div class="a-ring-row"><span>Avg Lead Time</span><strong>3.2 days</strong></div>
+                    </div>
+                </div>
+                <div class="a-ring-panel">
+                    <div class="a-ring-label">Client Satisfaction</div>
+                    <svg class="ring-svg" viewBox="0 0 120 120">
+                        <circle class="ring-bg" cx="60" cy="60" r="50" />
+                        <circle class="ring-fill" cx="60" cy="60" r="50" stroke="#6366f1" stroke-dasharray="314"
+                            stroke-dashoffset="13" />
+                        <text class="ring-text-val" x="50%" y="52%" dominant-baseline="middle"
+                            text-anchor="middle">96%</text>
+                        <text class="ring-text-unit" x="50%" y="66%" dominant-baseline="middle"
+                            text-anchor="middle">POSITIVE</text>
+                    </svg>
+                    <div class="a-ring-breakdown">
+                        <div class="a-ring-row"><span>Reviews</span><strong>214</strong></div>
+                        <div class="a-ring-row"><span>Avg Score</span><strong>4.8 / 5</strong></div>
+                        <div class="a-ring-row"><span>Escalations</span><strong>3</strong></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wave line graph + system status -->
+            <div class="a-bottom-row">
+                <div class="a-wave-panel">
+                    <div class="a-panel-title">Revenue &amp; Shipments — 6 Month Trend</div>
+                    <div class="a-wave-graph">
+                        <svg class="a-wave-svg" viewBox="0 0 600 140" preserveAspectRatio="none">
+                            <line x1="0" y1="28" x2="600" y2="28" stroke="rgba(255,255,255,.04)" stroke-width="1" />
+                            <line x1="0" y1="70" x2="600" y2="70" stroke="rgba(255,255,255,.04)" stroke-width="1" />
+                            <line x1="0" y1="112" x2="600" y2="112" stroke="rgba(255,255,255,.04)" stroke-width="1" />
+                            <path class="a-wave-area" fill="#0ea5e9"
+                                d="M0,100 C50,90 100,80 150,75 C200,70 250,50 300,42 C350,34 400,28 450,22 C500,16 550,10 600,6 L600,140 L0,140 Z" />
+                            <path class="a-wave-path" stroke="#0ea5e9"
+                                d="M0,100 C50,90 100,80 150,75 C200,70 250,50 300,42 C350,34 400,28 450,22 C500,16 550,10 600,6" />
+                            <path class="a-wave-area" fill="#6366f1"
+                                d="M0,120 C50,115 100,110 150,105 C200,100 250,88 300,80 C350,72 400,60 450,52 C500,44 550,36 600,30 L600,140 L0,140 Z" />
+                            <path class="a-wave-path" stroke="#6366f1" stroke-dasharray="6,3"
+                                d="M0,120 C50,115 100,110 150,105 C200,100 250,88 300,80 C350,72 400,60 450,52 C500,44 550,36 600,30" />
+                            <circle cx="0" cy="100" r="4" fill="#0ea5e9" />
+                            <circle cx="120" cy="75" r="4" fill="#0ea5e9" />
+                            <circle cx="240" cy="42" r="4" fill="#0ea5e9" />
+                            <circle cx="360" cy="34" r="4" fill="#0ea5e9" />
+                            <circle cx="480" cy="22" r="4" fill="#0ea5e9" />
+                            <circle cx="600" cy="6" r="4" fill="#0ea5e9" />
+                        </svg>
+                    </div>
+                    <div class="a-months">
+                        <span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span>
+                    </div>
+                    <div class="a-wave-legend">
+                        <div class="a-wave-leg-item"><span class="a-wave-leg-dot"
+                                style="background:#0ea5e9"></span>Revenue ($k)</div>
+                        <div class="a-wave-leg-item"><span class="a-wave-leg-dot"
+                                style="background:#6366f1"></span>Shipments (units)</div>
+                    </div>
+                </div>
+                <div class="a-status-panel">
+                    <div class="a-panel-title" style="margin-bottom:16px;">System Status</div>
+                    <ul class="sys-list">
+                        <li class="sys-item"><span class="sdot ok"></span>Order Management Online</li>
+                        <li class="sys-item"><span class="sdot ok"></span>Inventory DB Synced</li>
+                        <li class="sys-item"><span class="sdot ok"></span>Payment Gateway Active</li>
+                        <li class="sys-item"><span class="sdot warn"></span>Regulatory API Latency</li>
+                        <li class="sys-item"><span class="sdot ok"></span>Clinic Portal Operational</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= ORDERS ======= -->
+        <section id="orders" class="d-section" role="tabpanel">
+            <div class="d-section-head">
+                <div>
+                    <h2>Device Orders</h2>
+                    <p>Track procurement pipeline, revenue distribution, and stage breakdown.</p>
+                </div>
+                <a href="./error.html" class="d-btn">New Order</a>
+            </div>
+
+            <div class="o-grid">
+                <div class="o-pipeline">
+                    <div class="a-panel-title" style="margin-bottom:18px;">Order Pipeline</div>
+                    <div class="o-pipeline-stages">
+                        <div class="o-stage">
+                            <div class="o-stage-info"><span class="o-stage-name">New / Received</span><span
+                                    class="o-stage-count">12 orders</span></div>
+                            <div class="o-stage-bar-track">
+                                <div class="o-stage-bar-fill" style="width:60%;background:#0ea5e9;"></div>
+                            </div>
+                        </div>
+                        <div class="o-stage">
+                            <div class="o-stage-info"><span class="o-stage-name">Processing</span><span
+                                    class="o-stage-count">8 orders</span></div>
+                            <div class="o-stage-bar-track">
+                                <div class="o-stage-bar-fill" style="width:40%;background:#6366f1;"></div>
+                            </div>
+                        </div>
+                        <div class="o-stage">
+                            <div class="o-stage-info"><span class="o-stage-name">Quality Check</span><span
+                                    class="o-stage-count">5 orders</span></div>
+                            <div class="o-stage-bar-track">
+                                <div class="o-stage-bar-fill" style="width:25%;background:#f59e0b;"></div>
+                            </div>
+                        </div>
+                        <div class="o-stage">
+                            <div class="o-stage-info"><span class="o-stage-name">In Transit</span><span
+                                    class="o-stage-count">9 orders</span></div>
+                            <div class="o-stage-bar-track">
+                                <div class="o-stage-bar-fill" style="width:45%;background:#10b981;"></div>
+                            </div>
+                        </div>
+                        <div class="o-stage">
+                            <div class="o-stage-info"><span class="o-stage-name">Delivered</span><span
+                                    class="o-stage-count">46 orders</span></div>
+                            <div class="o-stage-bar-track">
+                                <div class="o-stage-bar-fill" style="width:100%;background:#10b981;opacity:.6;"></div>
+                            </div>
+                        </div>
+                        <div class="o-stage">
+                            <div class="o-stage-info"><span class="o-stage-name">On Hold</span><span
+                                    class="o-stage-count">2 orders</span></div>
+                            <div class="o-stage-bar-track">
+                                <div class="o-stage-bar-fill" style="width:10%;background:#ef4444;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="o-vchart-panel">
+                    <div class="a-panel-title" style="margin-bottom:4px;">Revenue by Device Category</div>
+                    <div class="o-vchart" id="orderChart"></div>
+                </div>
+            </div>
+
+            <div class="o-summary-row">
+                <div class="o-summary-card">
+                    <div class="o-sum-val" style="color:var(--d-accent);">82</div>
+                    <div class="o-sum-lbl">Total Orders</div>
+                </div>
+                <div class="o-summary-card">
+                    <div class="o-sum-val" style="color:var(--d-green);">$284k</div>
+                    <div class="o-sum-lbl">Monthly Revenue</div>
+                </div>
+                <div class="o-summary-card">
+                    <div class="o-sum-val" style="color:var(--d-yellow);">3.2d</div>
+                    <div class="o-sum-lbl">Avg Fulfillment</div>
+                </div>
+                <div class="o-summary-card">
+                    <div class="o-sum-val" style="color:var(--d-red);">2</div>
+                    <div class="o-sum-lbl">On Hold</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= USERS ======= -->
+        <section id="users" class="d-section" role="tabpanel">
+            <div class="d-section-head">
+                <div>
+                    <h2>User Directory</h2>
+                    <p>10 active users — staff, partners, and procurement contacts.</p>
+                </div>
+                <a href="./error.html" class="d-btn">Add User</a>
+            </div>
+
+            <div class="u-carousel-wrap">
+                <div class="u-carousel-track" id="userTrack">
+                    <div class="u-card">
+                        <div class="u-av">DR</div>
+                        <h4>Dr. Rachel Kim</h4>
+                        <p class="u-detail">r.kim@metrogeneral.org</p>
+                        <p class="u-detail">+1 (310) 555-0184</p>
+                        <p class="u-visit">Last Active: Nov 08, 2025</p><span class="u-role-tag role-doctor">Lead
+                            Physician</span>
+                        <div class="u-stats-row">
+                            <div><span>Orders</span><strong>12</strong></div>
+                            <div><span>Spent</span><strong>$382k</strong></div>
+                        </div><a href="./error.html" class="d-btn d-btn-full">View Profile</a>
+                    </div>
+                    <div class="u-card">
+                        <div class="u-av" style="background:linear-gradient(135deg,#6366f1,#a855f7)">JM</div>
+                        <h4>James Mercer</h4>
+                        <p class="u-detail">j.mercer@supplychains.net</p>
+                        <p class="u-detail">+1 (415) 555-9271</p>
+                        <p class="u-visit">Last Active: Oct 30, 2025</p><span class="u-role-tag role-supplier">Supplier
+                            Partner</span>
+                        <div class="u-stats-row">
+                            <div><span>Listings</span><strong>34</strong></div>
+                            <div><span>Revenue</span><strong>$121k</strong></div>
+                        </div><a href="./error.html" class="d-btn d-btn-full">View Profile</a>
+                    </div>
+                    <div class="u-card">
+                        <div class="u-av" style="background:linear-gradient(135deg,#10b981,#0ea5e9)">SA</div>
+                        <h4>Sofia Adams</h4>
+                        <p class="u-detail">sofia.a@internal.med</p>
+                        <p class="u-detail">+1 (213) 555-0047</p>
+                        <p class="u-visit">Last Active: Nov 01, 2025</p><span class="u-role-tag role-admin">Site
+                            Admin</span>
+                        <div class="u-stats-row">
+                            <div><span>Actions</span><strong>508</strong></div>
+                            <div><span>Access</span><strong>Full</strong></div>
+                        </div><a href="./error.html" class="d-btn d-btn-full">View Profile</a>
+                    </div>
+                    <div class="u-card">
+                        <div class="u-av" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">TN</div>
+                        <h4>Thomas Nguyen</h4>
+                        <p class="u-detail">t.nguyen@caremail.com</p>
+                        <p class="u-detail">+1 (818) 555-3892</p>
+                        <p class="u-visit">Last Active: Sep 15, 2025</p><span class="u-role-tag role-client">Procurement
+                            Client</span>
+                        <div class="u-stats-row">
+                            <div><span>Orders</span><strong>5</strong></div>
+                            <div><span>Spent</span><strong>$38k</strong></div>
+                        </div><a href="./error.html" class="d-btn d-btn-full">View Profile</a>
+                    </div>
+                    <div class="u-card">
+                        <div class="u-av" style="background:linear-gradient(135deg,#a855f7,#6366f1)">PL</div>
+                        <h4>Priya Lander</h4>
+                        <p class="u-detail">p.lander@apexdiag.com</p>
+                        <p class="u-detail">+1 (408) 555-2291</p>
+                        <p class="u-visit">Last Active: Nov 05, 2025</p><span class="u-role-tag role-analyst">Data
+                            Analyst</span>
+                        <div class="u-stats-row">
+                            <div><span>Reports</span><strong>28</strong></div>
+                            <div><span>Access</span><strong>Read</strong></div>
+                        </div><a href="./error.html" class="d-btn d-btn-full">View Profile</a>
+                    </div>
+                    <div class="u-card">
+                        <div class="u-av" style="background:linear-gradient(135deg,#0ea5e9,#10b981)">MW</div>
+                        <h4>Mark Whitfield</h4>
+                        <p class="u-detail">m.whitfield@sunrisesc.org</p>
+                        <p class="u-detail">+1 (312) 555-0062</p>
+                        <p class="u-visit">Last Active: Oct 19, 2025</p><span class="u-role-tag role-client">Procurement
+                            Client</span>
+                        <div class="u-stats-row">
+                            <div><span>Orders</span><strong>9</strong></div>
+                            <div><span>Spent</span><strong>$57k</strong></div>
+                        </div><a href="./error.html" class="d-btn d-btn-full">View Profile</a>
+                    </div>
+                    <div class="u-card">
+                        <div class="u-av" style="background:linear-gradient(135deg,#ef4444,#f59e0b)">AL</div>
+                        <h4>Dr. Aisha Lowe</h4>
+                        <p class="u-detail">a.lowe@stlukes.org</p>
+                        <p class="u-detail">+1 (646) 555-7723</p>
+                        <p class="u-visit">Last Active: Nov 03, 2025</p><span class="u-role-tag role-doctor">ICU
+                            Specialist</span>
+                        <div class="u-stats-row">
+                            <div><span>Orders</span><strong>7</strong></div>
+                            <div><span>Spent</span><strong>$94k</strong></div>
+                        </div><a href="./error.html" class="d-btn d-btn-full">View Profile</a>
+                    </div>
+                    <div class="u-card">
+                        <div class="u-av" style="background:linear-gradient(135deg,#6366f1,#10b981)">BR</div>
+                        <h4>Brian Rhodes</h4>
+                        <p class="u-detail">b.rhodes@supplychains.net</p>
+                        <p class="u-detail">+1 (503) 555-4418</p>
+                        <p class="u-visit">Last Active: Sep 28, 2025</p><span class="u-role-tag role-supplier">Logistics
+                            Manager</span>
+                        <div class="u-stats-row">
+                            <div><span>Shipments</span><strong>120</strong></div>
+                            <div><span>On-Time</span><strong>94%</strong></div>
+                        </div><a href="./error.html" class="d-btn d-btn-full">View Profile</a>
+                    </div>
+                    <div class="u-card">
+                        <div class="u-av" style="background:linear-gradient(135deg,#f59e0b,#6366f1)">CO</div>
+                        <h4>Clara Ortega</h4>
+                        <p class="u-detail">c.ortega@carefirst.org</p>
+                        <p class="u-detail">+1 (857) 555-9934</p>
+                        <p class="u-visit">Last Active: Oct 11, 2025</p><span class="u-role-tag role-client">Rehab
+                            Clinic</span>
+                        <div class="u-stats-row">
+                            <div><span>Orders</span><strong>3</strong></div>
+                            <div><span>Spent</span><strong>$14k</strong></div>
+                        </div><a href="./error.html" class="d-btn d-btn-full">View Profile</a>
+                    </div>
+                    <div class="u-card">
+                        <div class="u-av" style="background:linear-gradient(135deg,#10b981,#a855f7)">NP</div>
+                        <h4>Nathan Park</h4>
+                        <p class="u-detail">n.park@healwell.com</p>
+                        <p class="u-detail">+1 (702) 555-5501</p>
+                        <p class="u-visit">Last Active: Nov 06, 2025</p><span class="u-role-tag role-admin">Support
+                            Admin</span>
+                        <div class="u-stats-row">
+                            <div><span>Tickets</span><strong>44</strong></div>
+                            <div><span>Resolved</span><strong>41</strong></div>
+                        </div><a href="./error.html" class="d-btn d-btn-full">View Profile</a>
+                    </div>
+                </div>
+            </div>
+            <div class="u-controls">
+                <button class="u-ctrl-btn" id="uPrev" aria-label="Previous">&#8592;</button>
+                <div class="u-dots" id="uDots"></div>
+                <button class="u-ctrl-btn" id="uNext" aria-label="Next">&#8594;</button>
+            </div>
+        </section>
+
+        <!-- ======= MESSAGES ======= -->
+        <section id="messages" class="d-section" role="tabpanel">
+            <div class="d-section-head">
+                <div>
+                    <h2>Inbox &amp; Inquiries</h2>
+                    <p>Respond to client requests and regulatory notices.</p>
+                </div>
+                <a href="./error.html" class="d-btn">Compose New</a>
+            </div>
+            <div class="m-layout">
+                <div class="m-list">
+                    <div class="m-list-header">
+                        <h3>Inbox</h3>
+                        <span class="dbadge dbadge-blue" id="unreadCount">5</span>
+                    </div>
+                    <div class="m-list-scroll" id="msgListScroll" role="list"></div>
+                </div>
+                <div class="m-view">
+                    <div class="m-client-strip">
+                        <div class="m-client-left">
+                            <div class="m-client-av" id="viewAv">--</div>
+                            <div>
+                                <div class="m-client-name" id="viewName">Select a message</div>
+                                <div class="m-client-email" id="viewEmail"></div>
+                            </div>
+                        </div>
+                        <span class="m-client-date" id="viewDate"></span>
+                    </div>
+                    <div class="m-subject-bar" id="viewSubject">Subject: —</div>
+                    <div class="m-body">
+                        <div id="viewBody">
+                            <p>Select a message from the list to read it here.</p>
+                        </div>
+                    </div>
+                    <form action="./error.html" method="GET" class="m-reply">
+                        <label for="replyTxt" class="sr-only">Reply</label>
+                        <textarea id="replyTxt" name="reply_message" class="d-input" placeholder="Type your reply here…"
+                            required></textarea>
+                        <button type="submit" class="d-btn"
+                            style="flex-shrink:0;height:80px;padding:0 22px;">Send</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= INVENTORY ======= -->
+        <section id="inventory" class="d-section" role="tabpanel">
+            <div class="d-section-head">
+                <div>
+                    <h2>Inventory Control</h2>
+                    <p>Stock levels and warehouse utilisation — visualised as percentages.</p>
+                </div>
+                <a href="./error.html" class="d-btn">Add Stock</a>
+            </div>
+
+            <div class="inv-header-row">
+                <div class="inv-header-card c-blue">
+                    <div class="inv-h-lbl">Total SKUs</div>
+                    <div class="inv-h-val big-blue">2,148</div>
+                    <div class="inv-h-sub">Across 6 product categories</div>
+                </div>
+                <div class="inv-header-card c-red">
+                    <div class="inv-h-lbl">Low Stock Alerts</div>
+                    <div class="inv-h-val big-red">14</div>
+                    <div class="inv-h-sub">Immediate reorder required</div>
+                </div>
+                <div class="inv-header-card c-yellow">
+                    <div class="inv-h-lbl">Warehouse Utilisation</div>
+                    <div class="inv-h-val big-yellow">78%</div>
+                    <div class="inv-h-sub">Approaching capacity threshold</div>
+                </div>
+            </div>
+
+            <!-- Donut % rings per category -->
+            <div class="inv-donuts-grid">
+                <div class="inv-donut-card">
+                    <div class="inv-donut-title">Diagnostic Imaging</div>
+                    <svg class="inv-donut-svg" viewBox="0 0 100 100">
+                        <circle class="inv-d-bg" cx="50" cy="50" r="38" />
+                        <circle class="inv-d-fill" cx="50" cy="50" r="38" stroke="#0ea5e9" stroke-dasharray="238.76"
+                            stroke-dashoffset="42.97" />
+                        <text class="inv-d-pct" x="50%" y="46%" dominant-baseline="middle"
+                            text-anchor="middle">82%</text>
+                        <text class="inv-d-unit" x="50%" y="62%" dominant-baseline="middle"
+                            text-anchor="middle">STOCKED</text>
+                    </svg>
+                    <div class="inv-donut-stats">
+                        <div class="inv-donut-row"><span>In Stock</span><strong>196</strong></div>
+                        <div class="inv-donut-row"><span>Reorder At</span><strong>40</strong></div>
+                    </div>
+                </div>
+                <div class="inv-donut-card">
+                    <div class="inv-donut-title">Surgical Instruments</div>
+                    <svg class="inv-donut-svg" viewBox="0 0 100 100">
+                        <circle class="inv-d-bg" cx="50" cy="50" r="38" />
+                        <circle class="inv-d-fill" cx="50" cy="50" r="38" stroke="#6366f1" stroke-dasharray="238.76"
+                            stroke-dashoffset="83.57" />
+                        <text class="inv-d-pct" x="50%" y="46%" dominant-baseline="middle"
+                            text-anchor="middle">65%</text>
+                        <text class="inv-d-unit" x="50%" y="62%" dominant-baseline="middle"
+                            text-anchor="middle">STOCKED</text>
+                    </svg>
+                    <div class="inv-donut-stats">
+                        <div class="inv-donut-row"><span>In Stock</span><strong>58</strong></div>
+                        <div class="inv-donut-row"><span>Reorder At</span><strong>30</strong></div>
+                    </div>
+                </div>
+                <div class="inv-donut-card">
+                    <div class="inv-donut-title">Patient Monitoring</div>
+                    <svg class="inv-donut-svg" viewBox="0 0 100 100">
+                        <circle class="inv-d-bg" cx="50" cy="50" r="38" />
+                        <circle class="inv-d-fill" cx="50" cy="50" r="38" stroke="#10b981" stroke-dasharray="238.76"
+                            stroke-dashoffset="21.49" />
+                        <text class="inv-d-pct" x="50%" y="46%" dominant-baseline="middle"
+                            text-anchor="middle">91%</text>
+                        <text class="inv-d-unit" x="50%" y="62%" dominant-baseline="middle"
+                            text-anchor="middle">STOCKED</text>
+                    </svg>
+                    <div class="inv-donut-stats">
+                        <div class="inv-donut-row"><span>In Stock</span><strong>142</strong></div>
+                        <div class="inv-donut-row"><span>Reorder At</span><strong>20</strong></div>
+                    </div>
+                </div>
+                <div class="inv-donut-card">
+                    <div class="inv-donut-title">Rehabilitation Aids</div>
+                    <svg class="inv-donut-svg" viewBox="0 0 100 100">
+                        <circle class="inv-d-bg" cx="50" cy="50" r="38" />
+                        <circle class="inv-d-fill" cx="50" cy="50" r="38" stroke="#f59e0b" stroke-dasharray="238.76"
+                            stroke-dashoffset="124.16" />
+                        <text class="inv-d-pct" x="50%" y="46%" dominant-baseline="middle"
+                            text-anchor="middle">48%</text>
+                        <text class="inv-d-unit" x="50%" y="62%" dominant-baseline="middle"
+                            text-anchor="middle">STOCKED</text>
+                    </svg>
+                    <div class="inv-donut-stats">
+                        <div class="inv-donut-row"><span>In Stock</span><strong>89</strong></div>
+                        <div class="inv-donut-row"><span>Reorder At</span><strong>15</strong></div>
+                    </div>
+                </div>
+                <div class="inv-donut-card">
+                    <div class="inv-donut-title">Laboratory Equipment</div>
+                    <svg class="inv-donut-svg" viewBox="0 0 100 100">
+                        <circle class="inv-d-bg" cx="50" cy="50" r="38" />
+                        <circle class="inv-d-fill" cx="50" cy="50" r="38" stroke="#ef4444" stroke-dasharray="238.76"
+                            stroke-dashoffset="186.23" />
+                        <text class="inv-d-pct" x="50%" y="46%" dominant-baseline="middle" text-anchor="middle"
+                            fill="#ef4444">22%</text>
+                        <text class="inv-d-unit" x="50%" y="62%" dominant-baseline="middle"
+                            text-anchor="middle">CRITICAL</text>
+                    </svg>
+                    <div class="inv-donut-stats">
+                        <div class="inv-donut-row"><span>In Stock</span><strong>22</strong></div>
+                        <div class="inv-donut-row"><span>Reorder At</span><strong>40</strong></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="inv-bottom-row">
+                <div class="inv-panel">
+                    <div class="inv-panel-title">Warehouse Zone Utilisation</div>
+                    <div class="inv-hbars">
+                        <div class="inv-hbar">
+                            <div class="inv-hbar-info"><span>Zone A — Imaging &amp; Monitoring</span><span>90%</span>
+                            </div>
+                            <div class="inv-hbar-track">
+                                <div class="inv-hbar-fill" style="width:90%;background:#ef4444;"></div>
+                            </div>
+                        </div>
+                        <div class="inv-hbar">
+                            <div class="inv-hbar-info"><span>Zone B — Surgical &amp; Instruments</span><span>72%</span>
+                            </div>
+                            <div class="inv-hbar-track">
+                                <div class="inv-hbar-fill" style="width:72%;background:#f59e0b;"></div>
+                            </div>
+                        </div>
+                        <div class="inv-hbar">
+                            <div class="inv-hbar-info"><span>Zone C — Rehabilitation Aids</span><span>55%</span></div>
+                            <div class="inv-hbar-track">
+                                <div class="inv-hbar-fill" style="width:55%;background:#0ea5e9;"></div>
+                            </div>
+                        </div>
+                        <div class="inv-hbar">
+                            <div class="inv-hbar-info"><span>Zone D — Lab &amp; Reagents</span><span>38%</span></div>
+                            <div class="inv-hbar-track">
+                                <div class="inv-hbar-fill" style="width:38%;background:#10b981;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="inv-panel">
+                    <div class="inv-panel-title" style="color:var(--d-red);">Reorder Alerts</div>
+                    <div class="inv-reorder-list">
+                        <div class="inv-reorder-item"><span class="inv-reorder-name">Hematology Analyzer
+                                Reagent</span><span class="inv-reorder-pct">22% left</span></div>
+                        <div class="inv-reorder-item"><span class="inv-reorder-name">Digital X-Ray DR 500</span><span
+                                class="inv-reorder-pct">12% left</span></div>
+                        <div class="inv-reorder-item"><span class="inv-reorder-name">Ultrasound Gel Packs
+                                (500ml)</span><span class="inv-reorder-pct">18% left</span></div>
+                        <div class="inv-reorder-item"><span class="inv-reorder-name">Surgical Suture Kit — Type
+                                B</span><span class="inv-reorder-pct">29% left</span></div>
+                        <div class="inv-reorder-item"><span class="inv-reorder-name">ECG Electrode Patches
+                                (50pk)</span><span class="inv-reorder-pct">31% left</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= REPORTS ======= -->
+        <section id="reports" class="d-section" role="tabpanel">
+            <div class="d-section-head">
+                <div>
+                    <h2>Reports &amp; Activity</h2>
+                    <p>Compliance summaries, KPIs, and audit activity.</p>
+                </div>
+                <a href="./error.html" class="d-btn">Generate Report</a>
+            </div>
+            <div class="rp-kpi-row">
+                <div class="rp-kpi">
+                    <div class="rp-kpi-num rp-num-accent">98.4%</div>
+                    <div class="rp-kpi-lbl">Compliance Rate</div>
+                    <p class="rp-kpi-sub">FDA &amp; ISO 13485</p>
+                </div>
+                <div class="rp-kpi">
+                    <div class="rp-kpi-num rp-num-green">1,340</div>
+                    <div class="rp-kpi-lbl">Devices Deployed</div>
+                    <p class="rp-kpi-sub">89 active clinics</p>
+                </div>
+                <div class="rp-kpi">
+                    <div class="rp-kpi-num rp-num-yellow">14</div>
+                    <div class="rp-kpi-lbl">Open Audit Findings</div>
+                    <p class="rp-kpi-sub">3 priority items</p>
+                </div>
+                <div class="rp-kpi">
+                    <div class="rp-kpi-num rp-num-violet">4.8</div>
+                    <div class="rp-kpi-lbl">Client Satisfaction</div>
+                    <p class="rp-kpi-sub">214 reviews</p>
+                </div>
+            </div>
+            <div class="rp-split">
+                <div class="rp-panel">
+                    <div class="rp-panel-head">
+                        <h3>Activity Log</h3><a href="./error.html" class="d-btn d-btn-ghost"
+                            style="padding:7px 16px;font-size:.75rem;">Full Log</a>
+                    </div>
+                    <div class="rp-timeline">
+                        <div class="rp-tl-item">
+                            <div class="rp-tl-dot-col"><span class="rp-tl-dot tg"></span><span
+                                    class="rp-tl-line"></span></div>
+                            <div class="rp-tl-body">
+                                <h4>Order #5022 Delivered</h4>
+                                <p>Laparoscopic Tower Kit — Sunrise Surgical</p><span class="rp-tl-time">Today, 09:14
+                                    AM</span>
+                            </div>
+                        </div>
+                        <div class="rp-tl-item">
+                            <div class="rp-tl-dot-col"><span class="rp-tl-dot ty"></span><span
+                                    class="rp-tl-line"></span></div>
+                            <div class="rp-tl-body">
+                                <h4>Low Stock — SKU-0051</h4>
+                                <p>Digital X-Ray DR 500 below threshold</p><span class="rp-tl-time">Today, 07:30
+                                    AM</span>
+                            </div>
+                        </div>
+                        <div class="rp-tl-item">
+                            <div class="rp-tl-dot-col"><span class="rp-tl-dot tb"></span><span
+                                    class="rp-tl-line"></span></div>
+                            <div class="rp-tl-body">
+                                <h4>New User Registered</h4>
+                                <p>Thomas Nguyen — Procurement Client</p><span class="rp-tl-time">Yesterday, 04:52
+                                    PM</span>
+                            </div>
+                        </div>
+                        <div class="rp-tl-item">
+                            <div class="rp-tl-dot-col"><span class="rp-tl-dot tr"></span><span
+                                    class="rp-tl-line"></span></div>
+                            <div class="rp-tl-body">
+                                <h4>API Latency Detected</h4>
+                                <p>Regulatory API — engineers notified</p><span class="rp-tl-time">Yesterday, 11:20
+                                    AM</span>
+                            </div>
+                        </div>
+                        <div class="rp-tl-item">
+                            <div class="rp-tl-dot-col"><span class="rp-tl-dot tv"></span></div>
+                            <div class="rp-tl-body">
+                                <h4>Monthly Compliance Report</h4>
+                                <p>October 2025 — 98.4% score achieved</p><span class="rp-tl-time">Oct 31, 11:59
+                                    PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rp-panel">
+                    <div class="rp-panel-head">
+                        <h3>Regulatory Checklist</h3>
+                    </div>
+                    <div class="rp-compliance">
+                        <div class="rp-comp-item">
+                            <div class="rp-comp-info"><span>FDA 510(k) Clearances</span><span>100%</span></div>
+                            <div class="rp-comp-track">
+                                <div class="rp-comp-fill" style="width:100%;background:var(--d-green);"></div>
+                            </div>
+                        </div>
+                        <div class="rp-comp-item">
+                            <div class="rp-comp-info"><span>ISO 13485 Audit Prep</span><span>88%</span></div>
+                            <div class="rp-comp-track">
+                                <div class="rp-comp-fill" style="width:88%;background:var(--d-accent);"></div>
+                            </div>
+                        </div>
+                        <div class="rp-comp-item">
+                            <div class="rp-comp-info"><span>CE Marking Documentation</span><span>74%</span></div>
+                            <div class="rp-comp-track">
+                                <div class="rp-comp-fill" style="width:74%;background:var(--d-accent2);"></div>
+                            </div>
+                        </div>
+                        <div class="rp-comp-item">
+                            <div class="rp-comp-info"><span>Post-Market Surveillance</span><span>60%</span></div>
+                            <div class="rp-comp-track">
+                                <div class="rp-comp-fill" style="width:60%;background:var(--d-yellow);"></div>
+                            </div>
+                        </div>
+                        <div class="rp-comp-item">
+                            <div class="rp-comp-info"><span>Adverse Event Reporting</span><span>95%</span></div>
+                            <div class="rp-comp-track">
+                                <div class="rp-comp-fill" style="width:95%;background:var(--d-green);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        /* 1. Theme */
+        document.getElementById('themeBtn').addEventListener('click', function () {
+            document.body.classList.toggle('light-theme');
+            localStorage.setItem('medilife-theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
+        });
+
+        /* 2. Tabs */
+        var tabs = document.querySelectorAll('.d-tab'), secs = document.querySelectorAll('.d-section');
+        tabs.forEach(function (b) {
+            b.addEventListener('click', function () {
+                tabs.forEach(function (x) { x.classList.remove('active'); x.setAttribute('aria-selected', 'false'); });
+                secs.forEach(function (s) { s.classList.remove('active'); });
+                b.classList.add('active'); b.setAttribute('aria-selected', 'true');
+                var t = document.getElementById(b.getAttribute('data-target')); if (t) t.classList.add('active');
+            });
+        });
+
+        /* 3. Order bar chart */
+        (function () {
+            var data = [
+                { l: 'Imaging', v: 320, c: '#0ea5e9' }, { l: 'Surgical', v: 185, c: '#6366f1' },
+                { l: 'Monitoring', v: 120, c: '#10b981' }, { l: 'Rehab', v: 76, c: '#f59e0b' },
+                { l: 'Lab', v: 55, c: '#ef4444' }, { l: 'Other', v: 30, c: '#a855f7' }
+            ];
+            var mx = Math.max.apply(null, data.map(function (d) { return d.v; }));
+            var w = document.getElementById('orderChart'); if (!w) return;
+            data.forEach(function (d) {
+                var p = Math.round((d.v / mx) * 100);
+                var c = document.createElement('div'); c.className = 'o-bar-col';
+                c.innerHTML = '<span class="o-bar-val">$' + d.v + 'k</span>' +
+                    '<div class="o-bar" style="height:' + p + '%;background:' + d.c + ';">' +
+                    '<span class="o-bar-lbl">' + d.l + '</span></div>';
+                w.appendChild(c);
+            });
+        }());
+
+        /* 4. Users carousel */
+        (function () {
+            var track = document.getElementById('userTrack');
+            var prev = document.getElementById('uPrev');
+            var next = document.getElementById('uNext');
+            var dotsWrap = document.getElementById('uDots');
+            if (!track) return;
+            var cards = track.querySelectorAll('.u-card');
+            var total = cards.length;
+            var idx = 0;
+
+            function vis() {
+                var w = track.parentElement.offsetWidth;
+                if (w < 540) return 1; if (w < 900) return 2; if (w < 1200) return 3; return 4;
+            }
+            function pages() { return Math.ceil(total / vis()); }
+
+            function buildDots() {
+                dotsWrap.innerHTML = '';
+                for (var i = 0; i < pages(); i++) {
+                    var d = document.createElement('button');
+                    d.className = 'u-dot' + (i === idx ? ' on' : '');
+                    d.setAttribute('aria-label', 'Page ' + (i + 1));
+                    (function (n) { d.addEventListener('click', function () { go(n); }); })(i);
+                    dotsWrap.appendChild(d);
+                }
+            }
+
+            function go(n) {
+                var v = vis(); var mx = Math.ceil(total / v) - 1;
+                idx = Math.max(0, Math.min(n, mx));
+                var cw = cards[0].offsetWidth + 22;
+                track.style.transform = 'translateX(-' + (idx * v * cw) + 'px)';
+                prev.disabled = (idx === 0); next.disabled = (idx >= mx);
+                dotsWrap.querySelectorAll('.u-dot').forEach(function (d, i) { d.classList.toggle('on', i === idx); });
+            }
+
+            prev.addEventListener('click', function () { go(idx - 1); });
+            next.addEventListener('click', function () { go(idx + 1); });
+            window.addEventListener('resize', function () { buildDots(); go(idx); });
+            buildDots(); go(0);
+        }());
+
+        /* 5. Messages */
+        (function () {
+            var msgs = [
+                {
+                    id: 1, ini: 'RK', name: 'Dr. Rachel Kim', email: 'r.kim@metrogeneral.org', date: '10:22 AM', subject: 'MRI Scanner Calibration Request', unread: true,
+                    body: '<p>Hello,</p><p>We received the MRI Scanner Pro X. Our installation team has finished setup, however we require a remote calibration session before patient use.</p><p>Could you please schedule this at the earliest?</p><p>Best regards,<br>Dr. Rachel Kim</p>'
+                },
+                {
+                    id: 2, ini: 'JM', name: 'James Mercer', email: 'j.mercer@supplychains.net', date: 'Yesterday', subject: 'New Product Catalogue — Q1 2026', unread: true,
+                    body: '<p>Hi Team,</p><p>We have added 18 new SKUs in patient monitoring and laboratory segments with improved pricing tiers for volume orders.</p><p>Regards,<br>James Mercer</p>'
+                },
+                {
+                    id: 3, ini: 'AP', name: 'Apex Diagnostic Labs', email: 'procurement@apexdiag.com', date: 'Oct 28', subject: 'Quotation Follow-Up — Analyzer Reagents', unread: false,
+                    body: '<p>Hello,</p><p>Could you confirm the updated pricing for the Hematology Analyzer reagent bundles? We need to finalise our Q4 budget before month end.</p><p>Thank you,<br>Apex Procurement</p>'
+                },
+                {
+                    id: 4, ini: 'CF', name: 'CareFirst Rehab', email: 'admin@carefirst.org', date: 'Oct 20', subject: 'Order On-Hold — Clarification Needed', unread: false,
+                    body: '<p>To whom it may concern,</p><p>Order #ORD-5025 for the Ultrasound Therapy Unit has been placed on hold. Could you clarify the reason and provide an estimated release date?</p><p>CareFirst Admin Team</p>'
+                },
+                {
+                    id: 5, ini: 'HL', name: 'HealWell Diagnostics', email: 'orders@healwell.com', date: 'Oct 14', subject: 'Digital X-Ray DR 500 — Bulk Inquiry', unread: false,
+                    body: '<p>Hello,</p><p>We are interested in procuring 3 units of the Digital X-Ray DR 500 for our new diagnostic wing. Please send over pricing, warranty, and delivery timeline.</p><p>HealWell Procurement</p>'
+                }
+            ];
+
+            var list = document.getElementById('msgListScroll');
+            var vAv = document.getElementById('viewAv'), vName = document.getElementById('viewName');
+            var vEmail = document.getElementById('viewEmail'), vDate = document.getElementById('viewDate');
+            var vSub = document.getElementById('viewSubject'), vBody = document.getElementById('viewBody');
+            var unEl = document.getElementById('unreadCount');
+
+            function esc(s) { var d = document.createElement('div'); d.appendChild(document.createTextNode(s)); return d.innerHTML; }
+            function syncUnread() { var n = msgs.filter(function (m) { return m.unread; }).length; unEl.textContent = n; unEl.style.display = n ? '' : 'none'; }
+
+            function setView(m) {
+                vAv.textContent = m.ini; vName.textContent = m.name; vEmail.textContent = m.email;
+                vDate.textContent = m.date; vSub.textContent = 'Subject: ' + m.subject; vBody.innerHTML = m.body;
+            }
+
+            function render(aid) {
+                list.innerHTML = '';
+                msgs.forEach(function (m) {
+                    var active = m.id === aid;
+                    var el = document.createElement('div');
+                    el.className = 'm-item' + (m.unread && !active ? ' unread' : '') + (active ? ' active-m' : '');
+                    el.setAttribute('role', 'listitem'); el.setAttribute('tabindex', '0');
+                    el.innerHTML =
+                        '<div class="m-item-top">' +
+                        '<div class="m-item-av">' + esc(m.ini) + '</div>' +
+                        '<div class="m-item-meta">' +
+                        '<div style="display:flex;justify-content:space-between;">' +
+                        '<span class="m-item-name">' + esc(m.name) + '</span>' +
+                        '<span class="m-item-time">' + esc(m.date) + '</span>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '<div class="m-item-sub">' + esc(m.subject) + '</div>' +
+                        '<div class="m-item-prev">Click to read full message&hellip;</div>';
+                    function act() { m.unread = false; syncUnread(); render(m.id); setView(m); }
+                    el.addEventListener('click', act);
+                    el.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); act(); } });
+                    list.appendChild(el);
+                });
+            }
+
+            render(msgs[0].id); setView(msgs[0]); syncUnread();
+        }());
+    </script>
+</body>
+
+</html>

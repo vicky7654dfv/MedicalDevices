@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediLife | Secure Checkout</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%230ea5e9' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z'/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/checkout.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <script>
+        if (localStorage.getItem('medilife-theme') === 'light') {
+            document.body.classList.add('light-theme');
+        }
+    </script>
+
+    <div id="page-loader">
+        <div class="loader-content">
+            <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="loader-img">
+            <p>Processing...</p>
+        </div>
+    </div>
+
+    <button id="scrollToTopBtn" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <header class="headerWrap" id="main-header">
+        <div class="imgWrap">
+            <a href="../index.html">
+                <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="site-logo">
+            </a>
+        </div>
+
+        <div class="hamburger" id="hamburger-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <nav class="linksWrap" id="nav-links">
+            <div class="topCloseBtn" id="close-btn">
+                <i class="fa-solid fa-times"></i>
+            </div>
+            <ul>
+                <li class="dropdown" id="home-dropdown">
+                    <div class="dropdownHeader">
+                        <a href="javascript:void(0)" class="homePageLink" id="home-nav-link">Home</a>
+                        <button class="dropdownToggle" aria-label="Toggle dropdown" id="dropdown-toggle-btn">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <ul class="dropdownMenu" id="dropdown-menu">
+                        <li><a href="../index.html">Home 1</a></li>
+                        <li><a href="./home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="./about.html">About Us</a></li>
+                <li><a href="./dashboard.html">DashBoard</a></li>
+                <li><a href="./product.html">Product</a></li>
+                <li><a href="./services.html">Services</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./signup.html">Sign Up</a></li>
+                <li><a href="./login.html">Login</a></li>
+                <li>
+                    <a href="./checkout.html" aria-label="Cart" class="cart-nav-icon"
+                        style="color: var(--accent-blue);">
+                        <i class="fa-solid fa-cart-arrow-down" style="color: rgb(116, 192, 252);"></i><sup>4</sup>
+                    </a>
+                </li>
+                <li class="theme-toggle-li">
+                    <button id="theme-toggle-btn" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-sun" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="menuOverlay" id="menu-overlay"></div>
+    </header>
+
+    <main class="checkout-main">
+
+        <div class="checkout-hero container">
+            <div class="checkout-breadcrumb">
+                <a href="../index.html">Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <a href="./product.html">Products</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>Checkout</span>
+            </div>
+            <h1><i class="fa-solid fa-lock"></i> Secure Checkout</h1>
+            <p>Your order is protected by 256-bit SSL encryption.</p>
+        </div>
+
+        <div class="checkout-steps container">
+            <div class="step done">
+                <span class="step-dot"><i class="fa-solid fa-check"></i></span>
+                <span class="step-label">Cart</span>
+            </div>
+            <div class="step-line done"></div>
+            <div class="step active">
+                <span class="step-dot"><i class="fa-solid fa-wallet"></i></span>
+                <span class="step-label">Payment</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step">
+                <span class="step-dot"><i class="fa-solid fa-box"></i></span>
+                <span class="step-label">Confirmation</span>
+            </div>
+        </div>
+
+        <div class="checkout-grid container">
+
+            <div class="checkout-left">
+
+                <section class="co-section fade-in">
+                    <div class="co-section-header">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <h2>Shipping Details</h2>
+                    </div>
+                    <form id="checkout-form" novalidate>
+
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label for="co-fname">First Name <span class="req">*</span></label>
+                                <input type="text" id="co-fname" name="fname" placeholder="e.g. John"
+                                    autocomplete="given-name">
+                                <span class="field-error" id="err-fname"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="co-lname">Last Name <span class="req">*</span></label>
+                                <input type="text" id="co-lname" name="lname" placeholder="e.g. Doe"
+                                    autocomplete="family-name">
+                                <span class="field-error" id="err-lname"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label for="co-email">Email Address <span class="req">*</span></label>
+                                <input type="email" id="co-email" name="email" placeholder="you@example.com"
+                                    autocomplete="email">
+                                <span class="field-error" id="err-email"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="co-phone">Phone Number <span class="req">*</span></label>
+                                <input type="tel" id="co-phone" name="phone" placeholder="10-digit number"
+                                    autocomplete="tel" inputmode="numeric" maxlength="10">
+                                <span class="field-error" id="err-phone"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="co-address">Street Address <span class="req">*</span></label>
+                            <input type="text" id="co-address" name="address" placeholder="123 Medical Avenue"
+                                autocomplete="street-address">
+                            <span class="field-error" id="err-address"></span>
+                        </div>
+
+                        <div class="form-row-3">
+                            <div class="form-group">
+                                <label for="co-city">City <span class="req">*</span></label>
+                                <input type="text" id="co-city" name="city" placeholder="Los Angeles"
+                                    autocomplete="address-level2">
+                                <span class="field-error" id="err-city"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="co-state">State <span class="req">*</span></label>
+                                <input type="text" id="co-state" name="state" placeholder="CA"
+                                    autocomplete="address-level1">
+                                <span class="field-error" id="err-state"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="co-zip">ZIP / Postal <span class="req">*</span></label>
+                                <input type="text" id="co-zip" name="zip" placeholder="6-digit PIN"
+                                    autocomplete="postal-code" inputmode="numeric" maxlength="6">
+                                <span class="field-error" id="err-zip"></span>
+                            </div>
+                        </div>
+
+                        <div class="co-section-header" style="margin-top: 32px;">
+                            <i class="fa-solid fa-credit-card"></i>
+                            <h2>Payment Method</h2>
+                        </div>
+
+                        <div class="payment-tabs" id="payment-tabs" role="tablist">
+                            <button type="button" class="pay-tab active" data-method="card" role="tab"
+                                aria-selected="true">
+                                <i class="fa-solid fa-credit-card"></i>
+                                <span>Card</span>
+                            </button>
+                            <button type="button" class="pay-tab" data-method="upi" role="tab">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                                <span>UPI</span>
+                            </button>
+                            <button type="button" class="pay-tab" data-method="netbanking" role="tab">
+                                <i class="fa-solid fa-building-columns"></i>
+                                <span>Net Banking</span>
+                            </button>
+                            <button type="button" class="pay-tab" data-method="paypal" role="tab">
+                                <i class="fa-brands fa-paypal"></i>
+                                <span>PayPal</span>
+                            </button>
+                            <button type="button" class="pay-tab" data-method="googlepay" role="tab">
+                                <i class="fa-brands fa-google-pay"></i>
+                                <span>G Pay</span>
+                            </button>
+                            <button type="button" class="pay-tab" data-method="applepay" role="tab">
+                                <i class="fa-brands fa-apple-pay"></i>
+                                <span>Apple Pay</span>
+                            </button>
+                        </div>
+
+                        <div class="pay-panel active" id="panel-card">
+                            <div class="card-preview">
+                                <div class="card-preview-chip"><i class="fa-solid fa-microchip"></i></div>
+                                <div class="card-preview-number" id="preview-number">•••• •••• •••• ••••</div>
+                                <div class="card-preview-row">
+                                    <div>
+                                        <div class="card-preview-label">Card Holder</div>
+                                        <div class="card-preview-val" id="preview-name">YOUR NAME</div>
+                                    </div>
+                                    <div>
+                                        <div class="card-preview-label">Expires</div>
+                                        <div class="card-preview-val" id="preview-expiry">MM/YY</div>
+                                    </div>
+                                    <div class="card-logo-area">
+                                        <i class="fa-brands fa-cc-visa" id="card-brand-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="card-name">Cardholder Name <span class="req">*</span></label>
+                                <input type="text" id="card-name" placeholder="As it appears on card"
+                                    autocomplete="cc-name">
+                                <span class="field-error" id="err-card-name"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="card-number">Card Number <span class="req">*</span></label>
+                                <div class="input-icon-wrap">
+                                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19"
+                                        autocomplete="cc-number" inputmode="numeric">
+                                    <i class="fa-solid fa-credit-card field-icon"></i>
+                                </div>
+                                <span class="field-error" id="err-card-number"></span>
+                            </div>
+                            <div class="form-row-2">
+                                <div class="form-group">
+                                    <label for="card-expiry">Expiry Date <span class="req">*</span></label>
+                                    <input type="text" id="card-expiry" placeholder="MM / YY" maxlength="7"
+                                        autocomplete="cc-exp" inputmode="numeric">
+                                    <span class="field-error" id="err-card-expiry"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="card-cvv">CVV <span class="req">*</span></label>
+                                    <div class="input-icon-wrap">
+                                        <input type="password" id="card-cvv" placeholder="•••" maxlength="4"
+                                            autocomplete="cc-csc" inputmode="numeric">
+                                        <i class="fa-solid fa-shield-halved field-icon"></i>
+                                    </div>
+                                    <span class="field-error" id="err-card-cvv"></span>
+                                </div>
+                            </div>
+                            <label class="save-card-label">
+                                <input type="checkbox" id="save-card" autocomplete="off">
+                                <span>Save card for future payments</span>
+                            </label>
+                        </div>
+
+                        <div class="pay-panel" id="panel-upi">
+                            <div class="upi-logos">
+                                <span class="upi-badge"><i class="fa-solid fa-mobile-screen"></i> PhonePe</span>
+                                <span class="upi-badge"><i class="fa-brands fa-google"></i> GPay</span>
+                                <span class="upi-badge"><i class="fa-solid fa-p"></i> Paytm</span>
+                                <span class="upi-badge"><i class="fa-solid fa-indian-rupee-sign"></i> BHIM</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="upi-id">UPI ID <span class="req">*</span></label>
+                                <div class="input-icon-wrap">
+                                    <input type="text" id="upi-id" name="upi" placeholder="yourname@upi"
+                                        autocomplete="off">
+                                    <i class="fa-solid fa-at field-icon"></i>
+                                </div>
+                                <span class="field-error" id="err-upi-id"></span>
+                            </div>
+                            <div class="upi-hint">Enter your UPI VPA linked to any bank account (e.g. john@okaxis)</div>
+                        </div>
+
+                        <div class="pay-panel" id="panel-netbanking">
+                            <div class="form-group">
+                                <label for="nb-bank">Select Your Bank <span class="req">*</span></label>
+                                <div class="select-wrap">
+                                    <select id="nb-bank" name="bank" autocomplete="off">
+                                        <option value="">-- Choose Bank --</option>
+                                        <option>State Bank of India</option>
+                                        <option>HDFC Bank</option>
+                                        <option>ICICI Bank</option>
+                                        <option>Axis Bank</option>
+                                        <option>Kotak Mahindra Bank</option>
+                                        <option>Bank of Baroda</option>
+                                        <option>Punjab National Bank</option>
+                                        <option>Citibank</option>
+                                        <option>JPMorgan Chase</option>
+                                        <option>Other</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down select-arrow"></i>
+                                </div>
+                                <span class="field-error" id="err-nb-bank"></span>
+                            </div>
+                            <div class="nb-info">
+                                <i class="fa-solid fa-circle-info"></i>
+                                You will be redirected to your bank's secure portal to complete the payment.
+                            </div>
+                        </div>
+
+                        <div class="pay-panel" id="panel-paypal">
+                            <div class="wallet-panel">
+                                <div class="wallet-logo paypal-logo">
+                                    <i class="fa-brands fa-paypal"></i> PayPal
+                                </div>
+                                <p>You'll be redirected to PayPal to log in and complete your payment securely.</p>
+                                <div class="wallet-note"><i class="fa-solid fa-shield-halved"></i> Secured by PayPal
+                                    Buyer Protection</div>
+                            </div>
+                        </div>
+
+                        <div class="pay-panel" id="panel-googlepay">
+                            <div class="wallet-panel">
+                                <div class="wallet-logo gpay-logo">
+                                    <i class="fa-brands fa-google"></i><span>Pay</span>
+                                </div>
+                                <p>Tap "Place Order" to authenticate with your Google account and pay instantly.</p>
+                                <div class="wallet-note"><i class="fa-solid fa-shield-halved"></i> Secured by Google Pay
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pay-panel" id="panel-applepay">
+                            <div class="wallet-panel">
+                                <div class="wallet-logo apple-logo">
+                                    <i class="fa-brands fa-apple"></i> Pay
+                                </div>
+                                <p>Use Touch ID or Face ID to confirm payment instantly with Apple Pay.</p>
+                                <div class="wallet-note"><i class="fa-solid fa-shield-halved"></i> Secured by Apple Pay
+                                    & Face ID</div>
+                            </div>
+                        </div>
+
+                        <div class="form-submit-row">
+                            <div class="secure-badge">
+                                <i class="fa-solid fa-lock"></i> 256-bit SSL Encrypted
+                            </div>
+                            <button type="submit" id="place-order-btn" class="btn-place-order">
+                                <i class="fa-solid fa-lock"></i> Place Order · <span id="pay-total-btn">$1,289.98</span>
+                            </button>
+                        </div>
+
+                    </form>
+                </section>
+            </div>
+
+            <aside class="checkout-right">
+                <div class="order-summary fade-in">
+                    <div class="os-header">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <h2>Order Summary</h2>
+                        <span class="os-item-count">4 items</span>
+                    </div>
+
+                    <div class="os-product">
+                        <div class="os-product-img">
+                            <img src="../assets/Blog/10.webp" alt="Portable Ultrasound Scanner">
+                        </div>
+                        <div class="os-product-info">
+                            <div class="os-product-name">Portable Ultrasound Scanner</div>
+                            <div class="os-product-model">Model: MediLife UX-900</div>
+                            <div class="os-product-qty">
+                                <button class="qty-btn" id="qty-dec-1" aria-label="Decrease">−</button>
+                                <span class="qty-val" id="qty-1">1</span>
+                                <button class="qty-btn" id="qty-inc-1" aria-label="Increase">+</button>
+                            </div>
+                        </div>
+                        <div class="os-product-price" id="price-1">$849.99</div>
+                        <button class="os-remove" id="remove-1" aria-label="Remove item"><i
+                                class="fa-solid fa-trash"></i></button>
+                    </div>
+
+                    <div class="os-product">
+                        <div class="os-product-img">
+                            <img src="../assets/Blog/8.webp" alt="Digital Stethoscope Pro">
+                        </div>
+                        <div class="os-product-info">
+                            <div class="os-product-name">Digital Stethoscope Pro</div>
+                            <div class="os-product-model">Model: MediLife ST-3X</div>
+                            <div class="os-product-qty">
+                                <button class="qty-btn" id="qty-dec-2" aria-label="Decrease">−</button>
+                                <span class="qty-val" id="qty-2">1</span>
+                                <button class="qty-btn" id="qty-inc-2" aria-label="Increase">+</button>
+                            </div>
+                        </div>
+                        <div class="os-product-price" id="price-2">$439.99</div>
+                        <button class="os-remove" id="remove-2" aria-label="Remove item"><i
+                                class="fa-solid fa-trash"></i></button>
+                    </div>
+
+                    <div class="os-product">
+                        <div class="os-product-img">
+                            <img src="../assets/Blog/4.webp" alt="Surgical Robot Arm">
+                        </div>
+                        <div class="os-product-info">
+                            <div class="os-product-name">Surgical Robot Arm Unit</div>
+                            <div class="os-product-model">Model: MediLife RB-X7</div>
+                            <div class="os-product-qty">
+                                <button class="qty-btn" id="qty-dec-3"
+                                    aria-label="Decrease quantity of item 3">−</button>
+                                <span class="qty-val" id="qty-3">1</span>
+                                <button class="qty-btn" id="qty-inc-3"
+                                    aria-label="Increase quantity of item 3">+</button>
+                            </div>
+                        </div>
+                        <div class="os-product-price" id="price-3">$2,199.00</div>
+                        <button class="os-remove" id="remove-3" aria-label="Remove Surgical Robot Arm Unit"><i
+                                class="fa-solid fa-trash"></i></button>
+                    </div>
+
+                    <div class="os-product">
+                        <div class="os-product-img">
+                            <img src="../assets/Blog/6.webp" alt="Patient Monitor Pro">
+                        </div>
+                        <div class="os-product-info">
+                            <div class="os-product-name">Patient Monitor Pro</div>
+                            <div class="os-product-model">Model: MediLife PM-500</div>
+                            <div class="os-product-qty">
+                                <button class="qty-btn" id="qty-dec-4"
+                                    aria-label="Decrease quantity of item 4">−</button>
+                                <span class="qty-val" id="qty-4">1</span>
+                                <button class="qty-btn" id="qty-inc-4"
+                                    aria-label="Increase quantity of item 4">+</button>
+                            </div>
+                        </div>
+                        <div class="os-product-price" id="price-4">$679.50</div>
+                        <button class="os-remove" id="remove-4" aria-label="Remove Patient Monitor Pro"><i
+                                class="fa-solid fa-trash"></i></button>
+                    </div>
+                    <div class="os-coupon">
+                        <input type="text" id="coupon-code" name="coupon" placeholder="Promo / Coupon code"
+                            autocomplete="off">
+                        <button type="button" id="apply-coupon">Apply</button>
+                    </div>
+                    <div class="coupon-msg" id="coupon-msg"></div>
+
+                    <div class="os-totals">
+                        <div class="os-row">
+                            <span>Subtotal</span>
+                            <span id="subtotal">$1,289.98</span>
+                        </div>
+                        <div class="os-row discount-row" id="discount-row" style="display:none;">
+                            <span>Discount <span class="discount-badge" id="discount-label"></span></span>
+                            <span class="discount-val" id="discount-val">−$0.00</span>
+                        </div>
+                        <div class="os-row">
+                            <span>Shipping</span>
+                            <span class="free-ship">FREE</span>
+                        </div>
+                        <div class="os-row">
+                            <span>Tax (8%)</span>
+                            <span id="tax-val">$103.20</span>
+                        </div>
+                        <div class="os-row os-total-row">
+                            <span>Total</span>
+                            <span id="total-val">$1,393.18</span>
+                        </div>
+                    </div>
+
+                    <div class="trust-badges">
+                        <div class="trust-item"><i class="fa-solid fa-rotate-left"></i> 30-Day Returns</div>
+                        <div class="trust-item"><i class="fa-solid fa-truck-fast"></i> Free Shipping</div>
+                        <div class="trust-item"><i class="fa-solid fa-headset"></i> 24/7 Support</div>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footerWrap container">
+            <div class="box">
+                <div class="logoContainer">
+                    <div class="logo">
+                        <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="footer-logo site-logo">
+                    </div>
+                </div>
+                <p class="footer-desc">
+                    MediLife is a global leader in medical technology, dedicated to improving patient outcomes through
+                    innovative solutions and reliable support.
+                </p>
+            </div>
+            <div class="box">
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./services.html">Services</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="./login.html">Login</a></li>
+                </ul>
+            </div>
+            <div class="box">
+                <h4>Categories</h4>
+                <ul class="footer-links">
+                    <li><a href="./error.html">Surgical</a></li>
+                    <li><a href="./error.html">Imaging</a></li>
+                    <li><a href="./error.html">Monitoring</a></li>
+                    <li><a href="./error.html">Lab Equipment</a></li>
+                </ul>
+            </div>
+            <div class="box">
+                <h4>Contact</h4>
+                <ul class="contactInfo">
+                    <li><i class="fa-solid fa-location-dot"></i><span> Stackly Headquarters, Los Angeles, CA</span></li>
+                    <li><i class="fa-solid fa-phone"></i> +1 888 123 4567</li>
+                    <li><i class="fa-solid fa-envelope"></i> vip@stackly.auto</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h4>Newsletter</h4>
+                <p>Subscribe for latest medical updates.</p>
+                <form id="footer-newsletter-form" class="subscribe-form" novalidate>
+                    <input type="email" id="newsletter-email" name="email" placeholder="Your Email"
+                        autocomplete="email">
+                    <span id="newsletter-error"
+                        style="color:var(--error-color);font-size:0.8rem;display:block;margin-top:-5px;min-height:15px;"></span>
+                    <button type="submit" class="btn btn-primary full-width">Subscribe</button>
+                </form>
+                <div class="media">
+                    <a href="./error.html" class="socialLink" aria-label="LinkedIn"><i
+                            class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="./error.html" class="socialLink" aria-label="WhatsApp"><i
+                            class="fa-brands fa-whatsapp"></i></a>
+                    <a href="./error.html" class="socialLink" aria-label="Facebook"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="./error.html" class="socialLink" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2026 MediLife Medical Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ── Loader ──
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('page-loader');
+            loader.style.opacity = '0';
+            setTimeout(() => { loader.style.display = 'none'; }, 300);
+        });
+
+        // ── Header / Hamburger ──
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const navLinks = document.getElementById('nav-links');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const dropdownToggleBtn = document.getElementById('dropdown-toggle-btn');
+        const homeNavLink = document.getElementById('home-nav-link');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        const body = document.body;
+        const openMenu = () => { navLinks.classList.add('showMenu'); menuOverlay.style.display = 'block'; body.classList.add('menu-open'); };
+        const closeMenu = () => { navLinks.classList.remove('showMenu'); menuOverlay.style.display = 'none'; body.classList.remove('menu-open'); dropdownMenu.classList.remove('showDropdown'); };
+        hamburgerBtn.addEventListener('click', e => { e.stopPropagation(); openMenu(); });
+        closeBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+        document.addEventListener('click', e => { if (body.classList.contains('menu-open') && !navLinks.contains(e.target) && !hamburgerBtn.contains(e.target)) closeMenu(); });
+        dropdownToggleBtn.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); dropdownMenu.classList.toggle('showDropdown'); });
+        homeNavLink.addEventListener('click', e => { if (window.innerWidth <= 768) { e.preventDefault(); e.stopPropagation(); dropdownMenu.classList.toggle('showDropdown'); } });
+
+        // ── Theme ──
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const themeIcon = document.getElementById('theme-icon');
+        if (localStorage.getItem('medilife-theme') === 'light') { themeIcon.classList.replace('fa-sun', 'fa-moon'); }
+        themeToggleBtn.addEventListener('click', () => {
+            body.classList.toggle('light-theme');
+            const isLight = body.classList.contains('light-theme');
+            themeIcon.classList.replace(isLight ? 'fa-sun' : 'fa-moon', isLight ? 'fa-moon' : 'fa-sun');
+            localStorage.setItem('medilife-theme', isLight ? 'light' : 'dark');
+        });
+
+        // ── Sticky Header & Scroll-to-top ──
+        const header = document.getElementById('main-header');
+        const scrollBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('sticky', window.scrollY > 50);
+            scrollBtn.classList.toggle('visible', window.scrollY > 300);
+        });
+        scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // ── Fade In ──
+        const fadeObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+
+        // ── Payment Tabs ──
+        const tabs = document.querySelectorAll('.pay-tab');
+        const panels = document.querySelectorAll('.pay-panel');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                panels.forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById('panel-' + tab.dataset.method).classList.add('active');
+            });
+        });
+
+        // ── Live Card Preview ──
+        const cardName = document.getElementById('card-name');
+        const cardNumber = document.getElementById('card-number');
+        const cardExpiry = document.getElementById('card-expiry');
+        const brandIcon = document.getElementById('card-brand-icon');
+
+        cardName.addEventListener('input', () => {
+            document.getElementById('preview-name').textContent = cardName.value.toUpperCase() || 'YOUR NAME';
+        });
+        cardNumber.addEventListener('input', () => {
+            let val = cardNumber.value.replace(/\D/g, '').slice(0, 16);
+            cardNumber.value = val.replace(/(.{4})/g, '$1 ').trim();
+            const display = val.padEnd(16, '•').replace(/(.{4})/g, '$1 ').trim();
+            document.getElementById('preview-number').textContent = display;
+            // Brand detect
+            brandIcon.className = 'fa-brands ' +
+                (/^4/.test(val) ? 'fa-cc-visa' :
+                    /^5[1-5]/.test(val) ? 'fa-cc-mastercard' :
+                        /^3[47]/.test(val) ? 'fa-cc-amex' :
+                            /^6/.test(val) ? 'fa-cc-discover' : 'fa-credit-card');
+        });
+        cardExpiry.addEventListener('input', () => {
+            let val = cardExpiry.value.replace(/\D/g, '').slice(0, 4);
+            if (val.length >= 3) val = val.slice(0, 2) + ' / ' + val.slice(2);
+            cardExpiry.value = val;
+            document.getElementById('preview-expiry').textContent = cardExpiry.value || 'MM/YY';
+        });
+
+        // ── Quantity Controls ──
+        const UNIT_PRICES = { 1: 849.99, 2: 439.99, 3: 2199.00, 4: 679.50 };
+        const quantities = { 1: 1, 2: 1, 3: 1, 4: 1 };
+
+        function fmt(n) { return '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+
+        function recalc() {
+            let sub = 0;
+            [1, 2, 3, 4].forEach(i => {
+                const price = UNIT_PRICES[i] * quantities[i];
+                sub += price;
+                const el = document.getElementById('price-' + i);
+                if (el) el.textContent = fmt(price);
+            });
+            const code = document.getElementById('coupon-code').value.trim().toUpperCase();
+            const discountPct = (code === 'MEDI10') ? 0.10 : (code === 'SAVE20') ? 0.20 : 0;
+            const discountAmt = sub * discountPct;
+            document.getElementById('discount-row').style.display = discountPct ? '' : 'none';
+            if (discountPct) {
+                document.getElementById('discount-label').textContent = code;
+                document.getElementById('discount-val').textContent = '−' + fmt(discountAmt);
+            }
+            const taxable = sub - discountAmt;
+            const tax = taxable * 0.08;
+            const total = taxable + tax;
+            document.getElementById('subtotal').textContent = fmt(sub);
+            document.getElementById('tax-val').textContent = fmt(tax);
+            document.getElementById('total-val').textContent = fmt(total);
+            document.getElementById('pay-total-btn').textContent = fmt(total);
+        }
+
+        // initialise totals display
+        recalc();
+
+        [1, 2, 3, 4].forEach(i => {
+            document.getElementById('qty-inc-' + i).addEventListener('click', () => {
+                if (quantities[i] < 10) { quantities[i]++; document.getElementById('qty-' + i).textContent = quantities[i]; recalc(); }
+            });
+            document.getElementById('qty-dec-' + i).addEventListener('click', () => {
+                if (quantities[i] > 1) { quantities[i]--; document.getElementById('qty-' + i).textContent = quantities[i]; recalc(); }
+            });
+            document.getElementById('remove-' + i).addEventListener('click', function () {
+                this.closest('.os-product').style.display = 'none';
+                quantities[i] = 0;
+                recalc();
+            });
+        });
+
+        // ── Coupon ──
+        document.getElementById('apply-coupon').addEventListener('click', () => {
+            const code = document.getElementById('coupon-code').value.trim().toUpperCase();
+            const msg = document.getElementById('coupon-msg');
+            if (code === 'MEDI10') { msg.className = 'coupon-msg success'; msg.textContent = '✓ 10% discount applied (MEDI10)'; }
+            else if (code === 'SAVE20') { msg.className = 'coupon-msg success'; msg.textContent = '✓ 20% discount applied (SAVE20)'; }
+            else if (code === '') { msg.className = 'coupon-msg error'; msg.textContent = 'Please enter a coupon code.'; }
+            else { msg.className = 'coupon-msg error'; msg.textContent = '✗ Invalid coupon code.'; }
+            recalc();
+        });
+
+        // ── Live Input Restrictions ──
+        // Characters only (letters + spaces + hyphen)
+        function charsOnly(el) {
+            el.addEventListener('input', () => {
+                el.value = el.value.replace(/[^a-zA-Z\s\-']/g, '');
+            });
+            el.addEventListener('keydown', e => {
+                if (e.key.length === 1 && /[^a-zA-Z\s\-']/.test(e.key)) e.preventDefault();
+            });
+        }
+        // Digits only
+        function digitsOnly(el, maxLen) {
+            el.addEventListener('input', () => {
+                el.value = el.value.replace(/\D/g, '').slice(0, maxLen);
+            });
+            el.addEventListener('keydown', e => {
+                if (e.key.length === 1 && !/\d/.test(e.key)) e.preventDefault();
+            });
+        }
+
+        charsOnly(document.getElementById('co-fname'));
+        charsOnly(document.getElementById('co-lname'));
+        charsOnly(document.getElementById('co-city'));
+        charsOnly(document.getElementById('co-state'));
+        charsOnly(document.getElementById('card-name'));
+        digitsOnly(document.getElementById('co-phone'), 10);
+        digitsOnly(document.getElementById('co-zip'), 6);
+        digitsOnly(document.getElementById('card-cvv'), 4);
+
+        // ── Validation Helpers ──
+        const isValidEmail = e => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
+        const isCharsOnly = v => /^[a-zA-Z\s\-']+$/.test(v);
+        const isValidCard = n => n.replace(/\s/g, '').length === 16 && /^\d+$/.test(n.replace(/\s/g, ''));
+        const isValidExpiry = e => { const m = e.replace(/\s/g, '').match(/^(\d{2})\/(\d{2})$/); if (!m) return false; const [, mm, yy] = m; const exp = new Date(2000 + parseInt(yy), parseInt(mm) - 1, 1); return parseInt(mm) >= 1 && parseInt(mm) <= 12 && exp >= new Date(); };
+        const isValidCVV = c => /^\d{3,4}$/.test(c);
+        const isValidUPI = u => /^[\w.\-]+@[\w]+$/.test(u);
+
+        function setError(id, msg) {
+            const errEl = document.getElementById(id);
+            if (!errEl) return;
+            errEl.textContent = msg;
+            // Highlight the matching input: find nearest input/select inside the same .form-group
+            const group = errEl.closest('.form-group');
+            if (!group) return;
+            const input = group.querySelector('input, select');
+            if (input) input.classList[msg ? 'add' : 'remove']('input-error');
+        }
+        function clearErrors() {
+            document.querySelectorAll('.field-error').forEach(e => e.textContent = '');
+            document.querySelectorAll('.input-error').forEach(e => e.classList.remove('input-error'));
+        }
+
+        // ── Form Submit ──
+        document.getElementById('checkout-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            clearErrors();
+            let valid = true;
+
+            const fname = document.getElementById('co-fname').value.trim();
+            const lname = document.getElementById('co-lname').value.trim();
+            const email = document.getElementById('co-email').value.trim();
+            const phone = document.getElementById('co-phone').value.trim();
+            const address = document.getElementById('co-address').value.trim();
+            const city = document.getElementById('co-city').value.trim();
+            const state = document.getElementById('co-state').value.trim();
+            const zip = document.getElementById('co-zip').value.trim();
+
+            if (!fname || !isCharsOnly(fname)) { setError('err-fname', 'First name: letters only, required'); valid = false; }
+            if (!lname || !isCharsOnly(lname)) { setError('err-lname', 'Last name: letters only, required'); valid = false; }
+            if (!email || !isValidEmail(email)) { setError('err-email', 'Enter a valid email address'); valid = false; }
+            if (!phone || phone.length !== 10) { setError('err-phone', 'Enter a valid 10-digit phone number'); valid = false; }
+            if (!address) { setError('err-address', 'Street address is required'); valid = false; }
+            if (!city || !isCharsOnly(city)) { setError('err-city', 'City: letters only, required'); valid = false; }
+            if (!state || !isCharsOnly(state)) { setError('err-state', 'State: letters only, required'); valid = false; }
+            if (!zip || zip.length !== 6) { setError('err-zip', 'Enter a valid 6-digit postal code'); valid = false; }
+
+            const activeTab = document.querySelector('.pay-tab.active');
+            const method = activeTab ? activeTab.dataset.method : 'card';
+
+            if (method === 'card') {
+                const cname = document.getElementById('card-name').value.trim();
+                const cnum = document.getElementById('card-number').value.trim();
+                const cexpiry = document.getElementById('card-expiry').value.trim();
+                const ccvv = document.getElementById('card-cvv').value.trim();
+                if (!cname || !isCharsOnly(cname)) { setError('err-card-name', 'Cardholder name: letters only'); valid = false; }
+                if (!cnum || !isValidCard(cnum)) { setError('err-card-number', 'Enter a valid 16-digit card number'); valid = false; }
+                if (!cexpiry || !isValidExpiry(cexpiry)) { setError('err-card-expiry', 'Enter a valid MM/YY'); valid = false; }
+                if (!ccvv || !isValidCVV(ccvv)) { setError('err-card-cvv', 'CVV must be 3–4 digits'); valid = false; }
+            } else if (method === 'upi') {
+                const upi = document.getElementById('upi-id').value.trim();
+                if (!upi || !isValidUPI(upi)) { setError('err-upi-id', 'Enter a valid UPI ID (e.g. name@upi)'); valid = false; }
+            } else if (method === 'netbanking') {
+                const bank = document.getElementById('nb-bank').value;
+                if (!bank) { setError('err-nb-bank', 'Please select your bank'); valid = false; }
+            }
+
+            if (!valid) {
+                const firstErr = document.querySelector('.field-error:not(:empty)');
+                if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
+
+            const loader = document.getElementById('page-loader');
+            loader.style.display = 'flex';
+            const btn = document.getElementById('place-order-btn');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Processing…';
+            setTimeout(() => { loader.style.opacity = '1'; }, 10);
+            setTimeout(() => { window.location.href = './error.html'; }, 1200);
+        });
+
+        // ── Footer Newsletter ──
+        document.getElementById('footer-newsletter-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const em = document.getElementById('newsletter-email');
+            const err = document.getElementById('newsletter-error');
+            err.textContent = '';
+            em.style.borderColor = '';
+            if (!em.value.trim()) { err.textContent = 'Email is required'; em.style.borderColor = 'var(--error-color)'; }
+            else if (!isValidEmail(em.value.trim())) { err.textContent = 'Enter a valid email'; em.style.borderColor = 'var(--error-color)'; }
+            else { window.location.href = './error.html'; }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | MediLife Medical Devices</title>
+    <meta name="description"
+        content="Learn about MediLife's history, mission, vision, leadership, and the team driving medical innovation worldwide.">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%230ea5e9' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z'/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/about.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <script>if (localStorage.getItem('medilife-theme') === 'light') document.body.classList.add('light-theme');</script>
+
+    <!-- ════════════════════════ PAGE LOADER ════════════════════════ -->
+    <div id="page-loader">
+        <div class="loader-content">
+            <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="loader-img">
+            <p>Loading About Us...</p>
+        </div>
+    </div>
+
+    <button id="scrollToTopBtn" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <!-- ════════════════════════ HEADER ════════════════════════ -->
+    <header class="headerWrap" id="main-header">
+        <div class="imgWrap">
+            <a href="../index.html"><img src="../assets/Header/logo.webp" alt="MediLife Logo" class="site-logo"></a>
+        </div>
+        <div class="hamburger" id="hamburger-btn"><i class="fa-solid fa-bars"></i></div>
+        <nav class="linksWrap" id="nav-links">
+            <div class="topCloseBtn" id="close-btn"><i class="fa-solid fa-times"></i></div>
+            <ul>
+                <li class="dropdown" id="home-dropdown">
+                    <div class="dropdownHeader">
+                        <a href="javascript:void(0)" class="homePageLink" id="home-nav-link">Home</a>
+                        <button class="dropdownToggle" aria-label="Toggle dropdown" id="dropdown-toggle-btn"><i
+                                class="fa-solid fa-chevron-down"></i></button>
+                    </div>
+                    <ul class="dropdownMenu" id="dropdown-menu">
+                        <li><a href="../index.html">Home 1</a></li>
+                        <li><a href="./home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="./about.html" class="active-nav">About Us</a></li>
+                <li><a href="./dashboard.html">Dashboard</a></li>
+                <li><a href="./product.html">Product</a></li>
+                <li><a href="./services.html">Services</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./signup.html">Sign Up</a></li>
+                <li><a href="./login.html">Login</a></li>
+                <li>
+                    <a href="./checkout.html" aria-label="Cart" class="cart-nav-icon">
+                        <i class="fa-solid fa-cart-arrow-down" style="color:rgb(116,192,252);"></i><sup>4</sup>
+                    </a>
+                </li>
+                <li class="theme-toggle-li">
+                    <button id="theme-toggle-btn" aria-label="Toggle Theme"><i class="fa-solid fa-sun"
+                            id="theme-icon"></i></button>
+                </li>
+            </ul>
+        </nav>
+        <div class="menuOverlay" id="menu-overlay"></div>
+    </header>
+
+    <main>
+
+        <!-- ══════════════════════════════════════════════════════════
+             SECTION 1 · HERO VIDEO CAROUSEL
+             ══════════════════════════════════════════════════════════ -->
+        <section class="abt-hero" aria-label="About page hero">
+
+            <!-- Two video slides -->
+            <div class="abt-slides" id="abtSlides">
+                <div class="abt-slide active">
+                    <video autoplay muted loop playsinline preload="metadata" src="../assets/About/22.mp4"></video>
+                </div>
+                <div class="abt-slide">
+                    <video muted loop playsinline preload="metadata" src="../assets/About/11.mp4"></video>
+                </div>
+            </div>
+
+            <!-- Overlay -->
+            <div class="abt-overlay"></div>
+
+            <!-- Content -->
+            <div class="abt-hero-content">
+
+                <h1>Pioneering the Future of<br><span class="abt-accent">Medical Innovation</span></h1>
+                <p>MediLife has spent over two decades engineering the instruments that clinicians trust when every
+                    second counts — delivering precision, reliability, and compassion through technology that saves
+                    lives.</p>
+                <div class="abt-hero-stats">
+                    <div class="abt-stat">
+                        <div class="abt-stat-num">21+</div>
+                        <div class="abt-stat-lbl">Years Active</div>
+                    </div>
+                    <div class="abt-stat">
+                        <div class="abt-stat-num">2,500+</div>
+                        <div class="abt-stat-lbl">Hospitals Served</div>
+                    </div>
+                    <div class="abt-stat">
+                        <div class="abt-stat-num">40+</div>
+                        <div class="abt-stat-lbl">Countries</div>
+                    </div>
+                    <div class="abt-stat">
+                        <div class="abt-stat-num">150+</div>
+                        <div class="abt-stat-lbl">Engineers</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide dots -->
+            <div class="abt-nav" aria-label="Slide navigation">
+                <button class="abt-dot active" data-i="0" aria-label="Slide 1"></button>
+                <button class="abt-dot" data-i="1" aria-label="Slide 2"></button>
+            </div>
+
+            <!-- Scroll cue -->
+            <div class="abt-scroll-cue" aria-hidden="true">
+                <span>Scroll</span>
+                <div class="abt-scroll-line"></div>
+            </div>
+
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════
+             SECTION 2 · HISTORY, BUILDING, VISION & MISSION
+             ══════════════════════════════════════════════════════════ -->
+        <section class="abt-history-section" aria-label="Company history and values">
+            <div class="container">
+
+                <!-- Section intro -->
+                <div class="fade-in">
+                    <div class="abt-sec-badge">Our Story</div>
+                    <h2 class="abt-sec-title">Two Decades of Building<br>Medical Excellence</h2>
+                    <p class="abt-sec-sub">From a single research lab in Boston to a global network of biomedical
+                        engineers, MediLife has grown by solving the problems that matter most to patients and
+                        clinicians alike.</p>
+                </div>
+
+                <!-- History + Images side by side -->
+                <div class="abt-history-split">
+
+                    <!-- Timeline -->
+                    <div class="abt-history-text fade-in">
+                        <h3>Our Origin &amp; Growth</h3>
+                        <p>MediLife was founded in 2003 by two biomedical engineers who believed that hospital equipment
+                            failures were not inevitable — they were preventable. Starting with a five-person team in a
+                            compact Boston workshop, we began servicing diagnostic imaging equipment for local clinics.
+                        </p>
+                        <p>As our reputation for reliability grew, so did our mandate. By 2009 we had opened our first
+                            international office in London, followed swiftly by expansions into Singapore, Dubai, and
+                            São Paulo.</p>
+
+                        <div class="abt-timeline">
+                            <div class="abt-tl-item fade-in">
+                                <div class="abt-tl-year">2003</div>
+                                <div class="abt-tl-body">
+                                    <h4>Founded in Boston</h4>
+                                    <p>Two engineers launch MediLife from a 400 sq ft workshop.</p>
+                                </div>
+                            </div>
+                            <div class="abt-tl-item fade-in">
+                                <div class="abt-tl-year">2007</div>
+                                <div class="abt-tl-body">
+                                    <h4>ISO 13485 Certification</h4>
+                                    <p>First medical-grade quality certification achieved.</p>
+                                </div>
+                            </div>
+                            <div class="abt-tl-item fade-in">
+                                <div class="abt-tl-year">2011</div>
+                                <div class="abt-tl-body">
+                                    <h4>Global Expansion Begins</h4>
+                                    <p>Offices open in London, Singapore, and Dubai.</p>
+                                </div>
+                            </div>
+                            <div class="abt-tl-item fade-in">
+                                <div class="abt-tl-year">2016</div>
+                                <div class="abt-tl-body">
+                                    <h4>1,000th Hospital Partner</h4>
+                                    <p>Milestone reached across 22 countries.</p>
+                                </div>
+                            </div>
+                            <div class="abt-tl-item fade-in">
+                                <div class="abt-tl-year">2021</div>
+                                <div class="abt-tl-body">
+                                    <h4>AI-Assisted Diagnostics Lab</h4>
+                                    <p>Launched predictive maintenance platform for critical devices.</p>
+                                </div>
+                            </div>
+                            <div class="abt-tl-item fade-in">
+                                <div class="abt-tl-year">2024</div>
+                                <div class="abt-tl-body">
+                                    <h4>2,500+ Hospitals Worldwide</h4>
+                                    <p>Operations across 40+ countries, 150+ engineers on the ground.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Two images stacked -->
+                    <div class="abt-history-imgs fade-in">
+                        <div class="abt-img-card">
+                            <img src="../assets/About/Buildings/b1.webp" alt="MediLife headquarters facility"
+                                loading="lazy">
+                            <div class="abt-img-caption"><i class="fa-solid fa-building"></i>&nbsp; Global HQ — Boston,
+                                Massachusetts</div>
+                            <a href="./error.html" class="abt-img-explore">Explore <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <div class="abt-img-card">
+                            <img src="../assets/About/Buildings/b2.webp" alt="MediLife engineering lab" loading="lazy">
+                            <div class="abt-img-caption"><i class="fa-solid fa-flask"></i>&nbsp; State-of-the-Art
+                                Engineering Lab</div>
+                            <a href="./error.html" class="abt-img-explore">Explore <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <div class="abt-img-card">
+                            <img src="../assets/About/Buildings/b3.webp" alt="Surgical device quality check"
+                                loading="lazy">
+                            <div class="abt-img-caption"><i class="fa-solid fa-shield-halved"></i>&nbsp; Quality
+                                Assurance Centre</div>
+                            <a href="./error.html" class="abt-img-explore">Explore <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                </div><!-- /split -->
+
+                <!-- Vision & Mission cards -->
+                <div class="abt-vm-row">
+                    <div class="abt-vm-card fade-in">
+                        <div class="abt-vm-icon"><i class="fa-solid fa-eye"></i></div>
+                        <h3>Our Vision</h3>
+                        <p>To be the world's most trusted partner in medical device lifecycle management — transforming
+                            healthcare delivery through reliability, precision, and continuous innovation, so that no
+                            patient suffers due to preventable equipment failure.</p>
+                        <div class="abt-vm-tag">Vision 2030</div>
+                    </div>
+                    <div class="abt-vm-card fade-in">
+                        <div class="abt-vm-icon"><i class="fa-solid fa-bullseye"></i></div>
+                        <h3>Our Mission</h3>
+                        <p>To engineer, maintain, and certify medical technologies to the highest global standards —
+                            delivering measurable improvements in device uptime, clinical workflow, and patient safety —
+                            while cultivating a culture of technical excellence and ethical accountability.</p>
+                        <div class="abt-vm-tag">Every Device. Every Day.</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════
+             SECTION 3 · TESTIMONIALS
+             ══════════════════════════════════════════════════════════ -->
+        <section class="abt-test-section" aria-label="Client testimonials">
+            <!-- Animated blobs -->
+            <div class="abt-test-blob" aria-hidden="true"></div>
+            <div class="abt-test-blob" aria-hidden="true"></div>
+
+            <div class="container">
+
+                <div class="abt-test-head fade-in">
+                    <div class="abt-sec-badge">Testimonials</div>
+                    <h2 class="abt-sec-title">Trusted by Clinicians<br>Around the World</h2>
+                    <p class="abt-sec-sub" style="margin:0 auto;max-width:520px;">Over 2,500 hospitals share their
+                        first-hand experience with MediLife's equipment, engineering teams, and clinical support.</p>
+                </div>
+
+                <!-- Staggered masonry grid -->
+                <div class="abt-test-grid">
+
+                    <!-- Featured testimonial -->
+                    <div class="abt-test-card featured">
+                        <span class="abt-test-q">&ldquo;</span>
+                        <blockquote>MediLife's biomedical team reduced our OR equipment downtime by 73% in the first
+                            quarter alone. Their engineers were not just technically brilliant — they integrated
+                            seamlessly with our clinical staff, communicating in plain language and solving problems
+                            before they became crises. I have never experienced a vendor partnership at this calibre.
+                        </blockquote>
+                        <div class="abt-test-stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                        <div class="abt-test-footer">
+                            <div class="abt-test-av">PR</div>
+                            <div class="abt-test-meta">
+                                <strong>Dr. Priya Ramesh</strong>
+                                <span>Chief of Surgery, Apollo Hospitals — Chennai, India</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="abt-test-card">
+                        <span class="abt-test-q">&ldquo;</span>
+                        <blockquote>The calibration turnaround for our MRI fleet was remarkable — and fully
+                            NIST-traceable. MediLife is our go-to partner for anything imaging-related.</blockquote>
+                        <div class="abt-test-stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                        <div class="abt-test-footer">
+                            <div class="abt-test-av">JK</div>
+                            <div class="abt-test-meta">
+                                <strong>Dr. James Kowalski</strong>
+                                <span>Head of Radiology, St. Augustin Medical Centre — Chicago</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="abt-test-card">
+                        <span class="abt-test-q">&ldquo;</span>
+                        <blockquote>Their predictive maintenance platform flagged a ventilator fault 36 hours before
+                            failure. That early warning alone could have saved a life — and it very nearly did.
+                        </blockquote>
+                        <div class="abt-test-stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                        <div class="abt-test-footer">
+                            <div class="abt-test-av">YS</div>
+                            <div class="abt-test-meta">
+                                <strong>Yara Saleh, RN</strong>
+                                <span>ICU Director, King Faisal Specialist Hospital — Riyadh</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="abt-test-card">
+                        <span class="abt-test-q">&ldquo;</span>
+                        <blockquote>We procured 12 surgical towers through MediLife. The end-to-end experience — from
+                            quotation to installation to staff training — was exceptional.</blockquote>
+                        <div class="abt-test-stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                        <div class="abt-test-footer">
+                            <div class="abt-test-av">TL</div>
+                            <div class="abt-test-meta">
+                                <strong>Thomas Lim</strong>
+                                <span>Procurement Director, Singapore General Hospital</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="abt-test-card">
+                        <span class="abt-test-q">&ldquo;</span>
+                        <blockquote>ISO-certified, FDA-compliant, four-hour emergency response — MediLife delivers on
+                            every promise in their SLA. That is exceptionally rare in this industry.</blockquote>
+                        <div class="abt-test-stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                        <div class="abt-test-footer">
+                            <div class="abt-test-av">MC</div>
+                            <div class="abt-test-meta">
+                                <strong>Dr. Maria Carvalho</strong>
+                                <span>Clinical Director, São Paulo University Hospital</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /grid -->
+
+                <!-- Scrolling ticker -->
+                <div class="abt-test-ticker" aria-hidden="true">
+                    <div class="abt-ticker-track">
+                        <div class="abt-ticker-item"><span class="abt-ticker-dot"></span>2,500+ Hospital Partners</div>
+                        <div class="abt-ticker-item"><span class="abt-ticker-dot"></span>98% Uptime Guarantee</div>
+                        <div class="abt-ticker-item"><span class="abt-ticker-dot"></span>4-Hour Emergency Response</div>
+                        <div class="abt-ticker-item"><span class="abt-ticker-dot"></span>ISO 13485 Certified</div>
+                        <div class="abt-ticker-item"><span class="abt-ticker-dot"></span>FDA Compliant</div>
+                        <div class="abt-ticker-item"><span class="abt-ticker-dot"></span>CE Marked</div>
+                        <div class="abt-ticker-item"><span class="abt-ticker-dot"></span>40+ Countries</div>
+                        <div class="abt-ticker-item"><span class="abt-ticker-dot"></span>150+ Field Engineers</div>
+                        <div class="abt-ticker-item"><span class="abt-ticker-dot"></span>NIST-Traceable Calibration
+                        </div>
+                        <!-- Duplicate for seamless loop -->
+                        <div class="abt-ticker-item"><span class="abt-ticker-dot"></span>2,500+ Hospital Partners</div>
+                        <div class="abt-ticker-item"><span class="abt-ticker-dot"></span>98% Uptime Guarantee</div>
+                        <div class="abt-ticker-item"><span class="abt-ticker-dot"></span>4-Hour Emergency Response</div>
+                        <div class="abt-ticker-item"><span class="abt-ticker-dot"></span>ISO 13485 Certified</div>
+                        <div class="abt-ticker-item"><span class="abt-ticker-dot"></span>FDA Compliant</div>
+                        <div class="abt-ticker-item"><span class="abt-ticker-dot"></span>CE Marked</div>
+                        <div class="abt-ticker-item"><span class="abt-ticker-dot"></span>40+ Countries</div>
+                        <div class="abt-ticker-item"><span class="abt-ticker-dot"></span>150+ Field Engineers</div>
+                        <div class="abt-ticker-item"><span class="abt-ticker-dot"></span>NIST-Traceable Calibration
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════
+             SECTION 4 · FOUNDERS & TEAM
+             ══════════════════════════════════════════════════════════ -->
+        <section class="abt-team-section" aria-label="Leadership and team">
+            <div class="container">
+
+                <div class="fade-in">
+                    <div class="abt-sec-badge">Leadership</div>
+                    <h2 class="abt-sec-title">The Minds Behind<br>MediLife</h2>
+                    <p class="abt-sec-sub">Our founders set the philosophy. Our team delivers it every day, in every
+                        hospital, across every continent.</p>
+                </div>
+
+                <!-- Two founders with images -->
+                <div class="abt-founders-grid">
+
+                    <div class="abt-founder-card fade-in">
+                        <div class="abt-founder-img">
+                            <img src="../assets/About/Team/1.webp" alt="Dr. Evan Merritt — Co-Founder & CEO"
+                                loading="lazy">
+                            <div class="abt-founder-badge">
+                                <h3>Dr. Evan Merritt</h3>
+                                <span>Co-Founder &amp; CEO</span>
+                            </div>
+                        </div>
+                        <div class="abt-founder-body">
+                            <p>A biomedical engineer and clinician, Dr. Merritt spent eight years in surgical device R&D
+                                at MIT before co-founding MediLife in 2003. He holds a PhD in Biomedical Engineering and
+                                14 patents in surgical device design.</p>
+                            <div class="abt-founder-meta">
+                                <span class="abt-f-tag">PhD — MIT</span>
+                                <span class="abt-f-tag">14 Patents</span>
+                                <span class="abt-f-tag">ISO 13485 Auditor</span>
+                            </div>
+                            <div class="abt-founder-links">
+                                <a href="./error.html" class="abt-f-link" aria-label="LinkedIn"><i
+                                        class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="./error.html" class="abt-f-link" aria-label="Email"><i
+                                        class="fa-solid fa-envelope"></i></a>
+                                <a href="./error.html" class="abt-f-link" aria-label="Profile"><i
+                                        class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="abt-founder-card fade-in">
+                        <div class="abt-founder-img">
+                            <img src="../assets/About/Team/5.webp" alt="Dr. Nadia Osei — Co-Founder & CTO"
+                                loading="lazy">
+                            <div class="abt-founder-badge">
+                                <h3>Dr. Nadia Osei</h3>
+                                <span>Co-Founder &amp; CTO</span>
+                            </div>
+                        </div>
+                        <div class="abt-founder-body">
+                            <p>Dr. Osei is a clinical AI researcher and systems engineer who pioneered MediLife's
+                                predictive maintenance platform. Previously a lead engineer at Siemens Healthineers, she
+                                brings two decades of industry expertise to every product decision.</p>
+                            <div class="abt-founder-meta">
+                                <span class="abt-f-tag">ScD — Harvard</span>
+                                <span class="abt-f-tag">AI &amp; ML Specialist</span>
+                                <span class="abt-f-tag">IEC 60601 Certified</span>
+                            </div>
+                            <div class="abt-founder-links">
+                                <a href="./error.html" class="abt-f-link" aria-label="LinkedIn"><i
+                                        class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="./error.html" class="abt-f-link" aria-label="Email"><i
+                                        class="fa-solid fa-envelope"></i></a>
+                                <a href="./error.html" class="abt-f-link" aria-label="Profile"><i
+                                        class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /founders -->
+
+                <!-- Team members — data only -->
+                <div class="abt-team-divider fade-in">
+                    <h3>Our Extended Team</h3>
+                </div>
+
+                <div class="abt-team-grid">
+
+                    <div class="abt-member fade-in">
+                        <div class="abt-member-av">RH</div>
+                        <div class="abt-member-name">Rachel Hammond</div>
+                        <div class="abt-member-role">Chief Operating Officer</div>
+                        <div class="abt-member-dept">Operations &amp; Strategy</div>
+                    </div>
+
+                    <div class="abt-member fade-in">
+                        <div class="abt-member-av">KJ</div>
+                        <div class="abt-member-name">Dr. Kevin Johansson</div>
+                        <div class="abt-member-role">Head of R&amp;D</div>
+                        <div class="abt-member-dept">Product Innovation</div>
+                    </div>
+
+                    <div class="abt-member fade-in">
+                        <div class="abt-member-av">AP</div>
+                        <div class="abt-member-name">Amara Patel</div>
+                        <div class="abt-member-role">VP Global Sales</div>
+                        <div class="abt-member-dept">Business Development</div>
+                    </div>
+
+                    <div class="abt-member fade-in">
+                        <div class="abt-member-av">LW</div>
+                        <div class="abt-member-name">Lucas Wren</div>
+                        <div class="abt-member-role">Lead Biomedical Engineer</div>
+                        <div class="abt-member-dept">Field Engineering, EMEA</div>
+                    </div>
+
+                    <div class="abt-member fade-in">
+                        <div class="abt-member-av">ST</div>
+                        <div class="abt-member-name">Sofia Tanaka</div>
+                        <div class="abt-member-role">Regulatory Affairs Director</div>
+                        <div class="abt-member-dept">Compliance &amp; Certification</div>
+                    </div>
+
+                    <div class="abt-member fade-in">
+                        <div class="abt-member-av">MB</div>
+                        <div class="abt-member-name">Marcus Bekele</div>
+                        <div class="abt-member-role">Senior Systems Architect</div>
+                        <div class="abt-member-dept">AI &amp; Predictive Platform</div>
+                    </div>
+
+                    <div class="abt-member fade-in">
+                        <div class="abt-member-av">CL</div>
+                        <div class="abt-member-name">Dr. Claire Lefevre</div>
+                        <div class="abt-member-role">Medical Affairs Lead</div>
+                        <div class="abt-member-dept">Clinical Partnerships</div>
+                    </div>
+
+                    <div class="abt-member fade-in">
+                        <div class="abt-member-av">NR</div>
+                        <div class="abt-member-name">Nathan Roy</div>
+                        <div class="abt-member-role">Quality Systems Manager</div>
+                        <div class="abt-member-dept">ISO Audit &amp; QA</div>
+                    </div>
+
+                </div><!-- /team-grid -->
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ════════════════════════ FOOTER ════════════════════════ -->
+    <footer>
+        <div class="footerWrap container">
+            <div class="box">
+                <div class="logoContainer">
+                    <div class="logo"><img src="../assets/Header/logo.webp" alt="MediLife Logo"
+                            class="footer-logo site-logo"></div>
+                </div>
+                <p class="footer-desc">MediLife is a global leader in medical technology, dedicated to improving patient
+                    outcomes through innovative solutions and reliable support.</p>
+            </div>
+            <div class="box">
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./services.html">Services</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="./login.html">Login</a></li>
+                </ul>
+            </div>
+            <div class="box">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="./error.html">Surgical</a></li>
+                    <li><a href="./error.html">Imaging</a></li>
+                    <li><a href="./error.html">Monitoring</a></li>
+                    <li><a href="./error.html">Lab Equipment</a></li>
+                </ul>
+            </div>
+            <div class="box">
+                <h4>Contact</h4>
+                <ul class="contactInfo">
+                    <li><i class="fa-solid fa-location-dot"></i><span> Stackly HQ, Los Angeles, CA</span></li>
+                    <li><i class="fa-solid fa-phone"></i> +1 888 123 4567</li>
+                    <li><i class="fa-solid fa-envelope"></i> vip@stackly.auto</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h4>Newsletter</h4>
+                <p>Subscribe for latest medical updates.</p>
+                <form id="footer-newsletter-form" class="subscribe-form" novalidate>
+                    <input type="email" id="newsletter-email" name="email" placeholder="Your Email"
+                        autocomplete="email">
+                    <span id="newsletter-error"
+                        style="color:var(--error-color);font-size:0.8rem;display:block;margin-top:-5px;min-height:15px;"></span>
+                    <button type="submit" class="btn btn-primary full-width">Subscribe</button>
+                </form>
+                <div class="media">
+                    <a href="./error.html" class="socialLink" aria-label="LinkedIn"><i
+                            class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="./error.html" class="socialLink" aria-label="WhatsApp"><i
+                            class="fa-brands fa-whatsapp"></i></a>
+                    <a href="./error.html" class="socialLink" aria-label="Facebook"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="./error.html" class="socialLink" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2026 MediLife Medical Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ════════════════════════ SCRIPTS ════════════════════════ -->
+    <script>
+        // ── Loader ──
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('page-loader');
+            if (!loader) return;
+            loader.style.opacity = '0';
+            setTimeout(() => { loader.style.display = 'none'; }, 300);
+        });
+
+        // ── Header / hamburger ──
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const navLinks = document.getElementById('nav-links');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const dropToggle = document.getElementById('dropdown-toggle-btn');
+        const homeNavLink = document.getElementById('home-nav-link');
+        const dropMenu = document.getElementById('dropdown-menu');
+        const body = document.body;
+
+        const openMenu = () => { navLinks.classList.add('showMenu'); menuOverlay.style.display = 'block'; body.classList.add('menu-open'); };
+        const closeMenu = () => { navLinks.classList.remove('showMenu'); menuOverlay.style.display = 'none'; body.classList.remove('menu-open'); dropMenu.classList.remove('showDropdown'); };
+
+        hamburgerBtn.addEventListener('click', e => { e.stopPropagation(); openMenu(); });
+        closeBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+        document.addEventListener('click', e => {
+            if (body.classList.contains('menu-open') && !navLinks.contains(e.target) && !hamburgerBtn.contains(e.target)) closeMenu();
+        });
+        dropToggle.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); dropMenu.classList.toggle('showDropdown'); });
+        homeNavLink.addEventListener('click', e => { if (window.innerWidth <= 768) { e.preventDefault(); e.stopPropagation(); dropMenu.classList.toggle('showDropdown'); } });
+
+        // ── Theme toggle ──
+        const themeBtn = document.getElementById('theme-toggle-btn');
+        const themeIcon = document.getElementById('theme-icon');
+        if (localStorage.getItem('medilife-theme') === 'light') { themeIcon.classList.replace('fa-sun', 'fa-moon'); }
+        themeBtn.addEventListener('click', () => {
+            body.classList.toggle('light-theme');
+            const isLight = body.classList.contains('light-theme');
+            themeIcon.classList.replace(isLight ? 'fa-sun' : 'fa-moon', isLight ? 'fa-moon' : 'fa-sun');
+            localStorage.setItem('medilife-theme', isLight ? 'light' : 'dark');
+        });
+
+        // ── Sticky header + scroll-to-top ──
+        const header = document.getElementById('main-header');
+        const scrollBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('sticky', window.scrollY > 50);
+            if (scrollBtn) scrollBtn.classList.toggle('visible', window.scrollY > 300);
+        });
+        if (scrollBtn) scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // ── Video hero carousel (4.5 s) ──
+        const abtSlides = document.querySelectorAll('.abt-slide');
+        const abtDots = document.querySelectorAll('.abt-dot');
+        let abtCurrent = 0;
+        let abtTimer = null;
+
+        function abtGoTo(n) {
+            abtSlides[abtCurrent].classList.remove('active');
+            const prevVid = abtSlides[abtCurrent].querySelector('video');
+            if (prevVid) prevVid.pause();
+            abtDots[abtCurrent].classList.remove('active');
+            abtCurrent = (n + abtSlides.length) % abtSlides.length;
+            abtSlides[abtCurrent].classList.add('active');
+            const nextVid = abtSlides[abtCurrent].querySelector('video');
+            if (nextVid) { nextVid.currentTime = 0; nextVid.play(); }
+            abtDots[abtCurrent].classList.add('active');
+        }
+
+        function abtStartAuto() { abtTimer = setInterval(() => abtGoTo(abtCurrent + 1), 4500); }
+        function abtResetAuto() { clearInterval(abtTimer); abtStartAuto(); }
+
+        abtDots.forEach(d => d.addEventListener('click', () => { abtGoTo(+d.dataset.i); abtResetAuto(); }));
+        abtStartAuto();
+
+        // ── Fade-in observer ──
+        const fadeObs = new IntersectionObserver((entries, obs) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.fade-in').forEach(el => fadeObs.observe(el));
+
+        // ── Testimonial card scroll-in observer ──
+        const testObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.abt-test-card').forEach(c => testObs.observe(c));
+
+        // ── Footer newsletter ──
+        const newsletterForm = document.getElementById('footer-newsletter-form');
+        const newsletterEmail = document.getElementById('newsletter-email');
+        const newsletterError = document.getElementById('newsletter-error');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', e => {
+                e.preventDefault();
+                const email = newsletterEmail.value.trim();
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!email) { newsletterError.textContent = 'Please enter your email address.'; return; }
+                if (!emailRegex.test(email)) { newsletterError.textContent = 'Please enter a valid email address.'; return; }
+                newsletterError.textContent = '';
+                newsletterEmail.value = '';
+                window.location.href = './error.html';
+            });
+        }
+    </script>
+
+</body>
+
+</html>
