@@ -616,6 +616,14 @@
             loader.style.opacity = '0';
             setTimeout(() => { loader.style.display = 'none'; }, 300);
         });
+        window.addEventListener('pageshow', (event) => {
+            if (event.persisted) {
+                const loader = document.getElementById('page-loader');
+                if (!loader) return; // Added this line for consistency, though not in the original instruction
+                loader.style.opacity = '0';
+                setTimeout(() => { loader.style.display = 'none'; }, 300);
+            }
+        });
 
         // ── Header / hamburger ──
         const hamburgerBtn = document.getElementById('hamburger-btn');

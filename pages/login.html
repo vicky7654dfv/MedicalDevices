@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MediLife | Healthcare Professional Login</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%230ea5e9' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z'/></svg>">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%230ea5e9' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z'/></svg>">
     <link rel="stylesheet" href="../css/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -22,7 +24,8 @@
 
     <div id="page-loader">
         <div class="loader-content">
-            <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="loader-img" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 50\'><text y=\'35\' font-family=\'sans-serif\' font-weight=\'bold\' font-size=\'30\' fill=\'%230ea5e9\'>MediLife</text></svg>'">
+            <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="loader-img"
+                onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 50\'><text y=\'35\' font-family=\'sans-serif\' font-weight=\'bold\' font-size=\'30\' fill=\'%230ea5e9\'>MediLife</text></svg>'">
             <p>Authenticating Credentials...</p>
         </div>
     </div>
@@ -33,7 +36,7 @@
     </div>
 
     <div class="page-wrapper">
-        
+
         <div class="top-action-bar fade-in">
             <a href="../index.html" class="return-home-btn">
                 <i class="fa-solid fa-house-medical"></i> Return Home
@@ -46,25 +49,28 @@
         </div>
 
         <div class="login-container fade-in-up">
-            
+
             <div class="split-left">
                 <div class="left-content">
                     <a href="../index.html">
-                        <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="brand-logo" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 50\'><text y=\'35\' font-family=\'sans-serif\' font-weight=\'bold\' font-size=\'30\' fill=\'%230ea5e9\'>MediLife</text></svg>'">
+                        <img src="../assets/Header/logo.webp" alt="MediLife Logo" class="brand-logo"
+                            onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 50\'><text y=\'35\' font-family=\'sans-serif\' font-weight=\'bold\' font-size=\'30\' fill=\'%230ea5e9\'>MediLife</text></svg>'">
                     </a>
                     <h2>Welcome Back</h2>
-                    <p>Log in to manage your medical equipment procurement, view active orders, and access dedicated clinical support.</p>
+                    <p>Log in to manage your medical equipment procurement, view active orders, and access dedicated
+                        clinical support.</p>
                 </div>
             </div>
 
             <div class="split-right">
                 <form id="login-form" novalidate>
-                    
+
                     <div class="form-group">
                         <label for="email">Institutional Email</label>
                         <div class="input-wrapper">
                             <i class="fa-solid fa-envelope input-icon"></i>
-                            <input type="email" id="email" name="email" placeholder="doctor@hospital.org" autocomplete="email">
+                            <input type="email" id="email" name="email" placeholder="doctor@hospital.org"
+                                autocomplete="email">
                         </div>
                         <span class="error-msg" id="email-error"></span>
                     </div>
@@ -73,7 +79,8 @@
                         <label for="password">Password</label>
                         <div class="input-wrapper">
                             <i class="fa-solid fa-lock input-icon"></i>
-                            <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password">
+                            <input type="password" id="password" name="password" placeholder="Enter your password"
+                                autocomplete="current-password">
                             <i class="fa-solid fa-eye toggle-password" id="toggle-pwd"></i>
                         </div>
                         <span class="error-msg" id="password-error"></span>
@@ -88,7 +95,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary full-width">Secure Login</button>
-                    
+
                     <div class="auth-links">
                         <span>Don't have an account?</span>
                         <a href="signup.html" class="register-link">Register here</a>
@@ -105,17 +112,26 @@
             loader.style.opacity = '0';
             setTimeout(() => { loader.style.display = 'none'; }, 300);
         });
+        window.addEventListener('pageshow', (event) => {
+            if (event.persisted) {
+                const loader = document.getElementById('page-loader');
+                if (loader) {
+                    loader.style.opacity = '0';
+                    setTimeout(() => { loader.style.display = 'none'; }, 300);
+                }
+            }
+        });
 
         // Link Interceptor for Loader
         document.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function(e) {
+            link.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
                 if (href && href !== '#' && !href.startsWith('javascript') && !this.classList.contains('toggle-password')) {
                     e.preventDefault();
                     const loader = document.getElementById('page-loader');
                     loader.style.display = 'flex';
                     setTimeout(() => { loader.style.opacity = '1'; }, 10);
-                    setTimeout(() => { window.location.href = href; }, 400); 
+                    setTimeout(() => { window.location.href = href; }, 400);
                 }
             });
         });
@@ -124,14 +140,14 @@
         const form = document.getElementById('login-form');
         const email = document.getElementById('email');
         const password = document.getElementById('password');
-        
+
         // Error Message Spans
         const emailError = document.getElementById('email-error');
         const passwordError = document.getElementById('password-error');
 
         // Toggle Password Visibility Logic
         const togglePwd = document.getElementById('toggle-pwd');
-        togglePwd.addEventListener('click', function() {
+        togglePwd.addEventListener('click', function () {
             const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
             password.setAttribute('type', type);
             this.classList.toggle('fa-eye');
@@ -182,9 +198,10 @@
                 const loader = document.getElementById('page-loader');
                 loader.style.display = 'flex';
                 setTimeout(() => { loader.style.opacity = '1'; }, 10);
-                setTimeout(() => { window.location.href = 'error.html'; }, 400); 
+                setTimeout(() => { window.location.href = 'error.html'; }, 400);
             }
         });
     </script>
 </body>
+
 </html>
